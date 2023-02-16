@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="folders"/>
+		<Node name="logs">
+			<Node name="log idx=0000">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.515831169"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{37203F3E-11AC-44B0-9AA7-7799CBC8258A}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_12_22_47_813\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0001">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.5235480556"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{28280FC9-1779-41DD-A384-E1F8529310E9}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_12_33_54_552\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0002">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.5250699884"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{790F40FD-823F-49E9-9588-B1B5CB017107}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_12_36_06_47\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0003">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.5314393403"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{67E239CC-143A-4F98-BB52-58993218DA25}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_12_45_16_359\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0004">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.5895396065"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{701143AA-56CD-43F2-B4C4-E163EFD34FA4}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_14_08_56_222\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0005">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.5903678935"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{DC39129A-62FA-4BAC-820E-0AADF4476763}"/>
+				<Prp name="nameofroot" type="S" value="SAP_POC"/>
+				<Prp name="relpath" type="S" value="17-01-2023_14_10_07_786\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0006">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.6347659838"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{FFBE8F87-D773-403E-87EA-D916472E8ACF}"/>
+				<Prp name="nameofroot" type="S" value="SAP"/>
+				<Prp name="relpath" type="S" value="17-01-2023_15_14_03_782\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0007">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.6561445602"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{BE85C34B-DB1B-4D40-A1AD-DC016107F809}"/>
+				<Prp name="nameofroot" type="S" value="SAP"/>
+				<Prp name="relpath" type="S" value="17-01-2023_15_44_50_890\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0008">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.6585412616"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{4E7C5F00-EAC6-4E28-8C03-7FF0473DB50D}"/>
+				<Prp name="nameofroot" type="S" value="SAP"/>
+				<Prp name="relpath" type="S" value="17-01-2023_15_48_17_965\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0009">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="44943.8268248843"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{089F83B7-B219-4A22-B9C8-FD7FA8B69EEB}"/>
+				<Prp name="nameofroot" type="S" value="SAP"/>
+				<Prp name="relpath" type="S" value="17-01-2023_19_50_37_670\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+		</Node>
+		<Prp name="signature" type="S" value="{6511DB44-2372-47B8-8349-ADA0DB4D9E14}"/>
+		<Prp name="version" type="S" value="11.0"/>
+	</Node>
+</Nodes>

@@ -1,0 +1,235 @@
+﻿import loginForm
+import searchBox
+import createSalesPage
+import createStandardOrder
+import USRegionConfigurationPage
+import CNRegionConfigurationPage
+  
+RecNo = 0
+
+def sap_test():
+  # Creates the driver
+  # If you connect to an Excel 2007 sheet, use the following method call:
+  # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Copy.xlsx", "Test Cases Final Copy")
+  Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
+  browser = Aliases.browser
+  browser.BrowserWindow.Maximize()
+  page = browser.pageFlp
+  #linkLogon = page.FindElement("//a[.='Cancel']")
+  #linkLogon.Click()
+  #page.Wait()
+  #--Login form
+  loginForm.login_form(page, Project.Variables.username)
+  page.Wait()
+  page.WaitConfirm(5000)
+  
+  # Iterates through records
+  while not Driver.EOF():
+    ProcessData(browser, page); # Processes data
+    Driver.Next(); # Goes to the next record
+
+ 
+  # Closes the driver
+  DDT.CloseDriver(Driver.Name)
+  
+# Posts data to the log (helper routine)
+def ProcessData(browser, page):
+  global RecNo
+  Fldr = Log.CreateFolder("Record: " + aqConvert.VarToStr(RecNo))
+  sap_field_values = {}
+  sales_order_field_values = {}
+  standard_order_field_values = {}
+  general_requirement_configurations = {}
+  water_management_configurations = {}
+  air_handling_configurations = {}
+  additional_configs = {}
+  shipping_configs = {}
+  
+  for i in range(DDT.CurrentDriver.ColumnCount):
+    sap_field_values[DDT.CurrentDriver.ColumnName[i]] = aqConvert.VarToStr(DDT.CurrentDriver.Value[i])
+  
+  #Set values for Sales order type page
+  sales_order_field_values["order_type"] = sap_field_values["Order Type"]
+  sales_order_field_values["sales_organization"] = sap_field_values["Sales Organization"]
+  sales_order_field_values["distribution_channel"] = sap_field_values["Distribution Channel"]
+  
+  #Set values for standard order page
+  standard_order_field_values["sold_to_party"] = sap_field_values["Sold To Party"]
+  standard_order_field_values["customer_reference"] = sap_field_values["Customer Reference (PO #)"]
+  standard_order_field_values["delivery_block"] = sap_field_values["Delivery Block"]
+  standard_order_field_values["material"] = sap_field_values["Material (BAC Model)"]
+  standard_order_field_values["order_quantity"] = sap_field_values["Order Quantity"]
+  standard_order_field_values["plant"] = sap_field_values["Plant"]
+  
+  #Set values for general requirement configurations
+  general_requirement_configurations["region_specific"] = sap_field_values["Region Specific"]
+  general_requirement_configurations["model_number"] = sap_field_values["Model Number"]
+  general_requirement_configurations["unit_of_measure"] = sap_field_values["Unit of Measure"]
+  general_requirement_configurations["water_flow_rate"] = sap_field_values["Water Flow Rate"]
+  general_requirement_configurations["entering_water_temperature"] = sap_field_values["Entering Water Temperature"]
+  general_requirement_configurations["leaving_water_temperature"] = sap_field_values["Leaving Water Temperature"]
+  general_requirement_configurations["entering_wet_bulb_temp"] = sap_field_values["Entering Wet-Bulb Temp"]
+  general_requirement_configurations["fill_material"] = sap_field_values["Fill Material"]
+  general_requirement_configurations["cti_certification"] = sap_field_values["CTI Certification"]
+  #general_requirement_configurations["ibc"] = sap_field_values["IBC 2018 or Later?"]
+  #general_requirement_configurations["california_oshpd_proj"] = sap_field_values["California OSHPD Project"]
+  general_requirement_configurations["special_seismic"] = sap_field_values["Special Seismic Cert Required"]
+  general_requirement_configurations["fm_approval"] = sap_field_values["FM Approval"]
+  general_requirement_configurations["cooling_tower_structure"] = sap_field_values["Cooling Tower Structure"]
+  general_requirement_configurations["basinless_unit"] = sap_field_values["Basinless Unit"]
+  general_requirement_configurations["anchorage"] = sap_field_values["Anchorage"]
+  general_requirement_configurations["anchor_bolt_hole_spacing"] = sap_field_values["Anchor Bolt Hole Spacing"]
+  general_requirement_configurations["shipping_plant"] = sap_field_values["Shipping/Production Plant"]
+  general_requirement_configurations["field_assembly"] = sap_field_values["Knockdown For Field Assembly?"]
+  
+  #Set values for Water Management configurations
+  water_management_configurations["material_of_construction"] = sap_field_values["Material of Construction"]
+  water_management_configurations["casing_lovuver_material"] = sap_field_values["Casing and Louver Material"]
+  water_management_configurations["independent_cell_operation"] = sap_field_values["Independent Cell Operation?"]
+  water_management_configurations["inlet_outlet_connections"] = sap_field_values["Inlet/Outlet Connectons"]
+  water_management_configurations["outlet_strainer_material"] = sap_field_values["Outlet Strainer Material"]
+  water_management_configurations["depressed_sump_box"] = sap_field_values["Depressed Sump Box"]
+  water_management_configurations["sgl_inlet_piping_draing_valve"] = sap_field_values["SGL Inlet Piping Drain Valve"]
+  water_management_configurations["basin_water_level_control"] = sap_field_values["Basin Water Level Control"]
+  water_management_configurations["basin_heaters"] = sap_field_values["Basin Heaters"]
+  water_management_configurations["basin_sweeper_piping"] = sap_field_values["Basin Sweeper Piping"]
+  water_management_configurations["float_switch"] = sap_field_values["Float Switch"]
+  water_management_configurations["flume_box_options"] = sap_field_values["Flume Box Options"]
+  water_management_configurations["bottom_equalizer"] = sap_field_values["Bottom Equalizer/Bypass conn"]
+  water_management_configurations["end_equalizer"] = sap_field_values["End Equalizer/Bypass conn"]
+  water_management_configurations["standard_inlet_connection_size"] = sap_field_values["Standard Inlet Connection Size"]
+  water_management_configurations["inlet_connection_options"] = sap_field_values["Inlet Connection Options"]
+  water_management_configurations["inlet_connection_size_change"] = sap_field_values["Inlet Connection Size Change"]
+  water_management_configurations["standard_outlet_connection_size"] = sap_field_values["Standard Outlet Conn Size"]
+  water_management_configurations["outlet_connection_options"] = sap_field_values["Outlet Connection Options"]
+  water_management_configurations["outlet_connection_size_change"] = sap_field_values["Outlet Connection Size Change"]
+  
+  #--Set Values for Air Handling System---
+  air_handling_configurations["system_frequency"] = sap_field_values["System Frequency"]
+  air_handling_configurations["system_phase"] = sap_field_values["System Phase"]
+  air_handling_configurations["system_voltage"] = sap_field_values["System Voltage"]
+  air_handling_configurations["fan_type"] = sap_field_values["Fan Type"]
+  air_handling_configurations["fan_drive_system"] = sap_field_values["Fan Drive System"]
+  air_handling_configurations["enclosure"] = sap_field_values["Enclosure"]
+  air_handling_configurations["motor_efficiency_class"] = sap_field_values["Motor Efficiency Class"]
+  air_handling_configurations["manufacturer"] = sap_field_values["Manufacturer"]
+  air_handling_configurations["horsepower_motor_a"] = sap_field_values["Horsepower Motor A"]
+  air_handling_configurations["fan_motor_rpm"] = sap_field_values["Fan Motor RPM A"]
+  air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"]
+  air_handling_configurations["fan_motor_options_a"] = sap_field_values["Fan Motor Options A"]
+  air_handling_configurations["add_shaft_grounding_ring"] = sap_field_values["Add Shaft Grounding Ring?"]
+  air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"]
+  air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"]
+  air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"] 
+  
+  #-- Set additional Config values
+  additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"]
+  additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"]
+  additional_configs["upgrade_fan_guard_material"] = sap_field_values["Upgrade Fan Guard Material?"]
+  additional_configs["fan_deck_safety_rails"] = sap_field_values["Fan Deck Safety Rails"]
+  additional_configs["3Side_safetyRail_to_exist_cell"] = sap_field_values["3Side SafetyRail to Exist Cell"]
+  additional_configs["ladder_fan_deck"] = sap_field_values["Ladder to Fan Deck"]
+  additional_configs["add_safety_cages_to_ladders"] = sap_field_values["Add Safety Cages to Ladders?"]
+  additional_configs["safety_gates_to_all_ladder"] = sap_field_values["Safety Gates to All Ladder?"]
+  additional_configs["ladder_safety_cage_extensions"] = sap_field_values["Ladder/Safety Cage Extensions"]
+  additional_configs["moc_platform_supports"] = sap_field_values["MOC-Platform Supports"]
+  additional_configs["fan_deck_ext_with_handrils"] = sap_field_values["Fan Deck Ext with Handrails"]
+  additional_configs["louver_face_platform"] = sap_field_values["Louver Face Platform"]
+  additional_configs["access_door_platform"] = sap_field_values["Access Door Platform"]
+  additional_configs["louver_face_cage_extension"] = sap_field_values["Louver Face Ldr/Cage Extension "]
+  additional_configs["access_door_pltf"] = sap_field_values["Access Door Pltf Ladder Ext"]
+  additional_configs["internal_walkway_access_door"] = sap_field_values["Internal Walkway @ Access Door"]
+  additional_configs["internal_walkway_moc"] = sap_field_values["Internal Walkway MOC"]
+  #additional_configs["internal_access"] = sap_field_values["Internal Access"] --- DATA MISSING--
+  
+  #Set Shipping Configs
+  shipping_configs["special_required"] = sap_field_values["Specials Required?"]
+  #--Search va01 ----
+  if RecNo > 0:
+    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    image.FindElement("//a[@title='Navigate to Home Page']").Click()
+    
+  searchBox.search_item(page, "va01")
+  #panel = page.sectionShellSplitCanvas
+  page.FindElement("//a[contains(., 'Create Sales Orders')]").Click()
+  form = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']")
+  order_form = form.FindElement("//div[@id='webguiPage0']/form")
+  #--Enter order Type--  
+  createSalesPage.create_sales_order(order_form, sales_order_field_values)
+   #--Enter Order Details---
+  panel = page.sectionShellSplitCanvas
+  textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
+  createStandardOrder.create_standard_order(browser, textbox, page, standard_order_field_values)
+  #--Enter Configuration--
+  if general_requirement_configurations["region_specific"] == "China":
+    CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_configurations, water_management_configurations, 
+      air_handling_configurations, additional_configs, shipping_configs)
+    
+  #Enter US configuration---
+  if general_requirement_configurations["region_specific"] == "US":
+    USRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_configurations, water_management_configurations, 
+      air_handling_configurations, additional_configs, shipping_configs)
+  
+  textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+  page.WaitConfirm(25000)
+  textbox.FindElement("//div[.='Continue']").Click()
+  page.WaitConfirm(3000)
+  
+  image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+  #image = page.headerShellBar
+  image.FindElement("//a[@title='Navigate to Home Page']").Click()
+  searchBox.search_item(page, "csk2")
+  section = browser.pageFlp.sectionShellSplitCanvas
+  panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
+  item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
+  item_field.SetText("100")
+  material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
+  material_field.SetText("S3E")
+  textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
+  textbox2.SetText("PP01")
+  textbox.FindElement("//div[.='Execute']").Click()
+  page.WaitConfirm(5000)
+  browser = Aliases.browser
+  browser.BrowserWindow.Maximize()
+  frame = panel.frameApplicationBillofmaterialMu
+  #frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationBillofmaterialMu
+  form = frame.formWebguiform0
+  #form.panelExecute.Click()
+  form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
+  #form.panelSpreadsheetCtrlShiftF7.Click()
+  #frame.textnodeAlwaysUseSelectedFormat.Click()
+  #frame.panelContinue.Click()
+  frame.FindElement("//div[.='OK']").Click()
+  #frame.panelUpdowndialogchoose.Click()
+  page.WaitConfirm(10000)
+
+  #aqObject.CheckProperty(form.FindElement("#msgarea"), "contentText", cmpContains, "saved.", False)
+  #here you add the key:value for seperate json
+  RecNo = RecNo + 1
+  
+# Creates the driver (main routine)
+def TestDriver():
+  # Creates the driver
+  # If you connect to an Excel 2007 sheet, use the following method call:
+  # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Copy.xlsx", "Test Cases")
+  # Iterates through records
+  while not Driver.EOF():
+    ProcessData(); # Processes data
+    Driver.Next(); # Goes to the next record
+
+ 
+  # Closes the driver
+  DDT.CloseDriver(Driver.Name)
+
+def test_values(values):
+  Log.Message(values["order_type"])
+  
+def test_browser():
+  if Project.Variables.testBrowser == 'chrome':
+    sap_test(Browsers.btChrome)
+  elif Project.Variables.testBrowser == 'edge':
+    sap_test(Browsers.btEdge)
+  
+  

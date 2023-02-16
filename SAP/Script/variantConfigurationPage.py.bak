@@ -1,0 +1,36 @@
+﻿def set_configuration_details(textbox, page):
+  page.WaitConfirm(3000)
+  frame = textbox.frameC120
+  section = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
+  section2 = section.sectionSplitter0Content1
+  section2.FindElement("//div//span[contains(@class, 'sapMSltLabel')]").Click()
+  frame.FindElement("//li[.='CN']").Click()
+  section2.textnodeShowValueHelp.Click()
+  frame.FindElement("//bdi[.='S15E-0809-06GE-2']").Click()
+  textbox = section2.FindElement("//input[@id=(//label[.='Water Flow Rate per Unit (l/s):']/@for)]")
+  textbox.SetText("50")
+  textbox = section2.FindElement("//input[@id=(//label[.='Entering Water Temperature (C):']/@for)]")
+  textbox.Click()
+  textbox.SetText("30")
+  textbox = section2.FindElement("//input[@id=(//label[.='Leaving Water Temperature (°C):']/@for)]")
+  textbox.Click()
+  textbox.SetText("24")
+  textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp (C):']/@for)]")
+  textbox.Click()
+  textbox.SetText("23")
+  section2.panelConfigurationcomponentValua.Click()
+  page.wait()
+  page.WaitConfirm(5000)
+  #Done button
+  textbox.FindElement("//button[.='Done']").Click()
+  page.WaitConfirm(6000)
+  browser = Aliases.browser
+  #browser.BrowserWindow.Maximize()
+  frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
+  frame2 = frame.formWebguiform0
+  review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+  review_frame.FindElement("//button[.='Apply']").Click()
+  frame2.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+  page.WaitConfirm(50000)
+  frame2.FindElement("//div[.='Continue']").Click()
+  page.WaitConfirm(3000)

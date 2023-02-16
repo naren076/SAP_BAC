@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="15.0" key="{EDF6FF64-6F7F-4F34-AE0C-688760CEF8BC}">
+	<children>
+		<child name="SAP" key="{7D5EF646-88C3-4FFC-B8EB-4D4BC03B3195}" path="SAP\SAP.mds" />
+	</children>
+	<testItems key="{596DB7DD-3367-4C07-BE00-4CC6A86D50A6}">
+		<children>
+			<testItem key="{7D5EF646-88C3-4FFC-B8EB-4D4BC03B3195}" enabled="True" timeout="0" stopOnError="True" description="" />
+		</children>
+	</testItems>
+	<variables key="{D6F0E5B3-244A-4505-A00C-7BF12FE8F664}" />
+	<analysis key="{5FCDAA06-D7CF-4CD0-BE43-CDF4C5F4965A}" />
+	<scc key="{C900492B-D218-429C-9AA0-264B7D78CA88}" name="Git Plugin">
+		<data />
+	</scc>
+</Root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{1F64F68B-7489-4F63-BAEF-EF1587C69DEC}" version="15.0">
+	<Page Moniker="" />
+	<Tasks>
+		<Task Name="Check alt attribute" Value="False" />
+		<Task Name="Check mailto:" Value="False" />
+		<Task Name="Check image sizes " Value="False" />
+		<Task Name="Check title tag" Value="False" />
+		<Task Name="Check tab indexes" Value="False" />
+		<Task Name="Check link accessibility" Value="False" />
+		<Task Name="Check ActiveX objects" Value="False" />
+		<Task Name="Check Applet objects" Value="False" />
+		<Task Name="Check multimedia links" Value="False" />
+		<Task Name="Check server-side images" Value="False" />
+	</Tasks>
+</Root>
