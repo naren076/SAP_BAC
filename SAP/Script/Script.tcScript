@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
 	<children>
-		<child name="Unit1" key="{83C135DA-FB1B-47DB-B671-2C252814E7E8}" path="Unit1.py" />
 		<child name="Unit2" key="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}" path="Unit2.py" />
 		<child name="loginForm" key="{AD4F063B-FAD8-4378-B06C-055A69CF64CD}" path="loginForm.py" />
 		<child name="createSalesPage" key="{8BE3F9F9-0ACE-474D-A6E2-9C96813C7D9A}" path="createSalesPage.py" />
