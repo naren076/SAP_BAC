@@ -72,8 +72,8 @@ def ProcessData(browser, page):
   general_requirement_configurations["entering_wet_bulb_temp"] = sap_field_values["Entering Wet-Bulb Temp"]
   general_requirement_configurations["fill_material"] = sap_field_values["Fill Material"]
   general_requirement_configurations["cti_certification"] = sap_field_values["CTI Certification"]
-  #general_requirement_configurations["ibc"] = sap_field_values["IBC 2018 or Later?"]
-  #general_requirement_configurations["california_oshpd_proj"] = sap_field_values["California OSHPD Project"]
+  #general_requirement_configurations["ibc"] = sap_field_values["IBC 2018 or Later?"] --This fields for US Region
+  #general_requirement_configurations["california_oshpd_proj"] = sap_field_values["California OSHPD Project"] --This fields for US Region
   general_requirement_configurations["special_seismic"] = sap_field_values["Special Seismic Cert Required"]
   general_requirement_configurations["fm_approval"] = sap_field_values["FM Approval"]
   general_requirement_configurations["cooling_tower_structure"] = sap_field_values["Cooling Tower Structure"]
