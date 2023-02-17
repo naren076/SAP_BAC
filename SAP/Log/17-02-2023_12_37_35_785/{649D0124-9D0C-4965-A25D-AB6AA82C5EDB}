@@ -1,0 +1,2426 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="message 24">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="20"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973538773"/>
+					<Prp name="line #" type="I" value="20"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage45.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973538773"/>
+					<Prp name="line #" type="I" value="20"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage44.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Tab][Tab][Tab][Tab][Tab][Tab][Tab][Tab][Tab]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.526530544"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="24"/>
+			<Prp name="line no" type="I" value="20"/>
+		</Node>
+		<Node name="message 35">
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The test run has stopped because your test project is configured to stop on errors."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="stack end" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture1.png"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="stack beginning" type="I" value="3"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;body&gt;&lt;p&gt;The test run has stopped because --&lt;/p&gt;&lt;ul&gt;&lt;li&gt;An error message was posted to the log and&lt;/li&gt;&lt;li&gt;The &lt;a href=&quot;aqa-help://6090&quot;&gt;On error&lt;/a&gt; project property is set to &quot;Stop project&quot; or &quot;Stop current item&quot;.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If you don't want the test to stop on errors, set this property (&lt;b&gt;Project Editor &amp;rArr; Properties &amp;rArr; Playback&lt;/b&gt;), to &quot;Continue running&quot; or change your test commands so that they do not post errors to the log automatically. For example, if a window or process was not found, use WaitWindow, WaitProcess or similar methods to get the needed object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2207&quot;&gt;Read More&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="2"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="date" type="D" value="44974.5270928125"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="id" type="I" value="35"/>
+			<Prp name="line no" type="I" value="27"/>
+		</Node>
+		<Node name="message 12">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972684491"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="317"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage21.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Sales Organization']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="367"/>
+					<Prp name="object top" type="I" value="343"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972684491"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="317"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage20.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Sales Organization']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="367"/>
+					<Prp name="object top" type="I" value="343"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="message" type="S" value="The text '5860' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Sales Organization']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.526437419"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="12"/>
+			<Prp name="line no" type="I" value="4"/>
+		</Node>
+		<Node name="message 27">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="26"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973809143"/>
+					<Prp name="line #" type="I" value="26"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage51.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973809143"/>
+					<Prp name="line #" type="I" value="26"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage50.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Enter]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//tr/td[11]/div&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265500579"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="27"/>
+			<Prp name="line no" type="I" value="26"/>
+		</Node>
+		<Node name="message 13">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="6"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972719907"/>
+					<Prp name="line #" type="I" value="6"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="297"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage23.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="399"/>
+					<Prp name="object top" type="I" value="375"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972719907"/>
+					<Prp name="line #" type="I" value="6"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="297"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage22.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="399"/>
+					<Prp name="object top" type="I" value="375"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="message" type="S" value="The text '10' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264417245"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="13"/>
+			<Prp name="line no" type="I" value="6"/>
+		</Node>
+		<Node name="message 23">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.29735"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage43.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.29735"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage42.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The text '1' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265191204"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="23"/>
+			<Prp name="line no" type="I" value="19"/>
+		</Node>
+		<Node name="message 34">
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="Unable to find the object &quot;//input[@id=(//label[.='Water Flow Rate per Unit (GPM):']/@for)]&quot;. See Details for additional information."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="stack end" type="I" value="2"/>
+			<Prp name="picture" type="S" value="Picture1.png"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="stack beginning" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;body&gt;&lt;p&gt;The object with the specified attributes does not exist.&lt;/p&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;&lt;a href=&quot;aqa-help://2202&quot;&gt;Possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&lt;br /&gt;&lt;br /&gt;Tested object:&lt;br /&gt;Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="2"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="date" type="D" value="44974.5270919907"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="id" type="I" value="34"/>
+			<Prp name="line no" type="I" value="27"/>
+		</Node>
+		<Node name="message 19">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297316713"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="416"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage35.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="479"/>
+					<Prp name="object top" type="I" value="455"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297316713"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="416"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage34.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="479"/>
+					<Prp name="object top" type="I" value="455"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Enter]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264860069"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="19"/>
+			<Prp name="line no" type="I" value="14"/>
+		</Node>
+		<Node name="message 1">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-8"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969873727"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1608"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage1.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.BrowserWindow"/>
+					<Prp name="object bottom" type="I" value="868"/>
+					<Prp name="object top" type="I" value="-8"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-8"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969873727"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1608"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage0.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.BrowserWindow"/>
+					<Prp name="object bottom" type="I" value="868"/>
+					<Prp name="object top" type="I" value="-8"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="message" type="S" value="The 'Logon - Google Chrome' window was maximized."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.browser.BrowserWindow&#xA;(Sys.Browser(&quot;chrome&quot;).BrowserWindow(0))"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5261561806"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="16"/>
+		</Node>
+		<Node name="message 30">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="603"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2975682407"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="953"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage57.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//input[@id=(//label[.='Model Number:']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="538"/>
+					<Prp name="object top" type="I" value="514"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="603"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2975682407"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="953"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage56.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//input[@id=(//label[.='Model Number:']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="538"/>
+					<Prp name="object top" type="I" value="514"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The text 'XES3E-1222-06K-3' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;#__splitter0-content-1&quot;).FindElement(&quot;//input[@id=(//label[.='Model Number:']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5267379745"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="30"/>
+			<Prp name="line no" type="I" value="13"/>
+		</Node>
+		<Node name="message 25">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="24"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="1541"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="741"/>
+					<Prp name="datetime" type="D" value="44974.2973693171"/>
+					<Prp name="line #" type="I" value="24"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage47.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="1541"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="741"/>
+					<Prp name="datetime" type="D" value="44974.2973693171"/>
+					<Prp name="line #" type="I" value="24"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage46.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (0, 0) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//tr/td[11]/div&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265387847"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="25"/>
+			<Prp name="line no" type="I" value="24"/>
+		</Node>
+		<Node name="child data"/>
+		<Node name="message 29">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="9"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="794"/>
+					<Prp name="object left" type="I" value="602"/>
+					<Prp name="click point y" type="I" value="527"/>
+					<Prp name="datetime" type="D" value="44974.2975603704"/>
+					<Prp name="line #" type="I" value="9"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="986"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage55.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.FindElement(&quot;//li[.='CN']&quot;)"/>
+					<Prp name="object bottom" type="I" value="543"/>
+					<Prp name="object top" type="I" value="511"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="794"/>
+					<Prp name="object left" type="I" value="602"/>
+					<Prp name="click point y" type="I" value="527"/>
+					<Prp name="datetime" type="D" value="44974.2975603704"/>
+					<Prp name="line #" type="I" value="9"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="986"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage54.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.FindElement(&quot;//li[.='CN']&quot;)"/>
+					<Prp name="object bottom" type="I" value="543"/>
+					<Prp name="object top" type="I" value="511"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (192, 16) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;//li[.='CN']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5267298727"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="29"/>
+			<Prp name="line no" type="I" value="9"/>
+		</Node>
+		<Node name="message 31">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="1084"/>
+					<Prp name="object left" type="I" value="570"/>
+					<Prp name="click point y" type="I" value="605"/>
+					<Prp name="datetime" type="D" value="44974.2975762153"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1599"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage59.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua"/>
+					<Prp name="object bottom" type="I" value="796"/>
+					<Prp name="object top" type="I" value="414"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="1084"/>
+					<Prp name="object left" type="I" value="570"/>
+					<Prp name="click point y" type="I" value="605"/>
+					<Prp name="datetime" type="D" value="44974.2975762153"/>
+					<Prp name="line #" type="I" value="14"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1599"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage58.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua"/>
+					<Prp name="object bottom" type="I" value="796"/>
+					<Prp name="object top" type="I" value="414"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (514, 191) with no key pressed.&#xA;&#xA;Tested object:&#xA;Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua&#xA;(Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;#configurationComponent---valuationComponent---valuationView--groupVBox-0--groups--header-0--valuationScrollContainer&quot;))"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5267454514"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="31"/>
+			<Prp name="line no" type="I" value="14"/>
+		</Node>
+		<Node name="item 2">
+			<Prp name="stacktext" type="S" value="sap_test"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="28"/>
+		</Node>
+		<Node name="message 22">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="18"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="573"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="753"/>
+					<Prp name="datetime" type="D" value="44974.2973467708"/>
+					<Prp name="line #" type="I" value="18"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage41.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="573"/>
+					<Prp name="object left" type="I" value="486"/>
+					<Prp name="click point y" type="I" value="753"/>
+					<Prp name="datetime" type="D" value="44974.2973467708"/>
+					<Prp name="line #" type="I" value="18"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="661"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage40.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (87, 11) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//td[2]//tr/td//input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265157407"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="22"/>
+			<Prp name="line no" type="I" value="18"/>
+		</Node>
+		<Node name="message 0">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="message" type="S" value="Navigating to the https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp... page."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="URL: https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&#xA;&#xA;Aliases.browser"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.526153125"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="14"/>
+		</Node>
+		<Node name="message 3">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969965741"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage5.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="368"/>
+					<Prp name="object top" type="I" value="328"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969965741"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage4.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="368"/>
+					<Prp name="object top" type="I" value="328"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Tab]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&quot;).FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5261660648"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="3"/>
+			<Prp name="line no" type="I" value="4"/>
+		</Node>
+		<Node name="message 6">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="message" type="S" value="Record: 0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5262508102"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="id" type="I" value="6"/>
+			<Prp name="line no" type="I" value="38"/>
+		</Node>
+		<Node name="message 14">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972771991"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="297"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage25.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="399"/>
+					<Prp name="object top" type="I" value="375"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972771991"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="297"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage24.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="399"/>
+					<Prp name="object top" type="I" value="375"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Enter]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Distribution Channel']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264462963"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="14"/>
+			<Prp name="line no" type="I" value="7"/>
+		</Node>
+		<Node name="message 33">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="1251"/>
+					<Prp name="object left" type="I" value="1083"/>
+					<Prp name="click point y" type="I" value="555"/>
+					<Prp name="datetime" type="D" value="44974.2977848958"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1419"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage63.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.FindElement(&quot;//li[.='Imperial']&quot;)"/>
+					<Prp name="object bottom" type="I" value="571"/>
+					<Prp name="object top" type="I" value="539"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="1251"/>
+					<Prp name="object left" type="I" value="1083"/>
+					<Prp name="click point y" type="I" value="555"/>
+					<Prp name="datetime" type="D" value="44974.2977848958"/>
+					<Prp name="line #" type="I" value="19"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1419"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage62.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.FindElement(&quot;//li[.='Imperial']&quot;)"/>
+					<Prp name="object bottom" type="I" value="571"/>
+					<Prp name="object top" type="I" value="539"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (168, 16) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;//li[.='Imperial']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5269538542"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="33"/>
+			<Prp name="line no" type="I" value="19"/>
+		</Node>
+		<Node name="message 16">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972969444"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="447"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage29.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@title='Customer Reference']&quot;)"/>
+					<Prp name="object bottom" type="I" value="303"/>
+					<Prp name="object top" type="I" value="279"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972969444"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="447"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage28.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@title='Customer Reference']&quot;)"/>
+					<Prp name="object bottom" type="I" value="303"/>
+					<Prp name="object top" type="I" value="279"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The text 'TE 1002' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//input[@title='Customer Reference']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264661921"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="16"/>
+			<Prp name="line no" type="I" value="4"/>
+		</Node>
+		<Node name="item 0">
+			<Prp name="stacktext" type="S" value="set_configuration_details"/>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="line no" type="I" value="27"/>
+		</Node>
+		<Node name="message 7">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="1"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="1402"/>
+					<Prp name="object left" type="I" value="1384"/>
+					<Prp name="click point y" type="I" value="93"/>
+					<Prp name="datetime" type="D" value="44974.2971033565"/>
+					<Prp name="line #" type="I" value="1"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1420"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage11.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//a[@id='sf']/span&quot;)"/>
+					<Prp name="object bottom" type="I" value="111"/>
+					<Prp name="object top" type="I" value="75"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="1402"/>
+					<Prp name="object left" type="I" value="1384"/>
+					<Prp name="click point y" type="I" value="93"/>
+					<Prp name="datetime" type="D" value="44974.2971033565"/>
+					<Prp name="line #" type="I" value="1"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1420"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage10.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//a[@id='sf']/span&quot;)"/>
+					<Prp name="object bottom" type="I" value="111"/>
+					<Prp name="object top" type="I" value="75"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (18, 18) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#Shell-home&quot;).FindElement(&quot;//a[@id='sf']/span&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5262728472"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="7"/>
+			<Prp name="line no" type="I" value="1"/>
+		</Node>
+		<Node name="message 28">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="794"/>
+					<Prp name="object left" type="I" value="603"/>
+					<Prp name="click point y" type="I" value="466"/>
+					<Prp name="datetime" type="D" value="44974.2975402083"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="985"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage53.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//div//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="478"/>
+					<Prp name="object top" type="I" value="454"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="794"/>
+					<Prp name="object left" type="I" value="603"/>
+					<Prp name="click point y" type="I" value="466"/>
+					<Prp name="datetime" type="D" value="44974.2975402083"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="985"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage52.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//div//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="478"/>
+					<Prp name="object top" type="I" value="454"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (191, 12) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;#__splitter0-content-1&quot;).FindElement(&quot;//div//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5267097338"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="28"/>
+			<Prp name="line no" type="I" value="7"/>
+		</Node>
+		<Node name="message 5">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="8"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="800"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="532"/>
+					<Prp name="datetime" type="D" value="44974.2970065741"/>
+					<Prp name="line #" type="I" value="8"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage9.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//button[.='Log On']&quot;)"/>
+					<Prp name="object bottom" type="I" value="552"/>
+					<Prp name="object top" type="I" value="512"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="800"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="532"/>
+					<Prp name="datetime" type="D" value="44974.2970065741"/>
+					<Prp name="line #" type="I" value="8"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage8.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//button[.='Log On']&quot;)"/>
+					<Prp name="object bottom" type="I" value="552"/>
+					<Prp name="object top" type="I" value="512"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (144, 20) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&quot;).FindElement(&quot;//form&quot;).FindElement(&quot;//button[.='Log On']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5261760532"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="5"/>
+			<Prp name="line no" type="I" value="8"/>
+		</Node>
+		<Node name="message 2">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="3"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969913542"/>
+					<Prp name="line #" type="I" value="3"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage3.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="368"/>
+					<Prp name="object top" type="I" value="328"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2969913542"/>
+					<Prp name="line #" type="I" value="3"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage2.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="368"/>
+					<Prp name="object top" type="I" value="328"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="message" type="S" value="The text 'NGANESAN' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&quot;).FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='USERNAME_BLOCK']/input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5261609722"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="3"/>
+		</Node>
+		<Node name="message 20">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="15"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="139"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297335162"/>
+					<Prp name="line #" type="I" value="15"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="483"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage37.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//span/input[@name='InputField']&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="139"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297335162"/>
+					<Prp name="line #" type="I" value="15"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="483"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage36.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//span/input[@name='InputField']&quot;)"/>
+					<Prp name="object bottom" type="I" value="764"/>
+					<Prp name="object top" type="I" value="742"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The text 'S3E' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//span/input[@name='InputField']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265043056"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="20"/>
+			<Prp name="line no" type="I" value="15"/>
+		</Node>
+		<Node name="item 1">
+			<Prp name="stacktext" type="S" value="ProcessData"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="165"/>
+		</Node>
+		<Node name="units">
+			<Prp name="unit 0" type="S" value="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}"/>
+			<Prp name="unit 1" type="S" value="{AD4F063B-FAD8-4378-B06C-055A69CF64CD}"/>
+			<Prp name="unit 5" type="S" value="{02DDB98E-046C-47E2-B09A-7002FDF9FBD8}"/>
+			<Prp name="unit 3" type="S" value="{8BE3F9F9-0ACE-474D-A6E2-9C96813C7D9A}"/>
+			<Prp name="unit 4" type="S" value="{73D39DE9-3651-4308-BEBE-772097212D2E}"/>
+			<Prp name="unit 2" type="S" value="{5C21BFBA-6112-4380-A231-39048A91A75C}"/>
+		</Node>
+		<Node name="message 26">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="25"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297374456"/>
+					<Prp name="line #" type="I" value="25"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage49.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="1541"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297374456"/>
+					<Prp name="line #" type="I" value="25"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1588"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage48.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//tr/td[11]/div&quot;)"/>
+					<Prp name="object bottom" type="I" value="765"/>
+					<Prp name="object top" type="I" value="741"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'CN01' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//tr/td[11]/div&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265460301"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="26"/>
+			<Prp name="line no" type="I" value="25"/>
+		</Node>
+		<Node name="item 3">
+			<Prp name="stacktext" type="S" value=""/>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="line no" type="I" value="27"/>
+		</Node>
+		<Node name="stack"/>
+		<Node name="message 8">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="943"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2971656134"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1379"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage13.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="105"/>
+					<Prp name="object top" type="I" value="81"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="943"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2971656134"/>
+					<Prp name="line #" type="I" value="4"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1379"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage12.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="105"/>
+					<Prp name="object top" type="I" value="81"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="message" type="S" value="The text 'va01' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#Shell-home&quot;).FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5263351042"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="8"/>
+			<Prp name="line no" type="I" value="4"/>
+		</Node>
+		<Node name="message 4">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297000787"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage7.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='PASSWORD_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="416"/>
+					<Prp name="object top" type="I" value="376"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="656"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.297000787"/>
+					<Prp name="line #" type="I" value="7"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="944"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage6.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='PASSWORD_BLOCK']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="416"/>
+					<Prp name="object top" type="I" value="376"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="message" type="S" value="The value of the SAP.SAP.Password2 variable was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&quot;).FindElement(&quot;//form&quot;).FindElement(&quot;//div[@id='PASSWORD_BLOCK']/input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5261703472"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="4"/>
+			<Prp name="line no" type="I" value="7"/>
+		</Node>
+		<Node name="message 15">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972929861"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="327"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage27.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@title='Sold-to Party']&quot;)"/>
+					<Prp name="object bottom" type="I" value="239"/>
+					<Prp name="object top" type="I" value="215"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972929861"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="327"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage26.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@title='Sold-to Party']&quot;)"/>
+					<Prp name="object bottom" type="I" value="239"/>
+					<Prp name="object top" type="I" value="215"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The text '900' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//input[@title='Sold-to Party']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.526462419"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="15"/>
+			<Prp name="line no" type="I" value="2"/>
+		</Node>
+		<Node name="message 10">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="154"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="278"/>
+					<Prp name="object left" type="I" value="193"/>
+					<Prp name="click point y" type="I" value="323"/>
+					<Prp name="datetime" type="D" value="44974.2972478356"/>
+					<Prp name="line #" type="I" value="154"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="369"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage17.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//a[contains(., 'Create Sales Orders')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="379"/>
+					<Prp name="object top" type="I" value="203"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="278"/>
+					<Prp name="object left" type="I" value="193"/>
+					<Prp name="click point y" type="I" value="323"/>
+					<Prp name="datetime" type="D" value="44974.2972478356"/>
+					<Prp name="line #" type="I" value="154"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="369"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage16.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//a[contains(., 'Create Sales Orders')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="379"/>
+					<Prp name="object top" type="I" value="203"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (85, 120) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#Action-search&amp;/top=10&amp;filter=%7B%22dataSource%22%3A%7B%22type%22%3A%22Category%22%2C%22id%22%3A%22All%22%2C%22label%22%3A%22All%22%2C%22labelPlural%22%3A%22All%22%7D%2C%22searchTerm%22%3A%22va01%22%2C%22rootCondition%22%3A%7B%22type%22%3A%22Complex%22%2C%22operator%22%3A%22And%22%2C%22conditions%22%3A%5B%5D%7D%7D&quot;).FindElement(&quot;//a[contains(., 'Create Sales Orders')]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264178241"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="10"/>
+			<Prp name="line no" type="I" value="154"/>
+		</Node>
+		<Node name="message 17">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="11"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="317"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="467"/>
+					<Prp name="datetime" type="D" value="44974.2973039236"/>
+					<Prp name="line #" type="I" value="11"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="416"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage31.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="479"/>
+					<Prp name="object top" type="I" value="455"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="317"/>
+					<Prp name="object left" type="I" value="219"/>
+					<Prp name="click point y" type="I" value="467"/>
+					<Prp name="datetime" type="D" value="44974.2973039236"/>
+					<Prp name="line #" type="I" value="11"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="416"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage30.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="479"/>
+					<Prp name="object top" type="I" value="455"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (98, 12) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//input[@id=(//label[.='Delivery Block']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264735185"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="17"/>
+			<Prp name="line no" type="I" value="11"/>
+		</Node>
+		<Node name="message 32">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="17"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="1251"/>
+					<Prp name="object left" type="I" value="1084"/>
+					<Prp name="click point y" type="I" value="526"/>
+					<Prp name="datetime" type="D" value="44974.2976535648"/>
+					<Prp name="line #" type="I" value="17"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1418"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage61.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//div[4]//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="538"/>
+					<Prp name="object top" type="I" value="514"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="1251"/>
+					<Prp name="object left" type="I" value="1084"/>
+					<Prp name="click point y" type="I" value="526"/>
+					<Prp name="datetime" type="D" value="44974.2976535648"/>
+					<Prp name="line #" type="I" value="17"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1418"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage60.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC120.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.FindElement(&quot;//div[4]//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+					<Prp name="object bottom" type="I" value="538"/>
+					<Prp name="object top" type="I" value="514"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (167, 12) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;//iframe[contains(@src, 'flp')]&quot;).FindElement(&quot;#__splitter0-content-1&quot;).FindElement(&quot;//div[4]//span[contains(@class, 'sapMSltLabel')]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5268233218"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="32"/>
+			<Prp name="line no" type="I" value="17"/>
+		</Node>
+		<Node name="message 21">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="0"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973397569"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1600"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage39.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0"/>
+					<Prp name="object bottom" type="I" value="860"/>
+					<Prp name="object top" type="I" value="115"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="0"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2973397569"/>
+					<Prp name="line #" type="I" value="16"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1600"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage38.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0"/>
+					<Prp name="object bottom" type="I" value="860"/>
+					<Prp name="object top" type="I" value="115"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Tab]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0&#xA;(Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;))"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5265089468"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="21"/>
+			<Prp name="line no" type="I" value="16"/>
+		</Node>
+		<Node name="message 9">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="5"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="943"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2971701968"/>
+					<Prp name="line #" type="I" value="5"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1379"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage15.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="105"/>
+					<Prp name="object top" type="I" value="81"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="943"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2971701968"/>
+					<Prp name="line #" type="I" value="5"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="1379"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage14.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+					<Prp name="object bottom" type="I" value="105"/>
+					<Prp name="object top" type="I" value="81"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="message" type="S" value="Keyboard input."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="'[Enter]' was sent as a keyboard input to the following window or control.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#Shell-home&quot;).FindElement(&quot;//div[@id='searchFieldInShell-input-content']/input&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5263406134"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="9"/>
+			<Prp name="line no" type="I" value="5"/>
+		</Node>
+		<Node name="message 11">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972641319"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="317"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage19.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Order Type']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="271"/>
+					<Prp name="object top" type="I" value="247"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="269"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="44974.2972641319"/>
+					<Prp name="line #" type="I" value="2"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="317"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage18.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Order Type']/@for)]&quot;)"/>
+					<Prp name="object bottom" type="I" value="271"/>
+					<Prp name="object top" type="I" value="247"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="message" type="S" value="The text 'ZOR' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;//iframe[@name='application-SalesDocument-create-iframe']&quot;).FindElement(&quot;//div[@id='webguiPage0']/form&quot;).FindElement(&quot;//input[@id=(//label[.='Order Type']/@for)]&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264339005"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="11"/>
+			<Prp name="line no" type="I" value="2"/>
+		</Node>
+		<Node name="message 18">
+			<Node name="visualizer">
+				<Node name="diff">
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="object left" type="I" value="-1"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="0"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="-1"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value=""/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value=""/>
+					<Prp name="object bottom" type="I" value="-1"/>
+					<Prp name="object top" type="I" value="-1"/>
+				</Node>
+				<Node name="current">
+					<Prp name="click point x" type="I" value="322"/>
+					<Prp name="object left" type="I" value="218"/>
+					<Prp name="click point y" type="I" value="496"/>
+					<Prp name="datetime" type="D" value="44974.2973127662"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="426"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage33.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//div[.='BAC MRP Block']&quot;)"/>
+					<Prp name="object bottom" type="I" value="512"/>
+					<Prp name="object top" type="I" value="480"/>
+				</Node>
+				<Node name="original">
+					<Prp name="click point x" type="I" value="322"/>
+					<Prp name="object left" type="I" value="218"/>
+					<Prp name="click point y" type="I" value="496"/>
+					<Prp name="datetime" type="D" value="44974.2973127662"/>
+					<Prp name="line #" type="I" value="13"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="object right" type="I" value="426"/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="image file name" type="S" value="visImage32.png"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object name" type="S" value="Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.FindElement(&quot;//div[.='BAC MRP Block']&quot;)"/>
+					<Prp name="object bottom" type="I" value="512"/>
+					<Prp name="object top" type="I" value="480"/>
+				</Node>
+			</Node>
+			<Prp name="unit id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="remarks" type="S" value="A click at point (104, 16) with no key pressed.&#xA;&#xA;Tested object:&#xA;Sys.Browser(&quot;chrome&quot;).Page(&quot;https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240&amp;sap-language=EN#SalesDocument-create?sap-ui-tech-hint=GUI&quot;).FindElement(&quot;#application-SalesDocument-create-iframe&quot;).FindElement(&quot;#webguiform0&quot;).FindElement(&quot;//div[.='BAC MRP Block']&quot;)"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="date" type="D" value="44974.5264816435"/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="id" type="I" value="18"/>
+			<Prp name="line no" type="I" value="13"/>
+		</Node>
+		<Prp name="status" type="I" value="2"/>
+	</Node>
+</Nodes>

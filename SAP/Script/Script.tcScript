@@ -7,7 +7,6 @@
 		<child name="createStandardOrder" key="{73D39DE9-3651-4308-BEBE-772097212D2E}" path="createStandardOrder.py" />
 		<child name="searchBox" key="{5C21BFBA-6112-4380-A231-39048A91A75C}" path="searchBox.py" />
 		<child name="CNRegionConfigurationPage" key="{02DDB98E-046C-47E2-B09A-7002FDF9FBD8}" path="CNRegionConfigurationPage.py" />
-		<child name="testUnit" key="{77F394ED-B0C0-45B4-BEFE-B74A629B5EDD}" path="testUnit.py" />
 		<child name="USRegionConfigurationPage" key="{16F563DF-4220-4E76-BDA8-A21616D7D429}" path="USRegionConfigurationPage.py" />
 		<child name="WaterManagementConfiguration" key="{CDB12478-0E17-4D0C-BE21-5EC71AF04E94}" path="WaterManagementConfiguration.py" />
 		<child name="AirHandlingConfiguration" key="{FA6CD928-5785-497B-AB2F-90CC0D380D9B}" path="AirHandlingConfiguration.py" />
