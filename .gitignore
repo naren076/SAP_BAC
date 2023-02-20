@@ -1,0 +1,12 @@
+#Use glob syntax
+syntax: glob
+
+#ignore logs
+Log/
+
+#ingnore local settings files
+*.tcLS
+*.tcCfgExtender
+
+#ignore backup files
+*.bak
