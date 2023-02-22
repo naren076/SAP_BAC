@@ -4,14 +4,19 @@ import createSalesPage
 import createStandardOrder
 import USRegionConfigurationPage
 import CNRegionConfigurationPage
-  
+import WaterManagementConfiguration
+import AirHandlingConfiguration
+import AdditionalEnhancement
+import ShippingConfigurationPage
+
 RecNo = 0
 
 def sap_test():
+  global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Copy.xlsx", "Test Cases Final Copy")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Latest.xlsx", "Test Cases Final")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -24,11 +29,115 @@ def sap_test():
   page.Wait()
   page.WaitConfirm(5000)
   
-  # Iterates through records
   while not Driver.EOF():
-    ProcessData(browser, page); # Processes data
+    # Iterates through records
+    #Set Error Count
+    ErrCount = Log.ErrCount;
+    Fldr = Log.CreateFolder("Record: " + aqConvert.VarToStr(RecNo))
+    Log.PushLogFolder(Fldr)
+    sap_field_values = ProcessData(browser, page); # Processes data
+        
+    searchBox.search_item(page, "va01")
+    #panel = page.sectionShellSplitCanvas
+    #page.WaitConfirm(7000)
+    page.FindElement("//a[contains(., 'Create Sales Orders')]").Click()
+    form = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']")
+    
+    order_form = form.FindElement("//div[@id='webguiPage0']/form")
+    #--Enter order Type--  
+    createSalesPage.create_sales_order(order_form, sales_order_values(sap_field_values))
+     #--Enter Order Details---
+    panel = page.sectionShellSplitCanvas
+    textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
+    createStandardOrder.create_standard_order(browser, textbox, page, standard_order_values(sap_field_values))
+    
+    #--Enter Configuration--
+    CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_values(sap_field_values))
+    
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+    #Water Configurations
+    WaterManagementConfiguration.water_management(page, water_management_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+          
+    frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
+    textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
+    textNode2 = textNode.sectionSplitter0Content1
+    
+    #Air Handling Configuration
+    AirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+    #AdditionalEnhancement
+    AdditionalEnhancement.additional_configs(page, frame, textNode2, additional_config_vaues(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+    #Shipping Page
+    ShippingConfigurationPage.shipping_configurations(page, frame, textNode2, shipping_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+    #Done button
+    frame.FindElement("//button[.='Done']").Click()
+    page.WaitConfirm(6000)
+    browser = Aliases.browser
+    #browser.BrowserWindow.Maximize()
+    frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
+    frame2 = frame.formWebguiform0
+    review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+    review_frame.FindElement("//button[.='Apply']").Click()
+          
+    textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+    page.WaitConfirm(25000)
+    textbox.FindElement("//div[.='Continue']").Click()
+    page.WaitConfirm(3000)
+  
+    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    #image = page.headerShellBar
+    image.FindElement("//a[@title='Navigate to Home Page']").Click()
+    searchBox.search_item(page, "csk2")
+    section = browser.pageFlp.sectionShellSplitCanvas
+    panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
+    item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
+    item_field.SetText("100")
+    material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
+    material_field.SetText("S3E")
+    textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
+    textbox2.SetText("PP01")
+    textbox.FindElement("//div[.='Execute']").Click()
+    page.WaitConfirm(5000)
+    browser = Aliases.browser
+    browser.BrowserWindow.Maximize()
+    frame = panel.frameApplicationBillofmaterialMu
+    #frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationBillofmaterialMu
+    form = frame.formWebguiform0
+    #form.panelExecute.Click()
+    form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
+    #form.panelSpreadsheetCtrlShiftF7.Click()
+    #frame.textnodeAlwaysUseSelectedFormat.Click()
+    #frame.panelContinue.Click()
+    frame.FindElement("//div[.='OK']").Click()
+    #frame.panelUpdowndialogchoose.Click()
+    page.WaitConfirm(10000)
+    Log.PopLogFolder()
+    RecNo = RecNo + 1
     Driver.Next(); # Goes to the next record
-
+    
  
   # Closes the driver
   DDT.CloseDriver(Driver.Name)
@@ -38,23 +147,37 @@ def ProcessData(browser, page):
   global RecNo
   Fldr = Log.CreateFolder("Record: " + aqConvert.VarToStr(RecNo))
   sap_field_values = {}
-  sales_order_field_values = {}
-  standard_order_field_values = {}
-  general_requirement_configurations = {}
-  water_management_configurations = {}
-  air_handling_configurations = {}
-  additional_configs = {}
-  shipping_configs = {}
   
   for i in range(DDT.CurrentDriver.ColumnCount):
     sap_field_values[DDT.CurrentDriver.ColumnName[i]] = aqConvert.VarToStr(DDT.CurrentDriver.Value[i])
+ 
+  #--Search va01 ----
+  if RecNo > 0:
+    Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
+    browser = Aliases.browser
+    browser.BrowserWindow.Maximize()
+    #image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    #image.FindElement("//a[@title='Navigate to Home Page']").Click()
+   
+    #image.FindElement("//div[@id='sapUshellDashboardPage']/section")
+    
+  return sap_field_values
+
+  #aqObject.CheckProperty(form.FindElement("#msgarea"), "contentText", cmpContains, "saved.", False)
+  #here you add the key:value for seperate json
+  #RecNo = RecNo + 1
   
-  #Set values for Sales order type page
+# Sales Order Values
+def sales_order_values(sap_field_values):
+  sales_order_field_values = {}
   sales_order_field_values["order_type"] = sap_field_values["Order Type"]
   sales_order_field_values["sales_organization"] = sap_field_values["Sales Organization"]
   sales_order_field_values["distribution_channel"] = sap_field_values["Distribution Channel"]
   
-  #Set values for standard order page
+  return sales_order_field_values
+  
+def standard_order_values(sap_field_values):
+  standard_order_field_values = {}
   standard_order_field_values["sold_to_party"] = sap_field_values["Sold To Party"]
   standard_order_field_values["customer_reference"] = sap_field_values["Customer Reference (PO #)"]
   standard_order_field_values["delivery_block"] = sap_field_values["Delivery Block"]
@@ -62,7 +185,11 @@ def ProcessData(browser, page):
   standard_order_field_values["order_quantity"] = sap_field_values["Order Quantity"]
   standard_order_field_values["plant"] = sap_field_values["Plant"]
   
-  #Set values for general requirement configurations
+  return standard_order_field_values
+
+#Set values for general requirement configurations  
+def general_requirement_values(sap_field_values):
+  general_requirement_configurations = {}
   general_requirement_configurations["region_specific"] = sap_field_values["Region Specific"]
   general_requirement_configurations["model_number"] = sap_field_values["Model Number"]
   general_requirement_configurations["unit_of_measure"] = sap_field_values["Unit of Measure"]
@@ -83,7 +210,11 @@ def ProcessData(browser, page):
   general_requirement_configurations["shipping_plant"] = sap_field_values["Shipping/Production Plant"]
   general_requirement_configurations["field_assembly"] = sap_field_values["Knockdown For Field Assembly?"]
   
-  #Set values for Water Management configurations
+  return general_requirement_configurations
+  
+#Set values for Water Management configurations
+def water_management_values(sap_field_values):
+  water_management_configurations = {}
   water_management_configurations["material_of_construction"] = sap_field_values["Material of Construction"]
   water_management_configurations["casing_lovuver_material"] = sap_field_values["Casing and Louver Material"]
   water_management_configurations["independent_cell_operation"] = sap_field_values["Independent Cell Operation?"]
@@ -105,7 +236,11 @@ def ProcessData(browser, page):
   water_management_configurations["outlet_connection_options"] = sap_field_values["Outlet Connection Options"]
   water_management_configurations["outlet_connection_size_change"] = sap_field_values["Outlet Connection Size Change"]
   
-  #--Set Values for Air Handling System---
+  return water_management_configurations
+  
+#--Set Values for Air Handling System---
+def air_handling_values(sap_field_values):
+  air_handling_configurations = {}
   air_handling_configurations["system_frequency"] = sap_field_values["System Frequency"]
   air_handling_configurations["system_phase"] = sap_field_values["System Phase"]
   air_handling_configurations["system_voltage"] = sap_field_values["System Voltage"]
@@ -118,12 +253,16 @@ def ProcessData(browser, page):
   air_handling_configurations["fan_motor_rpm"] = sap_field_values["Fan Motor RPM A"]
   air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"]
   air_handling_configurations["fan_motor_options_a"] = sap_field_values["Fan Motor Options A"]
-  air_handling_configurations["add_shaft_grounding_ring"] = sap_field_values["Add Shaft Grounding Ring?"]
+  #air_handling_configurations["add_shaft_grounding_ring"] = sap_field_values["Add Shaft Grounding Ring?"]
   air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"]
   air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"]
-  air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"] 
+  air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"]
   
+  return air_handling_configurations
+  
+def additional_config_vaues(sap_field_values):
   #-- Set additional Config values
+  additional_configs = {}
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"]
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"]
   additional_configs["upgrade_fan_guard_material"] = sap_field_values["Upgrade Fan Guard Material?"]
@@ -142,94 +281,11 @@ def ProcessData(browser, page):
   additional_configs["internal_walkway_access_door"] = sap_field_values["Internal Walkway @ Access Door"]
   additional_configs["internal_walkway_moc"] = sap_field_values["Internal Walkway MOC"]
   #additional_configs["internal_access"] = sap_field_values["Internal Access"] --- DATA MISSING--
-  
-  #Set Shipping Configs
+  return additional_configs
+
+#Set Shipping Configs  
+def shipping_values(sap_field_values):
+  shipping_configs = {}
   shipping_configs["special_required"] = sap_field_values["Specials Required?"]
-  #--Search va01 ----
-  if RecNo > 0:
-    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
-    image.FindElement("//a[@title='Navigate to Home Page']").Click()
-    
-  searchBox.search_item(page, "va01")
-  #panel = page.sectionShellSplitCanvas
-  page.FindElement("//a[contains(., 'Create Sales Orders')]").Click()
-  form = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']")
-  order_form = form.FindElement("//div[@id='webguiPage0']/form")
-  #--Enter order Type--  
-  createSalesPage.create_sales_order(order_form, sales_order_field_values)
-   #--Enter Order Details---
-  panel = page.sectionShellSplitCanvas
-  textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
-  createStandardOrder.create_standard_order(browser, textbox, page, standard_order_field_values)
-  #--Enter Configuration--
-  if general_requirement_configurations["region_specific"] == "China":
-    CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_configurations, water_management_configurations, 
-      air_handling_configurations, additional_configs, shipping_configs)
-    
-  #Enter US configuration---
-  if general_requirement_configurations["region_specific"] == "US":
-    USRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_configurations, water_management_configurations, 
-      air_handling_configurations, additional_configs, shipping_configs)
   
-  textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-  page.WaitConfirm(25000)
-  textbox.FindElement("//div[.='Continue']").Click()
-  page.WaitConfirm(3000)
-  
-  image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
-  #image = page.headerShellBar
-  image.FindElement("//a[@title='Navigate to Home Page']").Click()
-  searchBox.search_item(page, "csk2")
-  section = browser.pageFlp.sectionShellSplitCanvas
-  panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
-  item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
-  item_field.SetText("100")
-  material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
-  material_field.SetText("S3E")
-  textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
-  textbox2.SetText("PP01")
-  textbox.FindElement("//div[.='Execute']").Click()
-  page.WaitConfirm(5000)
-  browser = Aliases.browser
-  browser.BrowserWindow.Maximize()
-  frame = panel.frameApplicationBillofmaterialMu
-  #frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationBillofmaterialMu
-  form = frame.formWebguiform0
-  #form.panelExecute.Click()
-  form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
-  #form.panelSpreadsheetCtrlShiftF7.Click()
-  #frame.textnodeAlwaysUseSelectedFormat.Click()
-  #frame.panelContinue.Click()
-  frame.FindElement("//div[.='OK']").Click()
-  #frame.panelUpdowndialogchoose.Click()
-  page.WaitConfirm(10000)
-
-  #aqObject.CheckProperty(form.FindElement("#msgarea"), "contentText", cmpContains, "saved.", False)
-  #here you add the key:value for seperate json
-  RecNo = RecNo + 1
-  
-# Creates the driver (main routine)
-def TestDriver():
-  # Creates the driver
-  # If you connect to an Excel 2007 sheet, use the following method call:
-  # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Copy.xlsx", "Test Cases")
-  # Iterates through records
-  while not Driver.EOF():
-    ProcessData(); # Processes data
-    Driver.Next(); # Goes to the next record
-
- 
-  # Closes the driver
-  DDT.CloseDriver(Driver.Name)
-
-def test_values(values):
-  Log.Message(values["order_type"])
-  
-def test_browser():
-  if Project.Variables.testBrowser == 'chrome':
-    sap_test(Browsers.btChrome)
-  elif Project.Variables.testBrowser == 'edge':
-    sap_test(Browsers.btEdge)
-  
-  
+  return shipping_configs

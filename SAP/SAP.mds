@@ -8,7 +8,7 @@
 	<config language="{7D0FC31C-B0A7-4F4F-B5AF-1F16370169CB}" />
 	<testItems key="{2D2B34C8-5B78-4C90-8004-9AA513123E8D}" version="14">
 		<children>
-			<testItem name="InitialTestRun" key="{84E63BFF-9FAB-42CE-A236-E14BE8A22B07}" group="False" parallel="False" enabled="True" testMoniker="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}sap_test" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True">
+			<testItem name="InitialTestRun" key="{84E63BFF-9FAB-42CE-A236-E14BE8A22B07}" group="False" parallel="False" enabled="True" testMoniker="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}sap_test" count="1" timeout="0" stopOnError="0" stopOnException="0" description="" tmsData="" testCase="True">
 				<testParameters />
 				<environments activeCloud="SWT" />
 				<children />
@@ -35,6 +35,9 @@
 				</Variable>
 				<Variable Name="sap_url" Type="String" Local="False">
 					<DefValue StrValue="https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240" />
+				</Variable>
+				<Variable Name="password" Type="Password" Local="False">
+					<DefValue StrValue="38003900360031003100330044003100460034004400380038004200460032004500430039003800320037003900360035004100460045003000330037004500370036003700430036003000300034003900430036004500300035004500300037003600330037004300430036004300320043004100440039004600430034003300300044004100" />
 				</Variable>
 			</Items>
 		</data>

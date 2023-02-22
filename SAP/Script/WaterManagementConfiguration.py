@@ -1,6 +1,6 @@
 ﻿import AirHandlingConfiguration
 
-def water_management(page, water_management_values, air_handling_configurations,additional_configs, shipping_configs):
+def water_management(page, water_management_values):
   frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
   textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   textNode2 = textNode.sectionSplitter0Content1
@@ -111,18 +111,3 @@ def water_management(page, water_management_values, air_handling_configurations,
     page.WaitConfirm(1000)
   
   textNode2.FindElement("//span[.='Air Handling System']").Click()
-  AirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_configurations, additional_configs, shipping_configs)
-  
-  #Done button
-  frame.FindElement("//button[.='Done']").Click()
-  page.WaitConfirm(6000)
-  browser = Aliases.browser
-  #browser.BrowserWindow.Maximize()
-  frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
-  frame2 = frame.formWebguiform0
-  review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
-  review_frame.FindElement("//button[.='Apply']").Click()
-  #frame2.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-  #page.WaitConfirm(10000)
-  #frame2.FindElement("//div[.='Continue']").Click()
-  #page.WaitConfirm(3000)

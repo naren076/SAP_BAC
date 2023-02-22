@@ -1,6 +1,6 @@
 ﻿import WaterManagementConfiguration
 
-def set_configuration_details(textbox, page, general_requirement_values, water_management_configurations, air_handling_configurations, additional_configs, shipping_configs):
+def set_configuration_details(textbox, page, general_requirement_values):
   page.WaitConfirm(3000)
   frame = textbox.frameC120
   section = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
@@ -83,23 +83,4 @@ def set_configuration_details(textbox, page, general_requirement_values, water_m
   section2.FindElement("//*[contains(text(),'Knockdown For Field Assembly')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   frame.FindElement("//ul[contains(@id,'list71')]//li[contains(text(),'"+general_requirement_values["field_assembly"]+"')]").Click()
-  page.WaitConfirm(1000) 
-  
-  WaterManagementConfiguration.water_management(page, water_management_configurations, air_handling_configurations, additional_configs, shipping_configs)
-  page.wait()
-  page.WaitConfirm(5000)
-  
-  def add_later():
-    #Done button
-    textbox.FindElement("//button[.='Done']").Click()
-    page.WaitConfirm(6000)
-    browser = Aliases.browser
-    #browser.BrowserWindow.Maximize()
-    frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
-    frame2 = frame.formWebguiform0
-    review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
-    review_frame.FindElement("//button[.='Apply']").Click()
-    frame2.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    page.WaitConfirm(50000)
-    frame2.FindElement("//div[.='Continue']").Click()
-    page.WaitConfirm(3000)
+  page.WaitConfirm(1000)

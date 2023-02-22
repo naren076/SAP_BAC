@@ -1,6 +1,6 @@
 ﻿import AdditionalEnhancement
 
-def air_handling(page, air_frame, air_page, air_handling_values, additional_configs, shipping_configs):
+def air_handling(page, air_frame, air_page, air_handling_values):
   #System Frequency
   air_page.FindElement("//*[contains(text(),'System Frequency')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
@@ -62,4 +62,3 @@ def air_handling(page, air_frame, air_page, air_handling_values, additional_conf
   page.WaitConfirm(1000)
   
   air_page.FindElement("//span[.='Additional Enhancements']").Click()
-  AdditionalEnhancement.additional_configs(page, air_frame, air_page, additional_configs, shipping_configs)
