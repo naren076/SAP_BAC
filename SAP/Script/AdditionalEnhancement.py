@@ -1,6 +1,6 @@
 ﻿import ShippingConfigurationPage
 
-def additional_configs(page, additional_frame, additional_page, additional_configs, shipping_configs):
+def additional_configs(page, additional_frame, additional_page, additional_configs):
   
   #Side Air Intake Option
   additional_page.FindElement("//*[contains(text(),'Side Air Intake Option')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -126,18 +126,3 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #page.WaitConfirm(2000)
   
   additional_page.FindElement("//span[.='Shipping and Specials']").Click()
-  ShippingConfigurationPage.shipping_configurations(page, additional_frame, additional_page, shipping_configs)
-  
-  #Done button
-  #additional_frame.FindElement("//button[.='Done']").Click()
-  #page.WaitConfirm(10000)
-  #browser = Aliases.browser
-  #browser.BrowserWindow.Maximize()
-  #frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
-  #frame2 = frame.formWebguiform0
-  #review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
-  #review_frame.FindElement("//button[.='Apply']").Click()
-  #frame2.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-  #page.WaitConfirm(25000)
-  #frame2.FindElement("//div[.='Continue']").Click()
-  #page.WaitConfirm(3000)

@@ -10,9 +10,10 @@
   
   textbox2 = textbox.FindElement("//input[@id=(//label[.='Delivery Block']/@for)]")
   textbox2.Click()
-  mrpoption = textbox.FindElement("//div[.='"+field_values["delivery_block"]+"']")  
+  mrpoption = textbox.FindElement("//div[.='"+field_values["delivery_block"]+"']")
   mrpoption.Click()
   textbox2.Keys("[Enter]")
+  page.WaitConfirm(2000)
   textbox.FindElement("//span/input[@name='InputField']").SetText(field_values["material"])
   textbox.Keys("[Tab]")
   textbox2 = textbox.FindElement("//td[2]//tr/td//input")
