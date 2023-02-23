@@ -16,7 +16,7 @@ def sap_test():
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Latest.xlsx", "Test Cases Final")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters (14).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -25,7 +25,7 @@ def sap_test():
   #linkLogon.Click()
   #page.Wait()
   #--Login form
-  loginForm.login_form(page, Project.Variables.username)
+  loginForm.login_form(page, Project.Variables.v_username)
   page.Wait()
   page.WaitConfirm(5000)
   
@@ -193,7 +193,8 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["region_specific"] = sap_field_values["Region Specific"]
   general_requirement_configurations["model_number"] = sap_field_values["Model Number"]
   general_requirement_configurations["unit_of_measure"] = sap_field_values["Unit of Measure"]
-  general_requirement_configurations["water_flow_rate"] = sap_field_values["Water Flow Rate"]
+  general_requirement_configurations["unit_flow_uom"] = sap_field_values["Unit Flow UOM"]
+  general_requirement_configurations["unit_flow"] = sap_field_values["Water Flow Rate"]
   general_requirement_configurations["entering_water_temperature"] = sap_field_values["Entering Water Temperature"]
   general_requirement_configurations["leaving_water_temperature"] = sap_field_values["Leaving Water Temperature"]
   general_requirement_configurations["entering_wet_bulb_temp"] = sap_field_values["Entering Wet-Bulb Temp"]

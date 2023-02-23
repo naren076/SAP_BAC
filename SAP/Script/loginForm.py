@@ -5,7 +5,7 @@
   username_field.Keys("[Tab]")
   passwordBox = login_form.FindElement("//div[@id='PASSWORD_BLOCK']/input")
   #passwordBox.SetText(Project.Variables.Password1)
-  passwordBox.SetText(Project.Variables.password)
+  passwordBox.SetText(Project.Variables.v_password)
   login_form.FindElement("//button[.='Log On']").Click()
   
   
