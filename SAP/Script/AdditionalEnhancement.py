@@ -41,14 +41,16 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #Add Safety Cages to Ladders
   additional_page.FindElement("//*[contains(text(),'Add Safety Cages to Ladders')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  additional_frame.FindElement("//ul[contains(@id,'list268')]//li[contains(text(),'"+additional_configs["add_safety_cages_to_ladders"]+"')]").Click()
+  additional_frame.FindElement("//bdi[text()='Add Safety Cages to Ladders?:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+additional_configs["add_safety_cages_to_ladders"]+"']").Click()
+  #additional_frame.FindElement("//ul[contains(@id,'list268')]//li[contains(text(),'"+additional_configs["add_safety_cages_to_ladders"]+"')]").Click()
   #additional_frame.FindElement("//li[.='"+additional_configs["add_safety_cages_to_ladders"]+"']").Click()
   page.WaitConfirm(1000)
   
   #Safety Gates to All Ladder?
   additional_page.FindElement("//*[contains(text(),'Safety Gates to All Ladder?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  additional_frame.FindElement("//ul[contains(@id,'list269')]//li[contains(text(),'"+additional_configs["safety_gates_to_all_ladder"]+"')]").Click()
+  additional_frame.FindElement("//bdi[text()='Safety Gates to All Ladder?:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+additional_configs["safety_gates_to_all_ladder"]+"']").Click()
+  #additional_frame.FindElement("//ul[contains(@id,'list269')]//li[contains(text(),'"+additional_configs["safety_gates_to_all_ladder"]+"')]").Click()
   #additional_frame.FindElement("//li[.='"+additional_configs["safety_gates_to_all_ladder"]+"']").Click()
   page.WaitConfirm(1000)
   
@@ -109,7 +111,8 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #Internal Walkway @ Access Door
   additional_page.FindElement("//*[contains(text(),'Internal Walkway @ Access Door')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  additional_frame.FindElement("//ul[contains(@id,'list279')]//li[contains(text(),'"+additional_configs["internal_walkway_access_door"]+"')]").Click()
+  additional_frame.FindElement("//bdi[text()='Internal Walkway @ Access Door:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+additional_configs["internal_walkway_access_door"]+"']").Click()
+  #additional_frame.FindElement("//ul[contains(@id,'list279')]//li[contains(text(),'"+additional_configs["internal_walkway_access_door"]+"')]").Click()
   #additional_frame.FindElement("//li[.='"+additional_configs["internal_walkway_access_door"]+"']").Click()
   page.WaitConfirm(1000)
   
