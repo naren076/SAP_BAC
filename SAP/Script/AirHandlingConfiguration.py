@@ -51,7 +51,8 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   #Extended Lube Line:
   air_page.FindElement("//*[contains(text(),'Extended Lube Line')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  air_frame.FindElement("//ul[contains(@id,'list164')]//li[contains(text(),'"+air_handling_values["extended_lube_line"]+"')]").Click()
+  air_frame.FindElement("//bdi[text()='Extended Lube Line:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+air_handling_values["extended_lube_line"]+"']").Click()
+  #air_frame.FindElement("//ul[contains(@id,'list164')]//li[contains(text(),'"+air_handling_values["extended_lube_line"]+"')]").Click()
   #air_frame.FindElement("//li[.='"+air_handling_values["extended_lube_line"]+"']").Click()
   page.WaitConfirm(1000)
   

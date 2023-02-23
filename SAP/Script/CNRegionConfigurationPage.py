@@ -82,5 +82,6 @@ def set_configuration_details(textbox, page, general_requirement_values):
   #--Knockdown For Field Assembly?
   section2.FindElement("//*[contains(text(),'Knockdown For Field Assembly')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  frame.FindElement("//ul[contains(@id,'list71')]//li[contains(text(),'"+general_requirement_values["field_assembly"]+"')]").Click()
+  #frame.FindElement("//ul[contains(@id,'list71')]//li[contains(text(),'"+general_requirement_values["field_assembly"]+"')]").Click()
+  frame.FindElement("(//bdi[contains(text(),'Knockdown For Field Assembly')]//ancestor::div//preceding::li[text()='"+general_requirement_values["field_assembly"]+"'])[2]").Click()
   page.WaitConfirm(1000)

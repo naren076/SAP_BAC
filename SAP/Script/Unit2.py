@@ -52,20 +52,19 @@ def sap_test():
     createStandardOrder.create_standard_order(browser, textbox, page, standard_order_values(sap_field_values))
     
     #--Enter Configuration--
-    CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_values(sap_field_values))
-    
+    CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
-      RecNo = RecNo + 1
-      Log.PopLogFolder()
-      Driver.Next()
-      continue
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
+     continue
     #Water Configurations
     WaterManagementConfiguration.water_management(page, water_management_values(sap_field_values))
     if Log.ErrCount > ErrCount:
-      RecNo = RecNo + 1
-      Log.PopLogFolder()
-      Driver.Next()
-      continue
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
+     continue
           
     frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
     textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
@@ -74,10 +73,10 @@ def sap_test():
     #Air Handling Configuration
     AirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_values(sap_field_values))
     if Log.ErrCount > ErrCount:
-      RecNo = RecNo + 1
-      Log.PopLogFolder()
-      Driver.Next()
-      continue
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
+     continue
     #AdditionalEnhancement
     AdditionalEnhancement.additional_configs(page, frame, textNode2, additional_config_vaues(sap_field_values))
     if Log.ErrCount > ErrCount:
