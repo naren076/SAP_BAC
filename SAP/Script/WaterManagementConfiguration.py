@@ -78,10 +78,13 @@ def water_management(page, water_management_values):
   
   #Flume Box Options:
   if water_management_values["flume_box_options"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
-    frame.FindElement("//li[.='"+water_management_values["flume_box_options"]+"']").Click()
-    page.WaitConfirm(1000)
+    page.WaitConfirm(2000)
+    flume_box = frame.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//input[1]")
+    if not flume_box.getAttribute("aria-readonly"):
+      textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+      page.WaitConfirm(1000)
+      frame.FindElement("//li[.='"+water_management_values["flume_box_options"]+"']").Click()
+      page.WaitConfirm(1000)
   
   #Bottom Equalizer/Bypass conn:
   if water_management_values["bottom_equalizer"] != "None":
