@@ -9,10 +9,11 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   page.WaitConfirm(2000)
   
   #Air Discharge Configuration
-  additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  page.WaitConfirm(1000)
-  additional_frame.FindElement("//li[.='"+additional_configs["air_discharge_configuration"]+"']").Click()
-  page.WaitConfirm(1000)
+  if additional_configs["air_discharge_configuration"] != "None":
+    additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    additional_frame.FindElement("//li[.='"+additional_configs["air_discharge_configuration"]+"']").Click()
+    page.WaitConfirm(1000)
   
   #Upgrade Fan Guard Material?:
   additional_page.FindElement("//*[contains(text(),'Upgrade Fan Guard Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -85,10 +86,11 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #page.WaitConfirm(2000)
   
   #Access Door Platform
-  additional_page.FindElement("//*[contains(text(),'Access Door Platform')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  page.WaitConfirm(1000)
-  additional_frame.FindElement("//li[.='"+additional_configs["access_door_platform"]+"']").Click()
-  page.WaitConfirm(1000)
+  if additional_configs["access_door_platform"] != "None":
+    additional_page.FindElement("//*[contains(text(),'Access Door Platform')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    additional_frame.FindElement("//li[.='"+additional_configs["access_door_platform"]+"']").Click()
+    page.WaitConfirm(1000)
   
   #Louver Face Ldr/Cage Extension!!DATA MISMATCH
   #additional_page.FindElement("//*[contains(text(),'Louver Face Ldr/Cage Extension')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
