@@ -268,7 +268,7 @@ def additional_config_vaues(sap_field_values):
   additional_configs["upgrade_fan_guard_material"] = sap_field_values["Upgrade Fan Guard Material?"].strip()
   additional_configs["fan_deck_safety_rails"] = sap_field_values["Fan Deck Safety Rails"].strip()
   additional_configs["3Side_safetyRail_to_exist_cell"] = sap_field_values["3Side SafetyRail to Exist Cell"].strip()
-  additional_configs["ladder_fan_deck"] = "(2) Ladders - End Front Right & End Back Right"
+  additional_configs["ladder_fan_deck"] = sap_field_values["Ladder to Fan Deck"].strip()
   additional_configs["add_safety_cages_to_ladders"] = sap_field_values["Add Safety Cages to Ladders?"].strip()
   additional_configs["safety_gates_to_all_ladder"] = sap_field_values["Safety Gates to All Ladder?"].strip()
   additional_configs["ladder_safety_cage_extensions"] = sap_field_values["Ladder/Safety Cage Extensions"].strip()
