@@ -16,7 +16,7 @@ def sap_test():
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (14).xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Latest.xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -280,7 +280,7 @@ def additional_config_vaues(sap_field_values):
   additional_configs["access_door_pltf"] = sap_field_values["Access Door Pltf Ladder Ext"].strip()
   additional_configs["internal_walkway_access_door"] = sap_field_values["Internal Walkway @ Access Door"].strip()
   additional_configs["internal_walkway_moc"] = sap_field_values["Internal Walkway MOC"].strip()
-  #additional_configs["internal_access"] = sap_field_values["Internal Access"] --- DATA MISSING--
+  additional_configs["internal_access"] = sap_field_values["Internal Access"]
   return additional_configs
 
 #Set Shipping Configs  
