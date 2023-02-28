@@ -23,7 +23,8 @@ def water_management(page, water_management_values):
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
   #frame.FindElement("//ul[contains(@id,'list96')]//li[contains(text(),'"+water_management_values["independent_cell_operation"]+"')]").Click()
-  frame.FindElement("//bdi[text()='Independent Cell Operation?:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+water_management_values["independent_cell_operation"]+"']").Click()
+  textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["independent_cell_operation"])
+  textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #Inlet/Outlet connections
@@ -32,86 +33,118 @@ def water_management(page, water_management_values):
   frame.FindElement("//li[.='"+water_management_values["inlet_outlet_connections"]+"']").Click()
   page.WaitConfirm(1000)
   
-  #Depressed Sum Box
+  #Depressed Sum Box  
+  textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  page.WaitConfirm(1000)
   if water_management_values["depressed_sump_box"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["depressed_sump_box"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["depressed_sump_box"])
+    textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #SGL Inlet Piping Drain Valve
+  textNode2.FindElement("//*[contains(text(),'SGL Inlet Piping Drain Valve')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  page.WaitConfirm(1000)
   if water_management_values["sgl_inlet_piping_draing_valve"] != "None":
-    textNode2.FindElement("//*[contains(text(),'SGL Inlet Piping Drain Valve')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["sgl_inlet_piping_draing_valve"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'SGL Inlet Piping Drain Valve')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["sgl_inlet_piping_draing_valve"])
+    textNode2.FindElement("//*[contains(text(),'SGL Inlet Piping Drain Valve')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #Basin Water Level Control
+  textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  page.WaitConfirm(1000)
   if water_management_values["basin_water_level_control"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["basin_water_level_control"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_water_level_control"])
+    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #Basin Heaters
+  textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  page.WaitConfirm(1000)
   if water_management_values["basin_heaters"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["basin_heaters"]+"']").Click()
-    page.WaitConfirm(2000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_heaters"])
+    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(2000)
   
   #Basin Sweeper Piping:
+  textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  page.WaitConfirm(2000)
   if water_management_values["basin_sweeper_piping"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(2000)
     frame.FindElement("//li[.='"+water_management_values["basin_sweeper_piping"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_sweeper_piping"])
+    textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua5.Drag(1024, 39, 5, 176)
   
   #Float Switch:
-  if water_management_values["float_switch"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
+  textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  page.WaitConfirm(1000)
+  if water_management_values["float_switch"] != "None": 
     frame.FindElement("//li[.='"+water_management_values["float_switch"]+"").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["float_switch"])
+    textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #Flume Box Options:
-  if water_management_values["flume_box_options"] != "None":
-    page.WaitConfirm(2000)
-    flume_box = frame.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//input[1]")
-    if not flume_box.getAttribute("aria-readonly"):
-      textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-      page.WaitConfirm(1000)
+  flume_box = frame.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//input[1]")
+  if not flume_box.getAttribute("aria-readonly"):
+    textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    if water_management_values["flume_box_options"] != "None":
       frame.FindElement("//li[.='"+water_management_values["flume_box_options"]+"']").Click()
-      page.WaitConfirm(1000)
+    else:
+      textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["flume_box_options"])
+      textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click("[Enter]")
+    page.WaitConfirm(1000)
   
   #Bottom Equalizer/Bypass conn:
+  textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  page.WaitConfirm(1000)
   if water_management_values["bottom_equalizer"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["bottom_equalizer"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["bottom_equalizer"])
+    textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #End Equalizer/Bypass conn:
+  textNode2.FindElement("//*[contains(text(),'End Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  page.WaitConfirm(1000)
   if water_management_values["end_equalizer"] != "None":
-    textNode2.FindElement("(//span[.='End Equalizer/Bypass conn']//parent::label//parent::div//parent::div//child::span)[3]").Click() 
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["end_equalizer"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'End Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["end_equalizer"])
+    textNode2.FindElement("//*[contains(text(),'End Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #Inlet Connection Size Change:
+  textNode2.FindElement("//*[contains(text(),'Inlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  page.WaitConfirm(1000)
   if water_management_values["inlet_connection_size_change"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Inlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["inlet_connection_size_change"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Inlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["inlet_connection_size_change"])
+    textNode2.FindElement("//*[contains(text(),'Inlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   #Outlet Connection Size Change:
+  textNode2.FindElement("//*[contains(text(),'Outlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  page.WaitConfirm(1000)
   if water_management_values["outlet_connection_size_change"] != "None":
-    textNode2.FindElement("//*[contains(text(),'Outlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["outlet_connection_size_change"]+"']").Click()
-    page.WaitConfirm(1000)
+  else:
+    textNode2.FindElement("//*[contains(text(),'Outlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["outlet_connection_size_change"])
+    textNode2.FindElement("//*[contains(text(),'Outlet Connection Size Change')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(1000)
   
   textNode2.FindElement("//span[.='Air Handling System']").Click()

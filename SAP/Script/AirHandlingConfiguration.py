@@ -45,21 +45,28 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   #Vibration Cutout Switch (VCOS):
   air_page.FindElement("//*[contains(text(),'Vibration Cutout Switch (VCOS)')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  air_frame.FindElement("//li[.='"+air_handling_values["vibration_cutout_switch"]+"']").Click()
+  if air_handling_values["vibration_cutout_switch"] != 'None':
+    air_frame.FindElement("//li[.='"+air_handling_values["vibration_cutout_switch"]+"']").Click()
+  else:
+    air_page.FindElement("//*[contains(text(),'Vibration Cutout Switch (VCOS)')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["vibration_cutout_switch"])
+    air_page.FindElement("//*[contains(text(),'Vibration Cutout Switch (VCOS)')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #Extended Lube Line:
   air_page.FindElement("//*[contains(text(),'Extended Lube Line')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  air_frame.FindElement("//bdi[text()='Extended Lube Line:']//preceding::div[@class='sapUiSimpleFixFlexFlexContent'][1]//li[text()='"+air_handling_values["extended_lube_line"]+"']").Click()
-  #air_frame.FindElement("//ul[contains(@id,'list164')]//li[contains(text(),'"+air_handling_values["extended_lube_line"]+"')]").Click()
-  #air_frame.FindElement("//li[.='"+air_handling_values["extended_lube_line"]+"']").Click()
+  air_page.FindElement("//*[contains(text(),'Extended Lube Line')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["extended_lube_line"]) 
+  air_page.FindElement("//*[contains(text(),'Extended Lube Line')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #Fan Motor Removal System:
   air_page.FindElement("//*[contains(text(),'Fan Motor Removal System')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_removal_system"]+"']").Click()
+  if air_handling_values["fan_motor_removal_system"] != "None":
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_removal_system"]+"']").Click()
+  else:
+    air_page.FindElement("//*[contains(text(),'Fan Motor Removal System')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_removal_system"])
+    air_page.FindElement("//*[contains(text(),'Fan Motor Removal System')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   air_page.FindElement("//span[.='Additional Enhancements']").Click()
