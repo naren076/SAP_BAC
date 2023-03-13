@@ -31,7 +31,7 @@ def water_management(page, water_management_values):
   textNode2.FindElement("//*[contains(text(),'Inlet/Outlet Connections')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+water_management_values["inlet_outlet_connections"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(2000)
   
   #Depressed Sum Box  
   textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -54,24 +54,26 @@ def water_management(page, water_management_values):
   page.WaitConfirm(1000)
   
   #Basin Water Level Control
-  textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
-  if water_management_values["basin_water_level_control"] != "None":
-    frame.FindElement("//li[.='"+water_management_values["basin_water_level_control"]+"']").Click()
-  else:
-    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_water_level_control"])
-    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  if water_management_values["basin_water_level_control"] != "SAP Defined":
+    textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    page.WaitConfirm(1000)
+    if water_management_values["basin_water_level_control"] != "None":
+      frame.FindElement("//li[.='"+water_management_values["basin_water_level_control"]+"']").Click()
+    else:
+      textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_water_level_control"])
+      textNode2.FindElement("//*[contains(text(),'Basin Water Level Control')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(1000)
   
   #Basin Heaters
-  textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  page.WaitConfirm(1000)
-  if water_management_values["basin_heaters"] != "None":
-    frame.FindElement("//li[.='"+water_management_values["basin_heaters"]+"']").Click()
-  else:
-    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_heaters"])
-    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(2000)
+  if water_management_values["basin_heaters"] != "SAP Defined":
+    textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    if water_management_values["basin_heaters"] != "None":
+      frame.FindElement("//li[.='"+water_management_values["basin_heaters"]+"']").Click()
+    else:
+      textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_heaters"])
+      textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(2000)
   
   #Basin Sweeper Piping:
   textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -89,15 +91,14 @@ def water_management(page, water_management_values):
   textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   if water_management_values["float_switch"] != "None": 
-    frame.FindElement("//li[.='"+water_management_values["float_switch"]+"").Click()
+    frame.FindElement("//li[.='"+water_management_values["float_switch"]+"']").Click()
   else:
     textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["float_switch"])
     textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #Flume Box Options:
-  flume_box = frame.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//input[1]")
-  if not flume_box.getAttribute("aria-readonly"):
+  if water_management_values["flume_box_options"] != "No Flume Box(es)":
     textNode2.FindElement("//*[contains(text(),'Flume Box Options')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     if water_management_values["flume_box_options"] != "None":

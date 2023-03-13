@@ -16,7 +16,7 @@ def sap_test():
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters Latest.xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (10).xlsx", "Test Cases FINAL")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -50,7 +50,11 @@ def sap_test():
     panel = page.sectionShellSplitCanvas
     textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
     createStandardOrder.create_standard_order(browser, textbox, page, standard_order_values(sap_field_values))
-    
+    if Log.ErrCount > ErrCount:
+         RecNo = RecNo + 1
+         Log.PopLogFolder()
+         Driver.Next()
+         continue
     #--Enter Configuration--
     CNRegionConfigurationPage.set_configuration_details(textbox, page, general_requirement_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
@@ -93,7 +97,7 @@ def sap_test():
       continue
     #Done button
     frame.FindElement("//button[.='Done']").Click()
-    page.WaitConfirm(6000)
+    page.WaitConfirm(15000)
     browser = Aliases.browser
     #browser.BrowserWindow.Maximize()
     frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
@@ -102,7 +106,7 @@ def sap_test():
     review_frame.FindElement("//button[.='Apply']").Click()
           
     textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    page.WaitConfirm(25000)
+    page.WaitConfirm(75000)
     textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
   
@@ -130,6 +134,7 @@ def sap_test():
     #form.panelSpreadsheetCtrlShiftF7.Click()
     #frame.textnodeAlwaysUseSelectedFormat.Click()
     #frame.panelContinue.Click()
+    page.WaitConfirm(5000)
     frame.FindElement("//div[.='OK']").Click()
     #frame.panelUpdowndialogchoose.Click()
     page.WaitConfirm(10000)
@@ -146,7 +151,6 @@ def ProcessData(browser, page):
   global RecNo
   Fldr = Log.CreateFolder("Record: " + aqConvert.VarToStr(RecNo))
   sap_field_values = {}
-  
   for i in range(DDT.CurrentDriver.ColumnCount):
     sap_field_values[DDT.CurrentDriver.ColumnName[i]] = aqConvert.VarToStr(DDT.CurrentDriver.Value[i])
  
