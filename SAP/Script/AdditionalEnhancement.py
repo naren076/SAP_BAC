@@ -17,8 +17,9 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["air_discharge_configuration"])
-  additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
+  additional_page.FindElement("//*[contains(text(),'Air Discharge Configuration')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(2000)
   
   #Upgrade Fan Guard Material?:
   additional_page.FindElement("//*[contains(text(),'Upgrade Fan Guard Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -148,14 +149,15 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #page.WaitConfirm(2000)
   
   #Access Door Pltf Ladder Ext!!NON EDITABLE DATA MISMATCH
-  additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  page.WaitConfirm(1000)
-  if additional_configs["access_door_pltf"] != 'None':
-    additional_frame.FindElement("//li[.=\""+additional_configs["access_door_pltf"]+"\"]").Click()
-  else:
-    additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["access_door_pltf"])
-    additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  if additional_configs["access_door_pltf"] != "SAP Defined":
+    additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    if additional_configs["access_door_pltf"] != 'None':
+      additional_frame.FindElement("//li[.=\""+additional_configs["access_door_pltf"]+"\"]").Click()
+    else:
+      additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["access_door_pltf"])
+      additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(1000)
   
   #Internal Walkway @ Access Door
   additional_page.FindElement("//*[contains(text(),'Internal Walkway @ Access Door')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -168,7 +170,8 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   #Internal Walkway MOC
   additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  additional_frame.FindElement("//li[.='"+additional_configs["internal_walkway_moc"]+"']").Click()
+  additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["internal_walkway_moc"])
+  additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #Internal Access:

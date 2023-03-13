@@ -21,7 +21,7 @@ def set_configuration_details(textbox, page, general_requirement_values):
   section2.FindElement("//div[4]//span[contains(@class, 'sapMSltLabel')]").Click()
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+general_requirement_values["unit_of_measure"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(2000)
  
  #---Select Unit Flow UOM:
   section2.FindElement("//*[contains(text(),'Unit Flow UOM')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -47,7 +47,7 @@ def set_configuration_details(textbox, page, general_requirement_values):
   textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp ("+unit_level+"):']/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
-  
+  page.WaitConfirm(2000)
   #--fill material--
   section2.FindElement("//*[contains(text(),'Fill Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
@@ -81,7 +81,8 @@ def set_configuration_details(textbox, page, general_requirement_values):
   #--Anchorage
   section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
-  frame.FindElement("//li[.='"+general_requirement_values["anchorage"]+"']").Click()
+  section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["anchorage"])
+  section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
   #--Shipping/Production Plan
@@ -94,4 +95,5 @@ def set_configuration_details(textbox, page, general_requirement_values):
   section2.FindElement("//*[contains(text(),'Knockdown For Field Assembly')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   section2.FindElement("//*[contains(text(),'Knockdown For Field Assembly')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["field_assembly"])
+  section2.FindElement("//*[contains(text(),'Knockdown For Field Assembly')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
