@@ -25,7 +25,7 @@ def water_management(page, water_management_values):
   #frame.FindElement("//ul[contains(@id,'list96')]//li[contains(text(),'"+water_management_values["independent_cell_operation"]+"')]").Click()
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["independent_cell_operation"])
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  page.WaitConfirm(3000)
   
   #Inlet/Outlet connections
   textNode2.FindElement("//*[contains(text(),'Inlet/Outlet Connections')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -33,15 +33,16 @@ def water_management(page, water_management_values):
   frame.FindElement("//li[.='"+water_management_values["inlet_outlet_connections"]+"']").Click()
   page.WaitConfirm(2000)
   
-  #Depressed Sum Box  
-  textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
-  if water_management_values["depressed_sump_box"] != "None":
-    frame.FindElement("//li[.='"+water_management_values["depressed_sump_box"]+"']").Click()
-  else:
-    textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["depressed_sump_box"])
-    textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+    #Depressed Sum Box 
+  if water_management_values["depressed_sump_box"] != "SAP Defined": 
+      textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+      page.WaitConfirm(1000)
+      if water_management_values["depressed_sump_box"] != "None":
+        frame.FindElement("//li[.='"+water_management_values["depressed_sump_box"]+"']").Click()
+      else:
+        textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["depressed_sump_box"])
+        textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+      page.WaitConfirm(1000)
   
   #SGL Inlet Piping Drain Valve
   textNode2.FindElement("//*[contains(text(),'SGL Inlet Piping Drain Valve')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()

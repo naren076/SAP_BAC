@@ -8,9 +8,10 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   page.WaitConfirm(1000)
   
   #System Voltage:
-  air_page.FindElement("//*[contains(text(),'System Voltage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  air_frame.FindElement("//li[.='"+air_handling_values["system_voltage"]+"']").Click()
-  page.WaitConfirm(1000)
+  if air_handling_values["system_voltage"] != "SAP Defined":
+    air_page.FindElement("//*[contains(text(),'System Voltage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    air_frame.FindElement("//li[.='"+air_handling_values["system_voltage"]+"']").Click()
+    page.WaitConfirm(1000)
   
   #Fan Type:
   air_page.FindElement("//*[contains(text(),'Fan Type')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
