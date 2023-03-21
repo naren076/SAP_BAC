@@ -16,7 +16,7 @@ def sap_test():
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters (29).xlsx", "Test Cases FINAL (5)")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (12).xlsx", "Test Cases FINAL")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -35,7 +35,7 @@ def sap_test():
     ErrCount = Log.ErrCount;
     Fldr = Log.CreateFolder("Record: " + aqConvert.VarToStr(RecNo))
     Log.PushLogFolder(Fldr)
-    sap_field_values = ProcessData(browser, page); # Processes data    
+    sap_field_values = ProcessData(browser, page); # Processes data
     searchBox.search_item(page, "va01")
     #panel = page.sectionShellSplitCanvas
     #page.WaitConfirm(7000)
@@ -275,6 +275,18 @@ def additional_config_vaues(sap_field_values):
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"].strip()
   air_discharge_configuration = sap_field_values["Air Discharge Configuration"].strip()
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"].strip()
+  ad = additional_configs["air_discharge_configuration"]
+  additional_configs["x_path"] = ""
+  #check if string contains double quptes
+  if aqString.Contains(ad, '"') < 0 :
+     additional_configs["air_discharge_configuration"]
+  else:
+    #split the string by double quotes
+    aqString.ListSeparator = '"'
+    first_element = aqString.GetListItem(ad, 0)
+    second_element = aqString.GetListItem(ad, 1)
+    x_path = "//li[contains(text(), \"" + first_element + "\") and contains(text(), '"+second_element+"')]"
+    additional_configs["x_path"] = x_path
   additional_configs["upgrade_fan_guard_material"] = sap_field_values["Upgrade Fan Guard Material?"].strip()
   additional_configs["fan_deck_safety_rails"] = sap_field_values["Fan Deck Safety Rails"].strip()
   additional_configs["3Side_safetyRail_to_exist_cell"] = sap_field_values["3Side SafetyRail to Exist Cell"].strip()
