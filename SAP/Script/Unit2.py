@@ -25,7 +25,7 @@ def sap_test():
   #linkLogon.Click()
   #page.Wait()
   #--Login form
-  loginForm.login_form(page, Project.Variables.username)
+  loginForm.login_form(page, Project.Variables.v_username)
   page.Wait()
   page.WaitConfirm(5000)
   
@@ -105,8 +105,12 @@ def sap_test():
     review_frame.FindElement("//button[.='Apply']").Click()
           
     textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    page.WaitConfirm(75000)
-    textbox.FindElement("//div[.='Continue']").Click()
+    #page.WaitConfirm(65000)
+    #textbox.FindElement("//div[.='Continue']").Click()
+    ###aliasObj = Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
+    #Checks whether the Font window has appeared within 10 seconds
+    if (frame.WaitAliasChild("panelContinue", 75000).Exists):
+      frame.FindElement("//div[.='Continue']").Click()  
     page.WaitConfirm(3000)
   
     image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
@@ -114,6 +118,7 @@ def sap_test():
     image.FindElement("//a[@title='Navigate to Home Page']").Click()
     searchBox.search_item(page, "csk2")
     section = browser.pageFlp.sectionShellSplitCanvas
+    #section.sectionSearchpageCont.linkMultiLevelSalesOrderBom5.textnodeMultiLevelSalesOrderBom2.Click()
     panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
     item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
     item_field.SetText("100")
@@ -133,6 +138,7 @@ def sap_test():
     #form.panelSpreadsheetCtrlShiftF7.Click()
     #frame.textnodeAlwaysUseSelectedFormat.Click()
     #frame.panelContinue.Click()
+    ##form.FindElement("//div[@title='Continue (Enter)']").Click()
     page.WaitConfirm(5000)
     frame.FindElement("//div[.='OK']").Click()
     #frame.panelUpdowndialogchoose.Click()
@@ -267,6 +273,7 @@ def additional_config_vaues(sap_field_values):
   #-- Set additional Config values
   additional_configs = {}
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"].strip()
+  air_discharge_configuration = sap_field_values["Air Discharge Configuration"].strip()
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"].strip()
   ad = additional_configs["air_discharge_configuration"]
   additional_configs["x_path"] = ""
