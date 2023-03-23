@@ -175,12 +175,13 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
   page.WaitConfirm(1000)
   
   #Internal Walkway MOC
-  additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  page.WaitConfirm(1000)
-  additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["internal_walkway_moc"])
-  additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
-  
+  isEnabled = additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")
+  if isEnabled == "false":
+    additional_page.FindElement("//*[contains(text(),'Internal Walkway MOC')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    additional_frame.FindElement("//li[.='"+additional_configs["internal_walkway_moc"]+"']").Click()
+    page.WaitConfirm(1000)
+    
   #Internal Access:
   additional_page.FindElement("//*[contains(text(),'Internal Access:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)

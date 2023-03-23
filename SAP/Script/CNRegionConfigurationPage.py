@@ -47,10 +47,10 @@ def set_configuration_details(textbox, page, general_requirement_values):
   textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp ("+unit_level+"):']/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
-  page.WaitConfirm(2000)
+  page.WaitConfirm(3000)
   #--fill material--
   section2.FindElement("//*[contains(text(),'Fill Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(2000)
   frame.FindElement("//li[.='"+general_requirement_values["fill_material"]+"']").Click()
   page.WaitConfirm(1000)
   
@@ -72,18 +72,19 @@ def set_configuration_details(textbox, page, general_requirement_values):
   frame.FindElement("//li[.='"+general_requirement_values["cooling_tower_structure"]+"']").Click()
   page.WaitConfirm(1000) 
   
-  #--Basinless Unit
+  #--Basinless 
   section2.FindElement("//*[contains(text(),'Basinless Unit')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+general_requirement_values["basinless_unit"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(3000)
   
   #--Anchorage
-  section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
-  section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["anchorage"])
-  section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  isEnabled = section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")
+  if isEnabled == "false":
+    section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    page.WaitConfirm(1000)
+    frame.FindElement("//li[.='"+general_requirement_values["anchorage"]+"']").Click()
+    page.WaitConfirm(1000)
   
   #--Shipping/Production Plan
   section2.FindElement("//*[contains(text(),'Shipping/Production Plant')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
