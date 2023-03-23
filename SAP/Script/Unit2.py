@@ -16,7 +16,7 @@ def sap_test():
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
   # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (12).xlsx", "Test Cases FINAL")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (13).xlsx", "Test Cases FINAL")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -25,7 +25,7 @@ def sap_test():
   #linkLogon.Click()
   #page.Wait()
   #--Login form
-  loginForm.login_form(page, Project.Variables.v_username)
+  loginForm.login_form(page, Project.Variables.username)
   page.Wait()
   page.WaitConfirm(5000)
   
@@ -45,6 +45,11 @@ def sap_test():
     order_form = form.FindElement("//div[@id='webguiPage0']/form")
     #--Enter order Type--  
     createSalesPage.create_sales_order(order_form, sales_order_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
      #--Enter Order Details---
     panel = page.sectionShellSplitCanvas
     textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
@@ -105,12 +110,9 @@ def sap_test():
     review_frame.FindElement("//button[.='Apply']").Click()
           
     textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    #page.WaitConfirm(65000)
-    #textbox.FindElement("//div[.='Continue']").Click()
-    ###aliasObj = Aliases.browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
-    #Checks whether the Font window has appeared within 10 seconds
-    if (frame.WaitAliasChild("panelContinue", 75000).Exists):
-      frame.FindElement("//div[.='Continue']").Click()  
+    #page.WaitConfirm(75000) 
+    if(frame.WaitAliasChild("panelContinue", 75000).Exists): 
+      textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
   
     image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
@@ -118,8 +120,8 @@ def sap_test():
     image.FindElement("//a[@title='Navigate to Home Page']").Click()
     searchBox.search_item(page, "csk2")
     section = browser.pageFlp.sectionShellSplitCanvas
-    #section.sectionSearchpageCont.linkMultiLevelSalesOrderBom5.textnodeMultiLevelSalesOrderBom2.Click()
-    panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
+    #panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
+    section.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
     item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
     item_field.SetText("100")
     material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
@@ -138,7 +140,6 @@ def sap_test():
     #form.panelSpreadsheetCtrlShiftF7.Click()
     #frame.textnodeAlwaysUseSelectedFormat.Click()
     #frame.panelContinue.Click()
-    ##form.FindElement("//div[@title='Continue (Enter)']").Click()
     page.WaitConfirm(5000)
     frame.FindElement("//div[.='OK']").Click()
     #frame.panelUpdowndialogchoose.Click()
@@ -273,7 +274,6 @@ def additional_config_vaues(sap_field_values):
   #-- Set additional Config values
   additional_configs = {}
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"].strip()
-  air_discharge_configuration = sap_field_values["Air Discharge Configuration"].strip()
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"].strip()
   ad = additional_configs["air_discharge_configuration"]
   additional_configs["x_path"] = ""
@@ -283,7 +283,9 @@ def additional_config_vaues(sap_field_values):
   else:
     #split the string by double quotes
     aqString.ListSeparator = '"'
+    #get the first element
     first_element = aqString.GetListItem(ad, 0)
+    #get the second element
     second_element = aqString.GetListItem(ad, 1)
     x_path = "//li[contains(text(), \"" + first_element + "\") and contains(text(), '"+second_element+"')]"
     additional_configs["x_path"] = x_path
