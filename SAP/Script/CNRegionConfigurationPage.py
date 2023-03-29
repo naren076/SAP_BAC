@@ -9,16 +9,13 @@ def set_configuration_details(textbox, page, general_requirement_values):
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='CN']").Click()
   page.WaitConfirm(3000)
-  #section2.textnodeShowValueHelp.Click()
   model_number_field = section2.FindElement("//input[@id=(//label[.='Model Number:']/@for)]")
   model_number_field.SetText(general_requirement_values["model_number"])
-  page.WaitConfirm(3000)
   model_number_field.Keys("[Enter]")
   page.WaitConfirm(2000)
   section2.panelConfigurationcomponentValua.Click()
-  page.WaitConfirm(6000)
-  #---Select Unit of Measure
-  section2.FindElement("//div[4]//span[contains(@class, 'sapMSltLabel')]").Click()
+  page.WaitConfirm(4000)
+  section2.FindElement("//*[contains(text(),'Unit of Measure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+general_requirement_values["unit_of_measure"]+"']").Click()
   page.WaitConfirm(2000)
@@ -34,7 +31,6 @@ def set_configuration_details(textbox, page, general_requirement_values):
   flow_meter = "GPM" if general_requirement_values["unit_of_measure"] == "Imperial" else "l/s"
   temp = "Temp" if general_requirement_values["unit_of_measure"] == "Imperial" else "Temperature"
   
-  #textbox = section2.FindElement("//input[@id=(//label[.='Water Flow Rate per Unit ("+flow_meter+"):']/@for)]")
   textbox = section2.FindElement("//input[@id=(//label[.='Unit flow:']/@for)]")
   textbox.Keys(general_requirement_values["unit_flow"])
   textbox = section2.FindElement("//input[@id=(//label[.='Entering Water "+temp+" ("+unit_level+"):']/@for)]")
