@@ -5,8 +5,6 @@ def water_management(page, water_management_values):
   textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   textNode2 = textNode.sectionSplitter0Content1
   textNode2.FindElement("//span[.='Water Management']").Click()
-  #page.WaitConfirm(15000)
-  #textNode2.textnodeWaterManagement.Click()
   material_of_construciton = frame.FindElement("//*[contains(text(),'Material of Construction')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']")
   material_of_construciton.Click()
   page.WaitConfirm(1000)
@@ -17,12 +15,10 @@ def water_management(page, water_management_values):
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+water_management_values["casing_lovuver_material"]+"']").Click()
   page.WaitConfirm(1000)
-  #frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua5.Drag(1024, 39, 5, 176)
   
   #--Independent Cell Operation?
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
-  #frame.FindElement("//ul[contains(@id,'list96')]//li[contains(text(),'"+water_management_values["independent_cell_operation"]+"')]").Click()
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["independent_cell_operation"])
   textNode2.FindElement("//*[contains(text(),'Independent Cell Operation?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(3000)

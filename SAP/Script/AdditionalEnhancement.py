@@ -123,12 +123,6 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
     additional_page.FindElement("//*[contains(text(),'Louver Face Platform')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
-  #External Fan Motor Platform !!MISSING!!
-  #additional_page.FindElement("//*[contains(text(),'External Fan Motor Platform')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  #page.WaitConfirm(1000)
-  #additional_frame.FindElement("//li[.='"+air_handling_values["system_frequency"]+"']").Click()
-  #page.WaitConfirm(2000)
-  
   #Access Door Platform
   additional_page.FindElement("//*[contains(text(),'Access Door Platform')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
@@ -148,12 +142,6 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
     additional_page.FindElement("//*[contains(text(),'Louver Face Ldr/Cage Extension')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["louver_face_cage_extension"])
     additional_page.FindElement("//*[contains(text(),'Louver Face Ldr/Cage Extension')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
-  
-  #Fan Motor Pltf Ladder/Cage Ext !!MISSING!!
-  #additional_page.FindElement("//*[contains(text(),'Fan Motor Pltf Ladder/Cage Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-  #page.WaitConfirm(1000)
-  #additional_frame.FindElement("//li[.='"+additional_configs["louver_face_cage_extension"]+"']").Click()
-  #page.WaitConfirm(2000)
   
   #Access Door Pltf Ladder Ext!!NON EDITABLE DATA MISMATCH
   if additional_configs["access_door_pltf"] != "SAP Defined":

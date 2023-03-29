@@ -15,15 +15,11 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  # Driver = DDT.ExcelDriver("C:\\MyFile.xlsx", "Sheet1", True)
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (13).xlsx", "Test Cases FINAL")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (17).xlsx", "Test Cases FINAL")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
   page = browser.pageFlp
-  #linkLogon = page.FindElement("//a[.='Cancel']")
-  #linkLogon.Click()
-  #page.Wait()
   #--Login form
   loginForm.login_form(page, Project.Variables.username)
   page.Wait()
@@ -37,8 +33,6 @@ def sap_test():
     Log.PushLogFolder(Fldr)
     sap_field_values = ProcessData(browser, page); # Processes data
     searchBox.search_item(page, "va01")
-    #panel = page.sectionShellSplitCanvas
-    #page.WaitConfirm(7000)
     page.FindElement("//a[contains(., 'Create Sales Orders')]").Click()
     form = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']")
     
@@ -103,24 +97,20 @@ def sap_test():
     frame.FindElement("//button[.='Done']").Click()
     page.WaitConfirm(15000)
     browser = Aliases.browser
-    #browser.BrowserWindow.Maximize()
     frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
     frame2 = frame.formWebguiform0
     review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
     review_frame.FindElement("//button[.='Apply']").Click()
           
     textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    #page.WaitConfirm(75000) 
     if(frame.WaitAliasChild("panelContinue", 75000).Exists): 
       textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
   
     image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
-    #image = page.headerShellBar
     image.FindElement("//a[@title='Navigate to Home Page']").Click()
     searchBox.search_item(page, "csk2")
     section = browser.pageFlp.sectionShellSplitCanvas
-    #panel.sectionSearchpageCont.linkMultiLevelSalesOrderBom4.panelContent73.Click()
     section.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
     item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
     item_field.SetText("100")
@@ -133,16 +123,10 @@ def sap_test():
     browser = Aliases.browser
     browser.BrowserWindow.Maximize()
     frame = panel.frameApplicationBillofmaterialMu
-    #frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationBillofmaterialMu
     form = frame.formWebguiform0
-    #form.panelExecute.Click()
     form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
-    #form.panelSpreadsheetCtrlShiftF7.Click()
-    #frame.textnodeAlwaysUseSelectedFormat.Click()
-    #frame.panelContinue.Click()
     page.WaitConfirm(5000)
     frame.FindElement("//div[.='OK']").Click()
-    #frame.panelUpdowndialogchoose.Click()
     page.WaitConfirm(10000)
     Log.PopLogFolder()
     RecNo = RecNo + 1
@@ -165,16 +149,7 @@ def ProcessData(browser, page):
     Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
     browser = Aliases.browser
     browser.BrowserWindow.Maximize()
-    #image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
-    #image.FindElement("//a[@title='Navigate to Home Page']").Click()
-   
-    #image.FindElement("//div[@id='sapUshellDashboardPage']/section")
-    
   return sap_field_values
-
-  #aqObject.CheckProperty(form.FindElement("#msgarea"), "contentText", cmpContains, "saved.", False)
-  #here you add the key:value for seperate json
-  #RecNo = RecNo + 1
   
 # Sales Order Values
 def sales_order_values(sap_field_values):
