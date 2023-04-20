@@ -1,18 +1,19 @@
 ﻿import WaterManagementConfiguration
 
 def set_configuration_details(textbox, page, general_requirement_values):
-  page.WaitConfirm(3000)
+  #page.WaitConfirm(3000)
   frame = textbox.frameC120
   section = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   section2 = section.sectionSplitter0Content1
-  section2.FindElement("//div//span[contains(@class, 'sapMSltLabel')]").Click()
+  if(section2.WaitAliasChild("textnodeNone", 10000).Exists):
+    section2.FindElement("//div//span[contains(@class, 'sapMSltLabel')]").Click()
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='CN']").Click()
   page.WaitConfirm(3000)
   model_number_field = section2.FindElement("//input[@id=(//label[.='Model Number:']/@for)]")
   model_number_field.SetText(general_requirement_values["model_number"])
   model_number_field.Keys("[Enter]")
-  page.WaitConfirm(2000)
+  page.WaitConfirm(5000)
   section2.panelConfigurationcomponentValua.Click()
   page.WaitConfirm(4000)
   section2.FindElement("//*[contains(text(),'Unit of Measure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -40,7 +41,8 @@ def set_configuration_details(textbox, page, general_requirement_values):
   textbox = section2.FindElement("//input[@id=(//label[.='Leaving Water Temperature ("+unit+"):']/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["leaving_water_temperature"])
-  textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp ("+unit_level+"):']/@for)]")
+  #textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp ("+unit_level+"):']/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Wet-Bulb ')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
   page.WaitConfirm(3000)

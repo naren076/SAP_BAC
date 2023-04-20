@@ -2311,6 +2311,24 @@
 															</Selector>
 														</Selectors>
 													</Child>
+													<Child Name="textbox2" Key="{43DBCCCD-9CDE-492D-ACE1-876C12519957}">
+														<Image FileName="2058924477" Left="702" Top="448" Right="934" Bottom="466" />
+														<TypeInfo Item0="{58FB00A4-CD1A-449F-879B-63CD6479B4FF}" />
+														<Selectors>
+															<Selector>
+																<Value Value="//input[@id=(//label[.=&apos;Entering Wet-Bulb Temp (°C):&apos;]/@for)]" />
+															</Selector>
+															<Selector>
+																<Value Value="//input[@aria-labelledby=(//label[.=&apos;Entering Wet-Bulb Temp (°C):&apos;]/@id)]" />
+															</Selector>
+															<Selector>
+																<Value Value="//div[9]//input[@type=&apos;text&apos;]" />
+															</Selector>
+															<Selector>
+																<Value Value="//div[9]//input" />
+															</Selector>
+														</Selectors>
+													</Child>
 												</Children>
 											</Child>
 											<Child Name="panelSeeAllSearchResults" Key="{DF85666B-452D-4058-A459-5A4906A65722}">
@@ -3975,6 +3993,21 @@
 											</Child>
 										</Children>
 									</Child>
+									<Child Name="buttonSearch" Key="{F877FD18-ED3A-4878-A5BC-CE63A8797C25}">
+										<Image FileName="-1924525936" Left="1677" Top="113" Right="1713" Bottom="149" />
+										<TypeInfo Item0="{FCBDC745-6545-4AE0-9F10-CB5B0AD382A4}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//button[.=&apos;Search&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="#searchFieldInShell-button" />
+											</Selector>
+											<Selector>
+												<Value Value="//header//button" />
+											</Selector>
+										</Selectors>
+									</Child>
 								</Children>
 							</Child>
 							<Child Name="pageSwagLabs" Key="{1E31DFE1-C6AE-4886-95C6-6BE989DFF968}">
@@ -4215,6 +4248,7 @@
 					<Child Name="linkHome" Owner="{69105595-2E45-454D-BEC9-D60C4FFCA9B3}">
 						<Child Name="imageShellHeaderIcon" Owner="{AE777276-00D7-4ACF-8627-234CAA05BBC9}" />
 					</Child>
+					<Child Name="buttonSearch" Owner="{F877FD18-ED3A-4878-A5BC-CE63A8797C25}" />
 				</Child>
 				<Child Name="sectionShellSplitCanvas" Owner="{D6B76594-5B95-48E2-B6C3-63C9CEFE1BDB}">
 					<Child Name="sectionSearchpageCont" Owner="{AA2D472D-4C90-4F13-9168-888A237B4A97}">
@@ -4322,6 +4356,7 @@
 											<Child Name="panelConfigurationcomponentValua5" Owner="{8E31DF00-5F37-4569-A24F-8823C58CDB8C}" />
 											<Child Name="textnode50Hz" Owner="{113210E8-046C-4D16-8138-9724EB8A24CB}" />
 											<Child Name="panelData845" Owner="{052DC757-2C91-41EA-AB14-DC5F3E998289}" />
+											<Child Name="textbox2" Owner="{43DBCCCD-9CDE-492D-ACE1-876C12519957}" />
 										</Child>
 										<Child Name="sectionExpandedHeader" Owner="{0EA7BC0C-DBEC-4EC8-9123-DC99F6799579}">
 											<Child Name="textnodeConfigurationcomponentCo" Owner="{2C19D8C5-606B-411F-BBAB-B049E3A5E0E6}" />

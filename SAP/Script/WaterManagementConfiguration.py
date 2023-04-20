@@ -113,7 +113,7 @@ def water_management(page, water_management_values):
   else:
     textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["bottom_equalizer"])
     textNode2.FindElement("//*[contains(text(),'Bottom Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  page.WaitConfirm(5000)
   
   #End Equalizer/Bypass conn:
   textNode2.FindElement("//*[contains(text(),'End Equalizer/Bypass conn')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
