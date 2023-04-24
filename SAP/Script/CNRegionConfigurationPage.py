@@ -27,22 +27,24 @@ def set_configuration_details(textbox, page, general_requirement_values):
   frame.FindElement("//li[.='"+general_requirement_values["unit_flow_uom"]+"']").Click()
   page.WaitConfirm(1000)
   
-  unit = "°F" if general_requirement_values["unit_of_measure"] == "Imperial" else "°C"
-  unit_level = "°F" if general_requirement_values["unit_of_measure"] == "Imperial" else "C"
-  flow_meter = "GPM" if general_requirement_values["unit_of_measure"] == "Imperial" else "l/s"
-  temp = "Temp" if general_requirement_values["unit_of_measure"] == "Imperial" else "Temperature"
+  #unit = "°F" if general_requirement_values["unit_of_measure"] == "Imperial" else "°C"
+ # unit_level = "°F" if general_requirement_values["unit_of_measure"] == "Imperial" else "C"
+ # flow_meter = "GPM" if general_requirement_values["unit_of_measure"] == "Imperial" else "l/s"
+  #temp = "Temp" if general_requirement_values["unit_of_measure"] == "Imperial" else "Temperature"
   
   textbox = section2.FindElement("//input[@id=(//label[.='Unit flow:']/@for)]")
   textbox.Keys(general_requirement_values["unit_flow"])
-  textbox = section2.FindElement("//input[@id=(//label[.='Entering Water "+temp+" ("+unit_level+"):']/@for)]")
+  #textbox = section2.FindElement("//input[@id=(//label[.='Entering Water "+temp+" ("+unit_level+"):']/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Water Temperature')]/@for)]")
   textbox.Click()
   
   textbox.Keys(general_requirement_values["entering_water_temperature"])
-  textbox = section2.FindElement("//input[@id=(//label[.='Leaving Water Temperature ("+unit+"):']/@for)]")
+  #textbox = section2.FindElement("//input[@id=(//label[.='Leaving Water Temperature ("+unit+"):']/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Leaving Water Temperature')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["leaving_water_temperature"])
   #textbox = section2.FindElement("//input[@id=(//label[.='Entering Wet-Bulb Temp ("+unit_level+"):']/@for)]")
-  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Wet-Bulb ')]/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Wet-Bulb Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
   page.WaitConfirm(3000)
