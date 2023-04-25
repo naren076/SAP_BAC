@@ -15,15 +15,15 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\SAP Test Parameters (17).xlsx", "Test Cases FINAL")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters.xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
   page = browser.pageFlp
   #--Login form
-  loginForm.login_form(page, Project.Variables.username)
-  page.Wait()
-  page.WaitConfirm(5000)
+  loginForm.login_form(page, Project.Variables.v_username)
+  #page.Wait()
+  #page.WaitConfirm(5000)
   
   while not Driver.EOF():
     # Iterates through records
@@ -95,15 +95,16 @@ def sap_test():
       continue
     #Done button
     frame.FindElement("//button[.='Done']").Click()
-    page.WaitConfirm(15000)
-    browser = Aliases.browser
+    
+    #browser = Aliases.browser
     frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
     frame2 = frame.formWebguiform0
-    review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
-    review_frame.FindElement("//button[.='Apply']").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("frameC104", 30000).Exists):
+      review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+      review_frame.FindElement("//button[.='Apply']").Click()
           
     textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
-    if(frame.WaitAliasChild("panelContinue", 75000).Exists): 
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("panelContinue", 75000).Exists):
       textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
   
@@ -119,14 +120,14 @@ def sap_test():
     textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
     textbox2.SetText("PP01")
     textbox.FindElement("//div[.='Execute']").Click()
-    page.WaitConfirm(5000)
-    browser = Aliases.browser
-    browser.BrowserWindow.Maximize()
+    
+    
     frame = panel.frameApplicationBillofmaterialMu
     form = frame.formWebguiform0
-    form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
-    page.WaitConfirm(5000)
-    frame.FindElement("//div[.='OK']").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelSpreadsheetCtrlShiftF7", 10000).Exists):
+      form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelUpdowndialogchoose", 10000).Exists):
+     frame.FindElement("//div[.='OK']").Click()
     page.WaitConfirm(10000)
     Log.PopLogFolder()
     RecNo = RecNo + 1
