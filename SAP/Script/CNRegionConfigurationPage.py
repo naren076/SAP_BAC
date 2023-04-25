@@ -32,11 +32,11 @@ def set_configuration_details(textbox, page, general_requirement_values):
   textbox = section2.FindElement("//input[@id=(//label[.='Unit flow:']/@for)]")
   textbox.Keys(general_requirement_values["unit_flow"])
   
-  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Water Temperature')]/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Water Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_water_temperature"])
   
-  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Leaving Water Temperature')]/@for)]")
+  textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Leaving Water Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["leaving_water_temperature"])
   
