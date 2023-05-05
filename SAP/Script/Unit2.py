@@ -68,8 +68,7 @@ def sap_test():
           
     frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
     textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
-    textNode2 = textNode.sectionSplitter0Content1
-    
+    textNode2 = textNode.sectionSplitter0Content1    
     #Air Handling Configuration
     AirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_values(sap_field_values))
     if Log.ErrCount > ErrCount:
@@ -91,6 +90,9 @@ def sap_test():
       Log.PopLogFolder()
       Driver.Next()
       continue
+    price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
+    record_price(price, RecNo, general_requirement_values(sap_field_values))
+    
     #Done button
     frame.FindElement("//button[.='Done']").Click()
     
@@ -285,3 +287,23 @@ def shipping_values(sap_field_values):
   shipping_configs["special_required"] = sap_field_values["Specials Required?"].strip()
   
   return shipping_configs
+  
+
+  
+def record_price(price, rec_no, general_requirement_values):
+  
+  # Get the sheet of the Excel file
+  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test.xlsx")
+  excelSheet = excelFile.SheetByTitle["Sheet1"]
+  
+  # Write the obtained data into a new row of the file
+  rowIndex = excelSheet.RowCount + 1
+  excelSheet.Cell["A", rowIndex].Value = rec_no
+  excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
+  excelSheet.Cell["C", rowIndex].Value = price
+
+  # Save the file to apply the changes
+  excelFile.Save()
+  
+  # Save the file with another name
+  # excelFile.SaveAs("C:\\temp\\DataStorageExcel_new.xlsx")
