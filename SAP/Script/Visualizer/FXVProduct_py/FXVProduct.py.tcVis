@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{42D2222C-ACA2-405F-8E67-05D5C42EB839}" version="2">
+	<data key="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}">
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="15" kind="0" dateTime="45054.2682097454" objectName="Aliases.browser.BrowserWindow" objectLeft="-8" objectTop="-8" objectRight="1608" objectBottom="868" clickPointX="-1" clickPointY="-1" imageFileName="visImage0.png" storageFileName="" needUpdate="False" rectColor="255" />
+		<item typeId="{87B03792-E854-4F5D-9F33-165F1F874209}" version="2" lineNo="29" kind="0" dateTime="45054.2658408681" objectName="Aliases.browser.pageFlp.FindElement(&quot;//a[contains(., &apos;Create Sales Orders&apos;)]&quot;)" objectLeft="193" objectTop="203" objectRight="369" objectBottom="379" clickPointX="286" clickPointY="255" imageFileName="visImage8.png" storageFileName="" needUpdate="False" rectColor="255" />
+	</data>
+</Root>
