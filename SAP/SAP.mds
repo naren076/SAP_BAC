@@ -37,7 +37,7 @@
 					<DefValue StrValue="https://s4qas.baltimoreaircoil.com/sap/bc/ui2/flp?sap-client=240" />
 				</Variable>
 				<Variable Name="password" Type="Password" Local="False">
-					<DefValue StrValue="38003900360031003100330044003100460034004400380038004200460032004500430039003800320037003900360035004100460045003000330037004500370036003700430036003000300034003900430036004500300035004500300037003600330037004300430036004300320043004100440039004600430034003300300044004100" />
+					<DefValue StrValue="38003900360031003100330044003100460034004400380038004200460032004500430039003800320037003900360035004100460045003000330037004500370036003700430036003000300034003900430037003600300035003600300037003700330037004300440041004300320044004100440039004500420030003300300045003900" />
 				</Variable>
 				<Variable Name="v_password" Type="Password" Local="False">
 					<DefValue StrValue="3800390036003100310033004400330046003400440038003800420046003600450043003900390032003700390033003300410046004500300033003700390039003600310043004100320037003800420034003000320041004300360038003000430045003800460035003100360035003000410044004100340038003700340039003300360036003100" />
@@ -49,7 +49,7 @@
 		</data>
 	</variables>
 	<settings key="{DA643986-84B6-47A6-820C-630E9EDEB7EF}">
-		<settingsVersion value="15.46" />
+		<settingsVersion value="15.50" />
 		<setting name="AgOpenApp_ExtendedSilverlightObjectTree" type="1" value="False" />
 		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
 			<columns>
@@ -80,6 +80,8 @@
 		<setting name="BitBar_APIURL" type="5" value="https://cloud.bitbar.com/api/" />
 		<setting name="BitBar_FindAndroidDevice" type="5" value="( Device Group As in Selected Device )" />
 		<setting name="BitBar_FindIOSDevice" type="5" value="( Device Group As in Selected Device )" />
+		<setting name="BitBar_FRAMEWORKID_Android" type="2" value="0" />
+		<setting name="BitBar_FRAMEWORKID_IOS" type="2" value="0" />
 		<setting name="BitBar_HUBURL" type="5" value="https://appium.bitbar.com/wd/hub/" />
 		<setting name="BitBar_NewCommandTimeout" type="2" value="300" />
 		<setting name="CBT_AppsAvailability" type="6" rowIndex="0" colIndex="0">
@@ -93,6 +95,7 @@
 				<row val0="Via proxy" />
 			</data>
 		</setting>
+		<setting name="CBT_Authkey" type="5" value="" />
 		<setting name="CBT_LocalHtmlDir" type="5" value="" />
 		<setting name="CBT_ProxyAddress" type="5" value="" />
 		<setting name="CBT_ProxyLogin" type="5" value="" />
@@ -346,26 +349,16 @@
 			</data>
 		</setting>
 		<setting name="OpenApps_MSAA_TreeModel" type="1" value="False" />
-		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="15" colIndex="0">
+		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="5" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
 			<data>
 				<row val0="NativeSlObject" />
 				<row val0="NativeWebObject" />
-				<row val0="NativeVBObject" />
-				<row val0="NativeDelphiObject" />
-				<row val0="NativeTextObject" />
-				<row val0="NativeJavaObject" />
 				<row val0="NativeChromeObject" />
-				<row val0="NativeClrObject" />
-				<row val0="NativeCPPObject" />
 				<row val0="NativeFirefoxObject" />
-				<row val0="NativeJavaFXObject" />
-				<row val0="NativeSAPObject" />
-				<row val0="NativeQtObject" />
 				<row val0="NativeWebDriverObject" />
-				<row val0="NativeUIAObject" />
 				<row val0="NativeMSAA" />
 			</data>
 		</setting>
