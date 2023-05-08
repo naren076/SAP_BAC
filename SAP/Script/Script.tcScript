@@ -12,5 +12,7 @@
 		<child name="AirHandlingConfiguration" key="{FA6CD928-5785-497B-AB2F-90CC0D380D9B}" path="AirHandlingConfiguration.py" />
 		<child name="AdditionalEnhancement" key="{AB05489A-52D1-4955-A2C1-E0A16695BC56}" path="AdditionalEnhancement.py" />
 		<child name="ShippingConfigurationPage" key="{026CC798-F1B3-4926-A42F-A056BF7E0759}" path="ShippingConfigurationPage.py" />
+		<child name="FXVProduct" key="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}" path="FXVProduct.py" />
+		<child name="FXVGeneralRequirements" key="{22076D40-8139-49DA-B302-2D3EE8261F9C}" path="FXVGeneralRequirements.py" />
 	</children>
 </Root>
