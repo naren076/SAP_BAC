@@ -1,6 +1,4 @@
-﻿#import AirHandlingConfiguration
-
-def coil_configuration(page, coil_configuration_values):
+﻿def coil_configuration(page, coil_configuration_values):
   frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
   textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   textNode2 = textNode.sectionSplitter0Content1

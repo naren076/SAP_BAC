@@ -15,7 +15,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\FXV SAP Test Parameters.xlsx", "Test Cases FINAL")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters.xlsx", "Test Cases FINAL (3)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -102,7 +102,45 @@ def sap_test():
       Log.PopLogFolder()
       Driver.Next()
       continue
+      
+    price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
+    record_price(price, RecNo, general_requirement_values(sap_field_values))
     
+    #Done button
+    frame.FindElement("//button[.='Done']").Click()
+    
+    frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
+    frame2 = frame.formWebguiform0
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("frameC104", 30000).Exists):
+      review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+      review_frame.FindElement("//button[.='Apply']").Click()
+          
+    textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("panelContinue", 75000).Exists):
+      textbox.FindElement("//div[.='Continue']").Click()
+    page.WaitConfirm(3000)
+  
+    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    image.FindElement("//a[@title='Navigate to Home Page']").Click()
+    searchBox.search_item(page, "csk2")
+    section = browser.pageFlp.sectionShellSplitCanvas
+    section.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
+    item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
+    item_field.SetText("100")
+    material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
+    material_field.SetText("FXV")
+    textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
+    textbox2.SetText("PP01")
+    textbox.FindElement("//div[.='Execute']").Click()
+    
+    frame = panel.frameApplicationBillofmaterialMu
+    form = frame.formWebguiform0
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelSpreadsheetCtrlShiftF7", 10000).Exists):
+     form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelUpdowndialogchoose", 10000).Exists):
+      frame.FindElement("//div[.='OK']").Click()
+    page.WaitConfirm(10000)
+    Log.PopLogFolder()
           
     RecNo = RecNo + 1
     Driver.Next(); # Goes to the next record
@@ -230,7 +268,7 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["horsepower_motor_a"] = sap_field_values["Horsepower Motor A"].strip()
   air_handling_configurations["fan_motor_rpm_a"] = sap_field_values["Fan Motor RPM A"].strip()
   air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"].strip()
-  air_handling_configurations["fan_motor_quantity_main_a:"] = sap_field_values["Fan Motor Quantity - Main A:"].strip()
+  air_handling_configurations["fan_motor_quantity_main_a"] = sap_field_values["Fan Motor Quantity - Main A:"].strip()
   air_handling_configurations["horsepower_motor_b"] = sap_field_values["Horsepower Motor B"].strip()
   air_handling_configurations["fan_motor_rpm_b"] = sap_field_values["Fan Motor RPM B"].strip()
   air_handling_configurations["fan_motor_quantity_b"] = sap_field_values["Fan Motor Quantity - B:"].strip()
@@ -238,7 +276,7 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["add_shaft_grounding_ring?"] = sap_field_values["Add Shaft Grounding Ring?"].strip()
   air_handling_configurations["fan_motor_options_b"] = sap_field_values["Fan Motor Options B"].strip()
   #air_handling_configurations["shaft_grounding_ring_main_b:"] = sap_field_values["Shaft Grounding Ring - Main B:"].strip()
-  air_handling_configurations["shaft_grounding_ring_main_b:"] = "No"
+  air_handling_configurations["shaft_grounding_ring_main_b"] = "No"
   air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"].strip()
   air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"].strip()
   air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"].strip()
@@ -300,7 +338,7 @@ def shipping_values(sap_field_values):
 def record_price(price, rec_no, general_requirement_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test.xlsx")
+  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\test.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file

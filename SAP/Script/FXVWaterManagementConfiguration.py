@@ -1,5 +1,4 @@
-﻿#import AirHandlingConfiguration
-def water_management(page, water_management_values):
+﻿def water_management(page, water_management_values):
   frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
   textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   textNode2 = textNode.sectionSplitter0Content1
@@ -42,7 +41,7 @@ def water_management(page, water_management_values):
     section2.FindElement("//*[contains(text(),'Pump Motor Efficiency Class')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["pump_motor_efficiency_class"]+"']").Click()
-    page.WaitConfirm(1000)
+    page.WaitConfirm(2000)
   
   #Basin Water Level Control
   if water_management_values["basin_water_level_control"] != "SAP Defined":
@@ -66,16 +65,16 @@ def water_management(page, water_management_values):
       textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
     page.WaitConfirm(2000)
     
-  #Pump Motor Efficiency Class
+  #heater_element_material
   if water_management_values["heater_element_material"] != "Not Visible":
-    section2.FindElement("//*[contains(text(),'Heater Element Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    textNode2.FindElement("//*[contains(text(),'Heater Element Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["heater_element_material"]+"']").Click()
     page.WaitConfirm(1000)
     
-   #Pump Motor Efficiency Class
+   #Basin Heater Controls
   if water_management_values["basin_heater_controls"] != "Not Visible":
-    section2.FindElement("//*[contains(text(),'Basin Heater Controls')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    textNode2.FindElement("//*[contains(text(),'Basin Heater Controls')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["basin_heater_controls"]+"']").Click()
     page.WaitConfirm(1000)
@@ -89,8 +88,6 @@ def water_management(page, water_management_values):
     textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_sweeper_piping"])
     textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
-  
-  #frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua5.Drag(1024, 39, 5, 176)
   
   #Float Switch:
   textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 

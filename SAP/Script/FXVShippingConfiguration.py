@@ -36,26 +36,26 @@
     shipping_frame.FindElement("//li[.='"+shipping_configs["model_with_suffix"]+"']").Click() 
     
   #Truck Type:
-  if isEnabled == "false":
+  if shipping_configs["truck_type"] != "QUOTE":
     shipping_page.FindElement("//*[contains(text(),'Truck Type')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     shipping_frame.FindElement("//li[.='"+shipping_configs["truck_type"]+"']").Click() 
 
   #Fan Type Freight:
   if shipping_configs["fan_type_freight"] != "SAP Defined":
-    shipping_page.FindElement("//*[contains(text(),'Fan Type Freight:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    shipping_page.FindElement("//*[contains(text(),'Fan Type Freight')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     shipping_frame.FindElement("//li[.='"+shipping_configs["fan_type_freight"]+"']").Click()
   
   #Side Air Intake Option Freight:
   if shipping_configs["side_air_intake_option_freight"] != "SAP Defined":
-    shipping_page.FindElement("//*[contains(text(),'Side Air Intake Option Freight:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    shipping_page.FindElement("//*[contains(text(),'Side Air Intake Option Freight')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
-    shipping_frame.FindElement("//li[.='"+shipping_configs["side_air_intake_option_freight:"]+"']").Click()
+    shipping_frame.FindElement("//li[.='"+shipping_configs["side_air_intake_option_freight"]+"']").Click()
   
   #Air Discharge Configuration F:
   if shipping_configs["air_discharge_configuration_f"] != "SAP Defined":
-    shipping_page.FindElement("//*[contains(text(),'Air Discharge Configuration F:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    shipping_page.FindElement("//*[contains(text(),'Air Discharge Configuration F')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     shipping_frame.FindElement("//li[.='"+shipping_configs["air_discharge_configuration_f"]+"']").Click() 
     

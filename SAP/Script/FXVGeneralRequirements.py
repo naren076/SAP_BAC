@@ -1,6 +1,4 @@
-﻿#import WaterManagementConfiguration
-
-def set_configuration_details(textbox, page, general_requirement_values):
+﻿def set_configuration_details(textbox, page, general_requirement_values):
   frame = textbox.frameC120
   section = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   section2 = section.sectionSplitter0Content1
@@ -92,13 +90,15 @@ def set_configuration_details(textbox, page, general_requirement_values):
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["fm_approval"])
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   #frame.FindElement("//li[.='"+general_requirement_values["fm_approval"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(4000)
   
   #--Cooling Tower Structure
-  section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
-  frame.FindElement("//li[.='"+general_requirement_values["cooling_tower_structure"]+"']").Click()
-  page.WaitConfirm(1000) 
+  isEnabled = section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")
+  if isEnabled == "false":
+    section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    page.WaitConfirm(1000)
+    frame.FindElement("//li[.='"+general_requirement_values["cooling_tower_structure"]+"']").Click()
+    page.WaitConfirm(1000) 
   
   #--Anchorage
   isEnabled = section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")

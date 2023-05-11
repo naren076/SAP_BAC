@@ -1,6 +1,4 @@
-﻿#import AdditionalEnhancement
-
-def air_handling(page, air_frame, air_page, air_handling_values):
+﻿def air_handling(page, air_frame, air_page, air_handling_values):
   #System Frequency
   air_page.FindElement("//*[contains(text(),'System Frequency')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
@@ -29,7 +27,7 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   air_page.FindElement("//*[contains(text(),'Fan Drive System')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   air_frame.FindElement("//li[.='"+air_handling_values["fan_drive_system"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(2000)
   
   #Upgrade Fan Shaft Material?
   air_page.FindElement("//*[contains(text(),'Upgrade Fan Shaft Material?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
@@ -82,10 +80,10 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   page.WaitConfirm(1000)
   
   #Fan Motor Quantity - Main A:
-  if air_handling_values["fan_motor_quantity_main_a:"] != "SAP Defined":
-    air_page.FindElement("//*[contains(text(),'Fan Motor Quantity - Main A:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+  if air_handling_values["fan_motor_quantity_main_a"] != "SAP Defined":
+    air_page.FindElement("//*[contains(text(),'Fan Motor Quantity - Main A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
-    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_main_a:"]+"']").Click()
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_main_a"]+"']").Click()
     page.WaitConfirm(1000)
   
   #Horsepower Motor B
@@ -122,19 +120,22 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   air_page.FindElement("//*[contains(text(),'Add Shaft Grounding Ring?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
-  #Fan Motor Options B
+  #Fan Motor Options B  
   if air_handling_values["fan_motor_options_b"] != "Not Visible":
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(3000)
+    #air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_b"]+"']").Click()
+    air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_options_b"])
+    air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
     page.WaitConfirm(1000)
-    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_b"]+"']").Click()
-    page.WaitConfirm(1000)
+  
   
   #Fan Motor Options B:Shaft Grounding Ring - Main B:
   #its not visible
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   #page.WaitConfirm(1000)
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["shaft_grounding_ring_main_b:"])
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["shaft_grounding_ring_main_b"])
+  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   #page.WaitConfirm(1000)
   
   #Vibration Cutout Switch (VCOS):
@@ -175,3 +176,5 @@ def air_handling(page, air_frame, air_page, air_handling_values):
   page.WaitConfirm(1000)
   
   air_page.FindElement("//span[.='Additional Enhancements']").Click()
+  
+  
