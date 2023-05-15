@@ -15,7 +15,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters.xlsx", "Test Cases FINAL (3)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (1).xlsx", "Test Cases FINAL (4)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -103,8 +103,9 @@ def sap_test():
       Driver.Next()
       continue
       
+    #Price  
     price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
-    record_price(price, RecNo, general_requirement_values(sap_field_values))
+    record_price(price, record_no_values(sap_field_values), general_requirement_values(sap_field_values))
     
     #Done button
     frame.FindElement("//button[.='Done']").Click()
@@ -165,6 +166,12 @@ def ProcessData(browser, page):
   return sap_field_values
   general_requirement_values(sap_field_values)
   
+#Record No
+def record_no_values(sap_field_values):
+  record_no = {}  
+  record_no['record_no'] = sap_field_values["Count"].strip()
+  return record_no
+  
 # Sales Order Values
 def sales_order_values(sap_field_values):
   sales_order_field_values = {}
@@ -195,8 +202,8 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["unit_flow"] = sap_field_values["Unit Flow"].strip()
   general_requirement_configurations["number_of_circuits_required"] = sap_field_values["Number of Circuits Required"].strip()
   general_requirement_configurations["fluid"] = sap_field_values["Fluid"].strip()
-  general_requirement_configurations["entering_water_temperature"] = sap_field_values["Entering Water Temperature"].strip()
-  general_requirement_configurations["leaving_water_temperature"] = sap_field_values["Leaving Water Temperature"].strip()
+  general_requirement_configurations["entering_fluid_temperature"] = sap_field_values["Entering Fluid Temp"].strip()
+  general_requirement_configurations["leaving_fluid_temperature"] = sap_field_values["Leaving Fluid Temperature"].strip()
   general_requirement_configurations["entering_wet_bulb_temp"] = sap_field_values["Entering Wet-Bulb Temp"].strip()
   general_requirement_configurations["coil_pressure_drop"] = sap_field_values["Coil Pressure Drop"].strip()
   general_requirement_configurations["fill_material"] = sap_field_values["Fill Material"].strip()
@@ -275,8 +282,7 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["fan_motor_options_a"] = sap_field_values["Fan Motor Options A"].strip()
   air_handling_configurations["add_shaft_grounding_ring?"] = sap_field_values["Add Shaft Grounding Ring?"].strip()
   air_handling_configurations["fan_motor_options_b"] = sap_field_values["Fan Motor Options B"].strip()
-  #air_handling_configurations["shaft_grounding_ring_main_b:"] = sap_field_values["Shaft Grounding Ring - Main B:"].strip()
-  air_handling_configurations["shaft_grounding_ring_main_b"] = "No"
+  air_handling_configurations["shaft_grounding_ring_main_b"] = sap_field_values["Shaft Grounding Ring - Main B:"].strip()
   air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"].strip()
   air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"].strip()
   air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"].strip()
@@ -335,15 +341,15 @@ def shipping_values(sap_field_values):
   
 
   
-def record_price(price, rec_no, general_requirement_values):
+def record_price(price, record_no_values, general_requirement_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\test.xlsx")
+  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\test1.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
   rowIndex = excelSheet.RowCount + 1
-  excelSheet.Cell["A", rowIndex].Value = rec_no
+  excelSheet.Cell["A", rowIndex].Value = record_no_values["record_no"]
   excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
   excelSheet.Cell["C", rowIndex].Value = price
 

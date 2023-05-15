@@ -60,7 +60,7 @@
     page.WaitConfirm(1000)
   
   #Horsepower Motor A
-  if air_handling_values["horsepower_motor_a"] != "SAP defined":
+  if air_handling_values["horsepower_motor_a"] != "SAP Defined":
     air_page.FindElement("//*[contains(text(),'Horsepower Motor A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     air_frame.FindElement("//li[.='"+air_handling_values["horsepower_motor_a"]+"']").Click()
@@ -94,14 +94,16 @@
     page.WaitConfirm(1000)
   
   #Fan Motor RPM B
-  if air_handling_values["fan_motor_rpm_b"] != "SAP Defined":
-    air_page.FindElement("//*[contains(text(),'Fan Motor RPM B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
-    page.WaitConfirm(1000)
-    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_rpm_b"]+"']").Click()
-    page.WaitConfirm(1000)
+  if air_handling_values["fan_motor_rpm_b"] != "SAP Defined" :
+   if air_handling_values["fan_motor_rpm_b"] != "Not Visible": 
+      air_page.FindElement("//*[contains(text(),'Fan Motor RPM B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+      page.WaitConfirm(1000)
+      air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_rpm_b"]+"']").Click()
+      page.WaitConfirm(1000)
   
   #Fan Motor Quantity - B:
   if air_handling_values["fan_motor_quantity_b"] != "SAP Defined":
+   if air_handling_values["fan_motor_quantity_b"] != "Not Visible": 
     air_page.FindElement("//*[contains(text(),'Fan Motor Quantity - B:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_b"]+"']").Click()
@@ -127,16 +129,16 @@
     #air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_b"]+"']").Click()
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_options_b"])
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(2000)
+  
+  
+  #Shaft Grounding Ring - Main B:
+  if air_handling_values["shaft_grounding_ring_main_b"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)
-  
-  
-  #Fan Motor Options B:Shaft Grounding Ring - Main B:
-  #its not visible
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  #page.WaitConfirm(1000)
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["shaft_grounding_ring_main_b"])
-  #air_page.FindElement("//*[contains(text(),'Fan Motor Options B: Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  #page.WaitConfirm(1000)
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["shaft_grounding_ring_main_b"])
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Main B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(1000)
   
   #Vibration Cutout Switch (VCOS):
   air_page.FindElement("//*[contains(text(),'Vibration Cutout Switch (VCOS)')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 

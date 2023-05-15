@@ -36,7 +36,7 @@
     shipping_frame.FindElement("//li[.='"+shipping_configs["model_with_suffix"]+"']").Click() 
     
   #Truck Type:
-  if shipping_configs["truck_type"] != "QUOTE":
+  if shipping_configs["truck_type"] != "SAP Defined":
     shipping_page.FindElement("//*[contains(text(),'Truck Type')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     shipping_frame.FindElement("//li[.='"+shipping_configs["truck_type"]+"']").Click() 
