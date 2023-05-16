@@ -29,7 +29,7 @@ def water_management(page, water_management_values):
   frame.FindElement("//li[.='"+water_management_values["inlet_outlet_connections"]+"']").Click()
   page.WaitConfirm(2000)
   
-    #Depressed Sum Box 
+  #Depressed Sum Box 
   if water_management_values["depressed_sump_box"] != "SAP Defined": 
       textNode2.FindElement("//*[contains(text(),'Depressed Sump Box')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
       page.WaitConfirm(1000)
@@ -81,8 +81,6 @@ def water_management(page, water_management_values):
     textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(water_management_values["basin_sweeper_piping"])
     textNode2.FindElement("//*[contains(text(),'Basin Sweeper Piping')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
-  
-  #frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu.sectionSplitter0Content1.panelConfigurationcomponentValua5.Drag(1024, 39, 5, 176)
   
   #Float Switch:
   textNode2.FindElement("//*[contains(text(),'Float Switch')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 

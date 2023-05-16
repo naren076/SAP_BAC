@@ -1,9 +1,9 @@
-﻿def multi_level_bom(panel,textbox,page,standard_order_values):
+﻿def multi_level_bom(panel,textbox,page,sap_values):
     panel.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
     item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
     item_field.SetText("100")
     material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
-    material_field.SetText(standard_order_values["material"])
+    material_field.SetText(sap_values["Material (BAC Model)"])
     textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
     textbox2.SetText("PP01")
     textbox.FindElement("//div[.='Execute']").Click()

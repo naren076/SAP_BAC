@@ -16,13 +16,13 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters (1).xlsx", "Test Cases FINAL (4)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters.xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
   page = browser.pageFlp
   #--Login form
-  loginForm.login_form(page, Project.Variables.v_username)
+  loginForm.login_form(page, Project.Variables.username)
   
   while not Driver.EOF():
     # Iterates through records
@@ -91,8 +91,11 @@ def sap_test():
       Log.PopLogFolder()
       Driver.Next()
       continue
+    
+    #Price    
     price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
-    record_price(price, RecNo, general_requirement_values(sap_field_values))
+    record_price(price,sap_field_values)
+    
     
     #Done button
     frame.FindElement("//button[.='Done']").Click()
@@ -115,7 +118,7 @@ def sap_test():
     searchBox.search_item(page, "csk2")
     
     #Multi-Level Sales Order BOM
-    MultiLevelBOM.multi_level_bom(panel,textbox,page,standard_order_values(sap_field_values))
+    MultiLevelBOM.multi_level_bom(panel,textbox,page,sap_field_values)
 
     page.WaitConfirm(10000)
     Log.PopLogFolder()
@@ -280,16 +283,16 @@ def shipping_values(sap_field_values):
   
 
   
-def record_price(price, rec_no, general_requirement_values):
+def record_price(price,sap_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test1.xlsx")
+  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\BOM_price_list_S3E.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
   rowIndex = excelSheet.RowCount + 1
-  excelSheet.Cell["A", rowIndex].Value = rec_no
-  excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
+  excelSheet.Cell["A", rowIndex].Value = sap_values["Count"]
+  excelSheet.Cell["B", rowIndex].Value = sap_values["Model Number"]
   excelSheet.Cell["C", rowIndex].Value = price
 
   # Save the file to apply the changes

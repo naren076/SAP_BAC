@@ -143,7 +143,7 @@ def additional_configs(page, additional_frame, additional_page, additional_confi
     additional_page.FindElement("//*[contains(text(),'Louver Face Ldr/Cage Extension')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
-  #Access Door Pltf Ladder Ext!!NON EDITABLE DATA MISMATCH
+  #Access Door Pltf Ladder Ext:
   if additional_configs["access_door_pltf"] != "SAP Defined":
     additional_page.FindElement("//*[contains(text(),'Access Door Pltf Ladder Ext')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)

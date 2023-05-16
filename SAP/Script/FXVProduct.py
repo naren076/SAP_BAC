@@ -104,7 +104,7 @@ def sap_test():
       
     #Price  
     price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
-    record_price(price,sales_order_values(sap_field_values),general_requirement_values(sap_field_values))
+    record_price(price,sap_field_values)
     
     #Done button
     frame.FindElement("//button[.='Done']").Click()
@@ -126,7 +126,7 @@ def sap_test():
     searchBox.search_item(page, "csk2")
     
     #Multi-Level Sales Order BOM
-    MultiLevelBOM.multi_level_bom(panel,textbox,page,standard_order_values(sap_field_values))
+    MultiLevelBOM.multi_level_bom(panel,textbox,page,sap_field_values)
       
     page.WaitConfirm(10000)
     Log.PopLogFolder()     
@@ -155,7 +155,6 @@ def ProcessData(browser, page):
 # Sales Order Values
 def sales_order_values(sap_field_values):
   sales_order_field_values = {}
-  sales_order_field_values["record_no"] = sap_field_values["Count"].strip()
   sales_order_field_values["order_type"] = sap_field_values["Order Type"].strip()
   sales_order_field_values["sales_organization"] = sap_field_values["Sales Organization"].strip()
   sales_order_field_values["distribution_channel"] = sap_field_values["Distribution Channel"].strip()
@@ -320,16 +319,16 @@ def shipping_values(sap_field_values):
   
 
   
-def record_price(price,sales_order_values,general_requirement_values):
+def record_price(price,sap_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\test1.xlsx")
+  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\BOM_price_list.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
   rowIndex = excelSheet.RowCount + 1
-  excelSheet.Cell["A", rowIndex].Value = sales_order_values["record_no"]
-  excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
+  excelSheet.Cell["A", rowIndex].Value = sap_values["Count"]
+  excelSheet.Cell["B", rowIndex].Value = sap_values["Model Number"]
   excelSheet.Cell["C", rowIndex].Value = price
 
   # Save the file to apply the changes

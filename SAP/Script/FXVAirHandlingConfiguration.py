@@ -94,7 +94,7 @@
     page.WaitConfirm(1000)
   
   #Fan Motor RPM B
-  if(air_handling_values["fan_motor_rpm_b"] != "SAP Defined" and  air_handling_values["fan_motor_rpm_b"] != "Not Visible"):
+  if(air_handling_values["fan_motor_rpm_b"] != "SAP Defined" and air_handling_values["fan_motor_rpm_b"] != "Not Visible"):
       air_page.FindElement("//*[contains(text(),'Fan Motor RPM B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
       page.WaitConfirm(1000)
       air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_rpm_b"]+"']").Click()
