@@ -8,6 +8,7 @@ import FXVCoilConfiguration
 import FXVAirHandlingConfiguration
 import FXVAdditionalEnhancement
 import FXVShippingConfiguration
+import MultiLevelBOM
 
 RecNo = 0
 
@@ -15,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (1).xlsx", "Test Cases FINAL (4)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (2).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -58,16 +59,14 @@ def sap_test():
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
-     continue
-     
+     continue  
     #--Water Management Configuration
     FXVWaterManagementConfiguration.water_management(page, water_management_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
-     continue
-    
+     continue   
     #-- Coil Configuration
     FXVCoilConfiguration.coil_configuration(page, coil_configuration_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
@@ -105,7 +104,7 @@ def sap_test():
       
     #Price  
     price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
-    record_price(price, record_no_values(sap_field_values), general_requirement_values(sap_field_values))
+    record_price(price,sales_order_values(sap_field_values),general_requirement_values(sap_field_values))
     
     #Done button
     frame.FindElement("//button[.='Done']").Click()
@@ -120,29 +119,17 @@ def sap_test():
     if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("panelContinue", 75000).Exists):
       textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
-  
     image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
     image.FindElement("//a[@title='Navigate to Home Page']").Click()
-    searchBox.search_item(page, "csk2")
-    section = browser.pageFlp.sectionShellSplitCanvas
-    section.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
-    item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
-    item_field.SetText("100")
-    material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
-    material_field.SetText("FXV")
-    textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
-    textbox2.SetText("PP01")
-    textbox.FindElement("//div[.='Execute']").Click()
     
-    frame = panel.frameApplicationBillofmaterialMu
-    form = frame.formWebguiform0
-    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelSpreadsheetCtrlShiftF7", 10000).Exists):
-     form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
-    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelUpdowndialogchoose", 10000).Exists):
-      frame.FindElement("//div[.='OK']").Click()
+    #SearchBOX
+    searchBox.search_item(page, "csk2")
+    
+    #Multi-Level Sales Order BOM
+    MultiLevelBOM.multi_level_bom(panel,textbox,page,standard_order_values(sap_field_values))
+      
     page.WaitConfirm(10000)
-    Log.PopLogFolder()
-          
+    Log.PopLogFolder()     
     RecNo = RecNo + 1
     Driver.Next(); # Goes to the next record
     
@@ -164,17 +151,11 @@ def ProcessData(browser, page):
     browser = Aliases.browser
     browser.BrowserWindow.Maximize()
   return sap_field_values
-  general_requirement_values(sap_field_values)
-  
-#Record No
-def record_no_values(sap_field_values):
-  record_no = {}  
-  record_no['record_no'] = sap_field_values["Count"].strip()
-  return record_no
-  
+   
 # Sales Order Values
 def sales_order_values(sap_field_values):
   sales_order_field_values = {}
+  sales_order_field_values["record_no"] = sap_field_values["Count"].strip()
   sales_order_field_values["order_type"] = sap_field_values["Order Type"].strip()
   sales_order_field_values["sales_organization"] = sap_field_values["Sales Organization"].strip()
   sales_order_field_values["distribution_channel"] = sap_field_values["Distribution Channel"].strip()
@@ -212,9 +193,7 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["special_seismic"] = sap_field_values["Special Seismic Cert Required"].strip()
   general_requirement_configurations["fm_approval"] = sap_field_values["FM Approval"].strip()
   general_requirement_configurations["cooling_tower_structure"] = sap_field_values["Cooling Tower Structure"].strip()
-  #general_requirement_configurations["basinless_unit"] = sap_field_values["Basinless Unit"].strip()
   general_requirement_configurations["anchorage"] = sap_field_values["Anchorage"].strip()
-  #general_requirement_configurations["anchor_bolt_hole_spacing"] = sap_field_values["Anchor Bolt Hole Spacing"].strip()
   general_requirement_configurations["shipping_plant"] = sap_field_values["Shipping/Production Plant"].strip()
   general_requirement_configurations["field_assembly"] = sap_field_values["Knockdown For Field Assembly?"].strip()
   general_requirement_configurations["base_seismic_rating"] = sap_field_values["Base Seismic Rating"].strip()
@@ -341,7 +320,7 @@ def shipping_values(sap_field_values):
   
 
   
-def record_price(price, record_no_values, general_requirement_values):
+def record_price(price,sales_order_values,general_requirement_values):
   
   # Get the sheet of the Excel file
   excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\test1.xlsx")
@@ -349,7 +328,7 @@ def record_price(price, record_no_values, general_requirement_values):
   
   # Write the obtained data into a new row of the file
   rowIndex = excelSheet.RowCount + 1
-  excelSheet.Cell["A", rowIndex].Value = record_no_values["record_no"]
+  excelSheet.Cell["A", rowIndex].Value = sales_order_values["record_no"]
   excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
   excelSheet.Cell["C", rowIndex].Value = price
 

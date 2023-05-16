@@ -50,8 +50,6 @@
   additional_page.FindElement("//*[contains(text(),'Upgrade Fan Guard Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   if additional_configs["upgrade_fan_guard_material"] != "No":
-    #additional_frame.FindElement("//li[.='"+additional_configs["upgrade_fan_guard_material"]+"']").Click()
-    #else:
     additional_page.FindElement("//*[contains(text(),'Upgrade Fan Guard Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(additional_configs["upgrade_fan_guard_material"])
     additional_page.FindElement("//*[contains(text(),'Upgrade Fan Guard Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
@@ -110,7 +108,6 @@
     page.WaitConfirm(1000)
   
   #additional Enhancement Page
-  #frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
   if(additional_frame.FindElement("//div[@class='sapMITHEndOverflow']//child::span[contains(text(), 'More')]")).VisibleOnScreen:
     additional_frame.FindElement("//div[@class='sapMITHEndOverflow']//child::span[contains(text(), 'More')]").Click() 
     additional_frame.FindElement("//div[@class='sapMPopoverScroll']//child::span[.='Shipping and Specials']").Click() 

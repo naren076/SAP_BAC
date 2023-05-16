@@ -41,7 +41,7 @@
     section2.FindElement("//*[contains(text(),'Pump Motor Efficiency Class')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+water_management_values["pump_motor_efficiency_class"]+"']").Click()
-    page.WaitConfirm(2000)
+    page.WaitConfirm(4000)
   
   #Basin Water Level Control
   if water_management_values["basin_water_level_control"] != "SAP Defined":
@@ -65,7 +65,7 @@
       textNode2.FindElement("//*[contains(text(),'Basin Heaters')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
     page.WaitConfirm(2000)
     
-  #heater_element_material
+  #Heater Element Material
   if water_management_values["heater_element_material"] != "Not Visible":
     textNode2.FindElement("//*[contains(text(),'Heater Element Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
     page.WaitConfirm(1000)

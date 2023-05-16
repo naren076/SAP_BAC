@@ -94,16 +94,14 @@
     page.WaitConfirm(1000)
   
   #Fan Motor RPM B
-  if air_handling_values["fan_motor_rpm_b"] != "SAP Defined" :
-   if air_handling_values["fan_motor_rpm_b"] != "Not Visible": 
+  if(air_handling_values["fan_motor_rpm_b"] != "SAP Defined" and  air_handling_values["fan_motor_rpm_b"] != "Not Visible"):
       air_page.FindElement("//*[contains(text(),'Fan Motor RPM B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
       page.WaitConfirm(1000)
       air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_rpm_b"]+"']").Click()
       page.WaitConfirm(1000)
   
   #Fan Motor Quantity - B:
-  if air_handling_values["fan_motor_quantity_b"] != "SAP Defined":
-   if air_handling_values["fan_motor_quantity_b"] != "Not Visible": 
+  if(air_handling_values["fan_motor_quantity_b"] != "SAP Defined" and air_handling_values["fan_motor_quantity_b"] != "Not Visible"): 
     air_page.FindElement("//*[contains(text(),'Fan Motor Quantity - B:')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_b"]+"']").Click()
@@ -126,7 +124,6 @@
   if air_handling_values["fan_motor_options_b"] != "Not Visible":
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(3000)
-    #air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_b"]+"']").Click()
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_options_b"])
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
     page.WaitConfirm(2000)
@@ -167,7 +164,7 @@
     air_page.FindElement("//*[contains(text(),'Fan Motor Removal System')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   page.WaitConfirm(1000)
   
-  #Factory Wiring
+  #Factory Wiring:
   air_page.FindElement("//*[contains(text(),'Factory Wiring')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
   if air_handling_values["factory_wiring"] != "None":

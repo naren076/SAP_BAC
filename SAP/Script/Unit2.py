@@ -8,6 +8,7 @@ import WaterManagementConfiguration
 import AirHandlingConfiguration
 import AdditionalEnhancement
 import ShippingConfigurationPage
+import MultiLevelBOM
 
 RecNo = 0
 
@@ -15,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters (1).xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\SAP Test Parameters (1).xlsx", "Test Cases FINAL (4)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -109,23 +110,13 @@ def sap_test():
   
     image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
     image.FindElement("//a[@title='Navigate to Home Page']").Click()
-    searchBox.search_item(page, "csk2")
-    section = browser.pageFlp.sectionShellSplitCanvas
-    section.FindElement("//span/span/span[contains(text(), 'Multi-')]").Click()
-    item_field = textbox.FindElement("//input[@id=(//label[.='Item']/@for)]")
-    item_field.SetText("100")
-    material_field = textbox.FindElement("//input[@id=(//label[.='Material']/@for)]")
-    material_field.SetText("S3E")
-    textbox2 = textbox.FindElement("//input[@id=(//label[.='BOM Application']/@for)]")
-    textbox2.SetText("PP01")
-    textbox.FindElement("//div[.='Execute']").Click()
     
-    frame = panel.frameApplicationBillofmaterialMu
-    form = frame.formWebguiform0
-    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelSpreadsheetCtrlShiftF7", 10000).Exists):
-     form.FindElement("//div[@title='Spreadsheet... (Ctrl+Shift+F7)']").Click()
-    if(NameMapping.Sys.browser.pageFlp.frameApplicationBillofmaterialMu.WaitNamedChild("panelUpdowndialogchoose", 10000).Exists):
-      frame.FindElement("//div[.='OK']").Click()
+    #Search Box
+    searchBox.search_item(page, "csk2")
+    
+    #Multi-Level Sales Order BOM
+    MultiLevelBOM.multi_level_bom(panel,textbox,page,standard_order_values(sap_field_values))
+
     page.WaitConfirm(10000)
     Log.PopLogFolder()
     RecNo = RecNo + 1
@@ -237,7 +228,6 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["fan_motor_rpm"] = sap_field_values["Fan Motor RPM A"].strip()
   air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"].strip()
   air_handling_configurations["fan_motor_options_a"] = sap_field_values["Fan Motor Options A"].strip()
-  #air_handling_configurations["add_shaft_grounding_ring"] = sap_field_values["Add Shaft Grounding Ring?"]
   air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"].strip()
   air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"].strip()
   air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"].strip()
@@ -293,7 +283,7 @@ def shipping_values(sap_field_values):
 def record_price(price, rec_no, general_requirement_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test.xlsx")
+  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test1.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file

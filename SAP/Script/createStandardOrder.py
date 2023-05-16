@@ -3,7 +3,6 @@
   textbox2.SetText(field_values["sold_to_party"])
   textbox2 = textbox.FindElement("//input[@title='Customer Reference']")
   textbox2.SetText(field_values["customer_reference"])
-  
   textbox2 = textbox.FindElement("//input[@id=(//label[.='Delivery Block']/@for)]")
   textbox2.Click()
   mrpoption = textbox.FindElement("//div[.='"+field_values["delivery_block"]+"']")

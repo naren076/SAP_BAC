@@ -21,10 +21,7 @@
   #----Number of Circuits required
   section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
-  frame.FindElement("//li[.='"+general_requirement_values["number_of_circuits_required"]+"']").Click()
-  #section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["number_of_circuits_required"])
-  #section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  
+  frame.FindElement("//li[.='"+general_requirement_values["number_of_circuits_required"]+"']").Click()  
   page.WaitConfirm(1000)
   
   #----Select Fluid
@@ -38,26 +35,32 @@
   page.WaitConfirm(1000)
   frame.FindElement("//li[.='"+general_requirement_values["unit_flow_uom"]+"']").Click()
   page.WaitConfirm(1000)
-  #--unit_flow
+  
+  #--Unit flow
   textbox = section2.FindElement("//input[@id=(//label[.='Unit flow:']/@for)]")
   textbox.Keys(general_requirement_values["unit_flow"])
+  
   #Entering Fluid Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Fluid Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_fluid_temperature"])
+  
   #Leaving Fluid Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Leaving Fluid Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["leaving_fluid_temperature"])
+  
   #Entering Wet-Bulb Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Wet-Bulb Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
+  
   #Coil Pressure Drop
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Coil Pressure Drop')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["coil_pressure_drop"])
   page.WaitConfirm(3000)
+  
   #--fill material--
   section2.FindElement("//*[contains(text(),'Fill Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(2000)
@@ -89,7 +92,6 @@
   page.WaitConfirm(1000)
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["fm_approval"])
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  #frame.FindElement("//li[.='"+general_requirement_values["fm_approval"]+"']").Click()
   page.WaitConfirm(4000)
   
   #--Cooling Tower Structure
