@@ -16,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (2).xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (4).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -254,6 +254,11 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["fan_motor_rpm_a"] = sap_field_values["Fan Motor RPM A"].strip()
   air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"].strip()
   air_handling_configurations["fan_motor_quantity_main_a"] = sap_field_values["Fan Motor Quantity - Main A:"].strip()
+  air_handling_configurations["fan_motor_rpm__a_pony"] = sap_field_values["Fan Motor RPM A Pony:"].strip()
+  air_handling_configurations["fan_motor_type_pony"] = sap_field_values["Fan Motor Type - Pony:"].strip()
+  air_handling_configurations["fan_motor_quantity_pony_a"] = sap_field_values["Fan Motor Quantity - Pony A:"].strip()
+  air_handling_configurations["fan_motor_options_a_pony:"] = sap_field_values["Fan Motor Options A Pony:"].strip()
+  air_handling_configurations["shaft_grounding_ring_pony_a"] = sap_field_values["Shaft Grounding Ring - Pony A:"].strip()
   air_handling_configurations["horsepower_motor_b"] = sap_field_values["Horsepower Motor B"].strip()
   air_handling_configurations["fan_motor_rpm_b"] = sap_field_values["Fan Motor RPM B"].strip()
   air_handling_configurations["fan_motor_quantity_b"] = sap_field_values["Fan Motor Quantity - B:"].strip()

@@ -86,8 +86,50 @@
     air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_main_a"]+"']").Click()
     page.WaitConfirm(1000)
   
+  #Fan Motor RPM A Pony:
+  if air_handling_values["fan_motor_rpm__a_pony"] != "SAP Defined" and air_handling_values["fan_motor_rpm__a_pony"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Fan Motor RPM A Pony')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_rpm__a_pony"]+"']").Click()  
+    
+  #Fan Motor Type - Pony:
+  if air_handling_values["fan_motor_type_pony"] != "SAP Defined" and air_handling_values["fan_motor_type_pony"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Fan Motor Type - Pony')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_type_pony"]+"']").Click()
+    page.WaitConfirm(1000)
+    
+  #Fan Motor Quantity - Pony A:
+  if air_handling_values["fan_motor_quantity_pony_a"] != "SAP Defined" and air_handling_values["fan_motor_quantity_pony_a"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Fan Motor Quantity - Pony A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_quantity_pony_a"]+"']").Click()
+    page.WaitConfirm(1000)
+    
+  #Fan Motor Options A Pony:
+  if air_handling_values["fan_motor_options_a_pony:"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Fan Motor Options A Pony')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_a_pony:"]+"']").Click()
+    page.WaitConfirm(1000)
+    
+  #Shaft Grounding Ring - Pony A:
+  if air_handling_values["shaft_grounding_ring_pony_a"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Pony A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Pony A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["shaft_grounding_ring_pony_a"])
+    air_page.FindElement("//*[contains(text(),'Shaft Grounding Ring - Pony A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+    page.WaitConfirm(1000)
+    
   #Horsepower Motor B
-  if air_handling_values["horsepower_motor_b"] != "SAP Defined":
+  if air_handling_values["horsepower_motor_b"] != "SAP Defined" and air_handling_values["horsepower_motor_b"] != "Not Visible":
+    air_page.FindElement("//*[contains(text(),'Horsepower Motor B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
+    page.WaitConfirm(1000)
+    air_frame.FindElement("//li[.='"+air_handling_values["horsepower_motor_b"]+"']").Click()
+    page.WaitConfirm(1000)
+  
+  #Horsepower Motor B
+  if air_handling_values["horsepower_motor_b"] != "SAP Defined" and air_handling_values["horsepower_motor_b"] != "Not Visible":
     air_page.FindElement("//*[contains(text(),'Horsepower Motor B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
     air_frame.FindElement("//li[.='"+air_handling_values["horsepower_motor_b"]+"']").Click()
@@ -110,8 +152,9 @@
   #Fan Motor Options A:
   air_page.FindElement("//*[contains(text(),'Fan Motor Options A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
   page.WaitConfirm(1000)
-  air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_a"]+"']").Click()
-  page.WaitConfirm(1000)
+  air_page.FindElement("//*[contains(text(),'Fan Motor Options A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_options_a"])
+  air_page.FindElement("//*[contains(text(),'Fan Motor Options A')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
+  page.WaitConfirm(2000)
   
   #Add Shaft Grounding Ring?
   air_page.FindElement("//*[contains(text(),'Add Shaft Grounding Ring?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -126,8 +169,7 @@
     page.WaitConfirm(3000)
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(air_handling_values["fan_motor_options_b"])
     air_page.FindElement("//*[contains(text(),'Fan Motor Options B')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-    page.WaitConfirm(2000)
-  
+    page.WaitConfirm(2000) 
   
   #Shaft Grounding Ring - Main B:
   if air_handling_values["shaft_grounding_ring_main_b"] != "Not Visible":
