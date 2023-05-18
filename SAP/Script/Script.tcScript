@@ -19,5 +19,6 @@
 		<child name="FXVAirHandlingConfiguration" key="{C96D2AA7-89E7-4F10-B8DF-CA862DA77084}" path="FXVAirHandlingConfiguration.py" />
 		<child name="FXVAdditionalEnhancement" key="{450A286A-A33F-4C8F-A031-157CDDD3EC48}" path="FXVAdditionalEnhancement.py" />
 		<child name="FXVShippingConfiguration" key="{E3FE0074-E782-421F-8A21-CC0915B5CB6C}" path="FXVShippingConfiguration.py" />
+		<child name="MultiLevelBOM" key="{445CB9F4-B1C9-423B-9C21-A5DBF93A435B}" path="MultiLevelBOM.py" />
 	</children>
 </Root>

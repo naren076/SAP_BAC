@@ -107,10 +107,10 @@
     page.WaitConfirm(1000)
     
   #Fan Motor Options A Pony:
-  if air_handling_values["fan_motor_options_a_pony:"] != "Not Visible":
+  if air_handling_values["fan_motor_options_a_pony"] != "Not Visible":
     air_page.FindElement("//*[contains(text(),'Fan Motor Options A Pony')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click() 
     page.WaitConfirm(1000)
-    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_a_pony:"]+"']").Click()
+    air_frame.FindElement("//li[.='"+air_handling_values["fan_motor_options_a_pony"]+"']").Click()
     page.WaitConfirm(1000)
     
   #Shaft Grounding Ring - Pony A:
