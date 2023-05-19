@@ -16,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (5).xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\FXV SAP Test Parameters (1).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -327,7 +327,7 @@ def shipping_values(sap_field_values):
 def record_price(price,sap_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\BOM_price_list.xlsx")
+  excelFile = Excel.Open("C:\\Users\\narayanan.r\\Documents\\BOM_price_list.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
