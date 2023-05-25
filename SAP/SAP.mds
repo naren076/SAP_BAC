@@ -54,7 +54,7 @@
 		</data>
 	</variables>
 	<settings key="{DA643986-84B6-47A6-820C-630E9EDEB7EF}">
-		<settingsVersion value="15.50" />
+		<settingsVersion value="15.49" />
 		<setting name="AgOpenApp_ExtendedSilverlightObjectTree" type="1" value="False" />
 		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
 			<columns>
@@ -354,7 +354,7 @@
 			</data>
 		</setting>
 		<setting name="OpenApps_MSAA_TreeModel" type="1" value="False" />
-		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="5" colIndex="0">
+		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="15" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
@@ -365,6 +365,16 @@
 				<row val0="NativeFirefoxObject" />
 				<row val0="NativeWebDriverObject" />
 				<row val0="NativeMSAA" />
+				<row val0="NativeVBObject" />
+				<row val0="NativeDelphiObject" />
+				<row val0="NativeTextObject" />
+				<row val0="NativeJavaObject" />
+				<row val0="NativeClrObject" />
+				<row val0="NativeCPPObject" />
+				<row val0="NativeJavaFXObject" />
+				<row val0="NativeSAPObject" />
+				<row val0="NativeQtObject" />
+				<row val0="NativeUIAObject" />
 			</data>
 		</setting>
 		<setting name="OpenApps_ProcessFilter_ProcessFilterMode" type="6" rowIndex="0" colIndex="0">
