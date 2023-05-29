@@ -8,7 +8,12 @@
 	<config language="{7D0FC31C-B0A7-4F4F-B5AF-1F16370169CB}" />
 	<testItems key="{2D2B34C8-5B78-4C90-8004-9AA513123E8D}" version="14">
 		<children>
-			<testItem name="InitialTestRun" key="{84E63BFF-9FAB-42CE-A236-E14BE8A22B07}" group="False" parallel="False" enabled="True" testMoniker="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}sap_test" count="1" timeout="0" stopOnError="0" stopOnException="0" description="" tmsData="" testCase="True">
+			<testItem name="S3EProduct" key="{84E63BFF-9FAB-42CE-A236-E14BE8A22B07}" group="False" parallel="False" enabled="True" testMoniker="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}sap_test" count="1" timeout="0" stopOnError="0" stopOnException="0" description="" tmsData="" testCase="True">
+				<testParameters />
+				<environments activeCloud="SWT" />
+				<children />
+			</testItem>
+			<testItem name="FXVProduct" key="{5BA40698-02DC-4C0A-BF3B-061CFFFBB7C3}" group="False" parallel="False" enabled="True" testMoniker="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}sap_test" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True">
 				<testParameters />
 				<environments activeCloud="SWT" />
 				<children />
@@ -49,7 +54,7 @@
 		</data>
 	</variables>
 	<settings key="{DA643986-84B6-47A6-820C-630E9EDEB7EF}">
-		<settingsVersion value="15.50" />
+		<settingsVersion value="15.49" />
 		<setting name="AgOpenApp_ExtendedSilverlightObjectTree" type="1" value="False" />
 		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
 			<columns>
@@ -349,7 +354,7 @@
 			</data>
 		</setting>
 		<setting name="OpenApps_MSAA_TreeModel" type="1" value="False" />
-		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="5" colIndex="0">
+		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="15" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
@@ -360,6 +365,16 @@
 				<row val0="NativeFirefoxObject" />
 				<row val0="NativeWebDriverObject" />
 				<row val0="NativeMSAA" />
+				<row val0="NativeVBObject" />
+				<row val0="NativeDelphiObject" />
+				<row val0="NativeTextObject" />
+				<row val0="NativeJavaObject" />
+				<row val0="NativeClrObject" />
+				<row val0="NativeCPPObject" />
+				<row val0="NativeJavaFXObject" />
+				<row val0="NativeSAPObject" />
+				<row val0="NativeQtObject" />
+				<row val0="NativeUIAObject" />
 			</data>
 		</setting>
 		<setting name="OpenApps_ProcessFilter_ProcessFilterMode" type="6" rowIndex="0" colIndex="0">

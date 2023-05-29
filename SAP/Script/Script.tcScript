@@ -14,5 +14,11 @@
 		<child name="ShippingConfigurationPage" key="{026CC798-F1B3-4926-A42F-A056BF7E0759}" path="ShippingConfigurationPage.py" />
 		<child name="FXVProduct" key="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}" path="FXVProduct.py" />
 		<child name="FXVGeneralRequirements" key="{22076D40-8139-49DA-B302-2D3EE8261F9C}" path="FXVGeneralRequirements.py" />
+		<child name="FXVWaterManagementConfiguration" key="{DB132FBB-AB38-43C8-B4C7-4BFB1ED0E6D8}" path="FXVWaterManagementConfiguration.py" />
+		<child name="FXVCoilConfiguration" key="{ADBA060D-2A84-4779-8F2B-482DD14DB8A5}" path="FXVCoilConfiguration.py" />
+		<child name="FXVAirHandlingConfiguration" key="{C96D2AA7-89E7-4F10-B8DF-CA862DA77084}" path="FXVAirHandlingConfiguration.py" />
+		<child name="FXVAdditionalEnhancement" key="{450A286A-A33F-4C8F-A031-157CDDD3EC48}" path="FXVAdditionalEnhancement.py" />
+		<child name="FXVShippingConfiguration" key="{E3FE0074-E782-421F-8A21-CC0915B5CB6C}" path="FXVShippingConfiguration.py" />
+		<child name="MultiLevelBOM" key="{445CB9F4-B1C9-423B-9C21-A5DBF93A435B}" path="MultiLevelBOM.py" />
 	</children>
 </Root>

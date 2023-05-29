@@ -1,6 +1,4 @@
-﻿#import WaterManagementConfiguration
-
-def set_configuration_details(textbox, page, general_requirement_values):
+﻿def set_configuration_details(textbox, page, general_requirement_values):
   frame = textbox.frameC120
   section = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
   section2 = section.sectionSplitter0Content1
@@ -23,10 +21,7 @@ def set_configuration_details(textbox, page, general_requirement_values):
   #----Number of Circuits required
   section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(1000)
-  #frame.FindElement("//li[.='"+general_requirement_values["number_of_circuits_required"]+"']").Click()
-  section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["number_of_circuits_required"])
-  section2.FindElement("//*[contains(text(),'Number of Circuits Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  
+  frame.FindElement("//li[.='"+general_requirement_values["number_of_circuits_required"]+"']").Click()  
   page.WaitConfirm(1000)
   
   #----Select Fluid
@@ -41,25 +36,31 @@ def set_configuration_details(textbox, page, general_requirement_values):
   frame.FindElement("//li[.='"+general_requirement_values["unit_flow_uom"]+"']").Click()
   page.WaitConfirm(1000)
   
+  #--Unit flow
   textbox = section2.FindElement("//input[@id=(//label[.='Unit flow:']/@for)]")
   textbox.Keys(general_requirement_values["unit_flow"])
   
+  #Entering Fluid Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Fluid Temp')]/@for)]")
   textbox.Click()
-  textbox.Keys(general_requirement_values["entering_water_temperature"])
+  textbox.Keys(general_requirement_values["entering_fluid_temperature"])
   
+  #Leaving Fluid Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Leaving Fluid Temp')]/@for)]")
   textbox.Click()
-  textbox.Keys(general_requirement_values["leaving_water_temperature"])
+  textbox.Keys(general_requirement_values["leaving_fluid_temperature"])
   
+  #Entering Wet-Bulb Temp
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Entering Wet-Bulb Temp')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["entering_wet_bulb_temp"])
   
+  #Coil Pressure Drop
   textbox = section2.FindElement("//input[@id=(//label[contains(@title,'Coil Pressure Drop')]/@for)]")
   textbox.Click()
   textbox.Keys(general_requirement_values["coil_pressure_drop"])
   page.WaitConfirm(3000)
+  
   #--fill material--
   section2.FindElement("//*[contains(text(),'Fill Material')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
   page.WaitConfirm(2000)
@@ -78,7 +79,7 @@ def set_configuration_details(textbox, page, general_requirement_values):
   page.WaitConfirm(1000)
   section2.FindElement("//*[contains(text(),'California OSHPD Project?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["california_oshpd_proj"])
   section2.FindElement("//*[contains(text(),'California OSHPD Project?')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  page.WaitConfirm(1000)
+  page.WaitConfirm(2000)
   
    #--Special Seismic Cert Required--
   section2.FindElement("//*[contains(text(),'Special Seismic Cert Required')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
@@ -91,14 +92,15 @@ def set_configuration_details(textbox, page, general_requirement_values):
   page.WaitConfirm(1000)
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys(general_requirement_values["fm_approval"])
   section2.FindElement("//*[contains(text(),'FM Approval')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
-  #frame.FindElement("//li[.='"+general_requirement_values["fm_approval"]+"']").Click()
-  page.WaitConfirm(1000)
+  page.WaitConfirm(4000)
   
   #--Cooling Tower Structure
-  section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
-  page.WaitConfirm(1000)
-  frame.FindElement("//li[.='"+general_requirement_values["cooling_tower_structure"]+"']").Click()
-  page.WaitConfirm(1000) 
+  isEnabled = section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")
+  if isEnabled == "false":
+    section2.FindElement("//*[contains(text(),'Cooling Tower Structure')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()
+    page.WaitConfirm(1000)
+    frame.FindElement("//li[.='"+general_requirement_values["cooling_tower_structure"]+"']").Click()
+    page.WaitConfirm(1000) 
   
   #--Anchorage
   isEnabled = section2.FindElement("//*[contains(text(),'Anchorage')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']//preceding-sibling::input[@class='sapUiPseudoInvisibleText sapMSltHiddenSelect']").getAttribute("aria-readonly")
@@ -107,6 +109,7 @@ def set_configuration_details(textbox, page, general_requirement_values):
     page.WaitConfirm(1000)
     frame.FindElement("//li[.='"+general_requirement_values["anchorage"]+"']").Click()
     page.WaitConfirm(1000)
+    
   
   #--Shipping/Production Plan
   section2.FindElement("//*[contains(text(),'Shipping/Production Plant')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Click()

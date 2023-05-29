@@ -3,6 +3,12 @@ import searchBox
 import createSalesPage
 import createStandardOrder
 import FXVGeneralRequirements
+import FXVWaterManagementConfiguration
+import FXVCoilConfiguration
+import FXVAirHandlingConfiguration
+import FXVAdditionalEnhancement
+import FXVShippingConfiguration
+import MultiLevelBOM
 
 RecNo = 0
 
@@ -10,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\FXV SAP Test Parameters.xlsx", "Test Cases FINAL")
+  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\FXV SAP Test Parameters (1).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -53,7 +59,77 @@ def sap_test():
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
+     continue  
+    #--Water Management Configuration
+    FXVWaterManagementConfiguration.water_management(page, water_management_values(sap_field_values))   
+    if Log.ErrCount > ErrCount:
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
+     continue   
+    #-- Coil Configuration
+    FXVCoilConfiguration.coil_configuration(page, coil_configuration_values(sap_field_values))   
+    if Log.ErrCount > ErrCount:
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
      continue
+    
+    frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
+    textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
+    textNode2 = textNode.sectionSplitter0Content1
+    #--Air Handling Configuration
+    FXVAirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+     RecNo = RecNo + 1
+     Log.PopLogFolder()
+     Driver.Next()
+     continue
+    
+    #--FXVAdditional Enhancement
+    FXVAdditionalEnhancement.additional_configs(page, frame, textNode2, additional_config_vaues(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+    
+    #Shipping Page
+    FXVShippingConfiguration.shipping_configurations(page, frame, textNode2, shipping_values(sap_field_values))
+    if Log.ErrCount > ErrCount:
+      RecNo = RecNo + 1
+      Log.PopLogFolder()
+      Driver.Next()
+      continue
+      
+    #Price  
+    price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
+    record_price(price,sap_field_values)
+    
+    #Done button
+    frame.FindElement("//button[.='Done']").Click()
+    
+    frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
+    frame2 = frame.formWebguiform0
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("frameC104", 30000).Exists):
+      review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+      review_frame.FindElement("//button[.='Apply']").Click()
+          
+    textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+    if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("panelContinue", 75000).Exists):
+      textbox.FindElement("//div[.='Continue']").Click()
+    page.WaitConfirm(3000)
+    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    image.FindElement("//a[@title='Navigate to Home Page']").Click()
+    
+    #SearchBOX
+    searchBox.search_item(page, "csk2")
+    
+    #Multi-Level Sales Order BOM
+    MultiLevelBOM.multi_level_bom(panel,textbox,page,sap_field_values)
+      
+    page.WaitConfirm(10000)
+    Log.PopLogFolder()     
     RecNo = RecNo + 1
     Driver.Next(); # Goes to the next record
     
@@ -75,8 +151,7 @@ def ProcessData(browser, page):
     browser = Aliases.browser
     browser.BrowserWindow.Maximize()
   return sap_field_values
-  general_requirement_values(sap_field_values)
-  
+   
 # Sales Order Values
 def sales_order_values(sap_field_values):
   sales_order_field_values = {}
@@ -107,8 +182,8 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["unit_flow"] = sap_field_values["Unit Flow"].strip()
   general_requirement_configurations["number_of_circuits_required"] = sap_field_values["Number of Circuits Required"].strip()
   general_requirement_configurations["fluid"] = sap_field_values["Fluid"].strip()
-  general_requirement_configurations["entering_water_temperature"] = sap_field_values["Entering Water Temperature"].strip()
-  general_requirement_configurations["leaving_water_temperature"] = sap_field_values["Leaving Water Temperature"].strip()
+  general_requirement_configurations["entering_fluid_temperature"] = sap_field_values["Entering Fluid Temp"].strip()
+  general_requirement_configurations["leaving_fluid_temperature"] = sap_field_values["Leaving Fluid Temperature"].strip()
   general_requirement_configurations["entering_wet_bulb_temp"] = sap_field_values["Entering Wet-Bulb Temp"].strip()
   general_requirement_configurations["coil_pressure_drop"] = sap_field_values["Coil Pressure Drop"].strip()
   general_requirement_configurations["fill_material"] = sap_field_values["Fill Material"].strip()
@@ -117,9 +192,7 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["special_seismic"] = sap_field_values["Special Seismic Cert Required"].strip()
   general_requirement_configurations["fm_approval"] = sap_field_values["FM Approval"].strip()
   general_requirement_configurations["cooling_tower_structure"] = sap_field_values["Cooling Tower Structure"].strip()
-  #general_requirement_configurations["basinless_unit"] = sap_field_values["Basinless Unit"].strip()
   general_requirement_configurations["anchorage"] = sap_field_values["Anchorage"].strip()
-  #general_requirement_configurations["anchor_bolt_hole_spacing"] = sap_field_values["Anchor Bolt Hole Spacing"].strip()
   general_requirement_configurations["shipping_plant"] = sap_field_values["Shipping/Production Plant"].strip()
   general_requirement_configurations["field_assembly"] = sap_field_values["Knockdown For Field Assembly?"].strip()
   general_requirement_configurations["base_seismic_rating"] = sap_field_values["Base Seismic Rating"].strip()
@@ -136,27 +209,34 @@ def general_requirement_values(sap_field_values):
 def water_management_values(sap_field_values):
   water_management_configurations = {}
   water_management_configurations["material_of_construction"] = sap_field_values["Material of Construction"].strip()
-  water_management_configurations["casing_lovuver_material"] = sap_field_values["Casing and Louver Material"].strip()
-  water_management_configurations["independent_cell_operation"] = sap_field_values["Independent Cell Operation?"].strip()
-  water_management_configurations["inlet_outlet_connections"] = sap_field_values["Inlet/Outlet Connectons"].strip()
-  water_management_configurations["outlet_strainer_material"] = sap_field_values["Outlet Strainer Material"].strip()
-  water_management_configurations["depressed_sump_box"] = sap_field_values["Depressed Sump Box"].strip()
-  water_management_configurations["sgl_inlet_piping_draing_valve"] = sap_field_values["SGL Inlet Piping Drain Valve"].strip()
+  water_management_configurations["unit_orientation"] = sap_field_values["Unit Orientation"].strip()
+  water_management_configurations["spray_water_outlet"] = sap_field_values["Spray Water Outlet"].strip()
+  water_management_configurations["spray_distribution_piping"] = sap_field_values["Spray Distribution Piping"].strip()
+  water_management_configurations["spray_pump_motor_type"] = sap_field_values["Spray Pump Motor Type"].strip()
+  water_management_configurations["pump_motor_efficiency_class"] = sap_field_values["Pump Motor Efficiency Class"].strip()
   water_management_configurations["basin_water_level_control"] = sap_field_values["Basin Water Level Control"].strip()
   water_management_configurations["basin_heaters"] = sap_field_values["Basin Heaters"].strip()
+  water_management_configurations["heater_element_material"] = sap_field_values["Heater Element Material"].strip()
+  water_management_configurations["basin_heater_controls"] = sap_field_values["Basin Heater Controls"].strip()
   water_management_configurations["basin_sweeper_piping"] = sap_field_values["Basin Sweeper Piping"].strip()
   water_management_configurations["float_switch"] = sap_field_values["Float Switch"].strip()
-  water_management_configurations["flume_box_options"] = sap_field_values["Flume Box Options"].strip()
-  water_management_configurations["bottom_equalizer"] = sap_field_values["Bottom Equalizer/Bypass conn"].strip()
-  water_management_configurations["end_equalizer"] = sap_field_values["End Equalizer/Bypass conn"].strip()
-  water_management_configurations["standard_inlet_connection_size"] = sap_field_values["Standard Inlet Connection Size"].strip()
-  water_management_configurations["inlet_connection_options"] = sap_field_values["Inlet Connection Options"].strip()
-  water_management_configurations["inlet_connection_size_change"] = sap_field_values["Inlet Connection Size Change"].strip()
-  water_management_configurations["standard_outlet_connection_size"] = sap_field_values["Standard Outlet Conn Size"].strip()
-  water_management_configurations["outlet_connection_options"] = sap_field_values["Outlet Connection Options"].strip()
-  water_management_configurations["outlet_connection_size_change"] = sap_field_values["Outlet Connection Size Change"].strip()
-  
+    
   return water_management_configurations
+  
+#--Set Values for Coil Configuration---
+def coil_configuration_values(sap_field_values):
+  coil_configurations = {}
+  coil_configurations["coil_style"] = sap_field_values["Coil Style"].strip()
+  coil_configurations["coil_material_of_construction"] = sap_field_values["Coil Material of Construction"].strip()
+  coil_configurations["coil_finning"] = sap_field_values["Coil Finning"].strip()
+  coil_configurations["coil_gauge"] = sap_field_values["Coil Gauge"].strip()
+  coil_configurations["asme_coil"] = sap_field_values["ASME Coil"].strip()
+  coil_configurations["canadianregistrationnumber_crn"] = sap_field_values["CanadianRegistrationNumber-CRN"].strip()
+  coil_configurations["coil_connection_pairs"] = sap_field_values["Coil Connection Pairs"].strip()
+  coil_configurations["coil_connection_std_size"] = sap_field_values["Coil Connection Std Size"].strip()
+  coil_configurations["coil_connection_type"] = sap_field_values["Coil Conneciton Type"].strip()
+  
+  return coil_configurations
   
 #--Set Values for Air Handling System---
 def air_handling_values(sap_field_values):
@@ -166,23 +246,37 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["system_voltage"] = sap_field_values["System Voltage"].strip()
   air_handling_configurations["fan_type"] = sap_field_values["Fan Type"].strip()
   air_handling_configurations["fan_drive_system"] = sap_field_values["Fan Drive System"].strip()
+  air_handling_configurations["upgrade_fan_shaft_material?"] = sap_field_values["Upgrade Fan Shaft Material?"].strip()
   air_handling_configurations["enclosure"] = sap_field_values["Enclosure"].strip()
   air_handling_configurations["motor_efficiency_class"] = sap_field_values["Motor Efficiency Class"].strip()
   air_handling_configurations["manufacturer"] = sap_field_values["Manufacturer"].strip()
   air_handling_configurations["horsepower_motor_a"] = sap_field_values["Horsepower Motor A"].strip()
-  air_handling_configurations["fan_motor_rpm"] = sap_field_values["Fan Motor RPM A"].strip()
+  air_handling_configurations["fan_motor_rpm_a"] = sap_field_values["Fan Motor RPM A"].strip()
   air_handling_configurations["fan_motor_type"] = sap_field_values["Fan Motor Type"].strip()
+  air_handling_configurations["fan_motor_quantity_main_a"] = sap_field_values["Fan Motor Quantity - Main A:"].strip()
+  air_handling_configurations["fan_motor_rpm__a_pony"] = sap_field_values["Fan Motor RPM A Pony:"].strip()
+  air_handling_configurations["fan_motor_type_pony"] = sap_field_values["Fan Motor Type - Pony:"].strip()
+  air_handling_configurations["fan_motor_quantity_pony_a"] = sap_field_values["Fan Motor Quantity - Pony A:"].strip()
+  air_handling_configurations["fan_motor_options_a_pony"] = sap_field_values["Fan Motor Options A Pony:"].strip()
+  air_handling_configurations["shaft_grounding_ring_pony_a"] = sap_field_values["Shaft Grounding Ring - Pony A:"].strip()
+  air_handling_configurations["horsepower_motor_b"] = sap_field_values["Horsepower Motor B"].strip()
+  air_handling_configurations["fan_motor_rpm_b"] = sap_field_values["Fan Motor RPM B"].strip()
+  air_handling_configurations["fan_motor_quantity_b"] = sap_field_values["Fan Motor Quantity - B:"].strip()
   air_handling_configurations["fan_motor_options_a"] = sap_field_values["Fan Motor Options A"].strip()
-  #air_handling_configurations["add_shaft_grounding_ring"] = sap_field_values["Add Shaft Grounding Ring?"]
+  air_handling_configurations["add_shaft_grounding_ring?"] = sap_field_values["Add Shaft Grounding Ring?"].strip()
+  air_handling_configurations["fan_motor_options_b"] = sap_field_values["Fan Motor Options B"].strip()
+  air_handling_configurations["shaft_grounding_ring_main_b"] = sap_field_values["Shaft Grounding Ring - Main B:"].strip()
   air_handling_configurations["vibration_cutout_switch"] = sap_field_values["Vibration Cutout Switch (VCOS)"].strip()
   air_handling_configurations["extended_lube_line"] = sap_field_values["Extended Lube Line"].strip()
   air_handling_configurations["fan_motor_removal_system"] = sap_field_values["Fan Motor Removal System"].strip()
+  air_handling_configurations["factory_wiring"] = sap_field_values["Factory Wiring"].strip()
   
   return air_handling_configurations
   
 def additional_config_vaues(sap_field_values):
   #-- Set additional Config values
   additional_configs = {}
+  additional_configs["coil_air_intake_option"] = sap_field_values["Coil Air Intake Option"].strip()
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"].strip()
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"].strip()
   ad = additional_configs["air_discharge_configuration"]
@@ -199,43 +293,47 @@ def additional_config_vaues(sap_field_values):
     second_element = aqString.GetListItem(ad, 1)
     x_path = "//li[contains(text(), \"" + first_element + "\") and contains(text(), '"+second_element+"')]"
     additional_configs["x_path"] = x_path
+  additional_configs["insulation"] = sap_field_values["Insulation"].strip()
   additional_configs["upgrade_fan_guard_material"] = sap_field_values["Upgrade Fan Guard Material?"].strip()
-  additional_configs["fan_deck_safety_rails"] = sap_field_values["Fan Deck Safety Rails"].strip()
-  additional_configs["3Side_safetyRail_to_exist_cell"] = sap_field_values["3Side SafetyRail to Exist Cell"].strip()
-  additional_configs["ladder_fan_deck"] = sap_field_values["Ladder to Fan Deck"].strip()
-  additional_configs["add_safety_cages_to_ladders"] = sap_field_values["Add Safety Cages to Ladders?"].strip()
-  additional_configs["safety_gates_to_all_ladder"] = sap_field_values["Safety Gates to All Ladder?"].strip()
-  additional_configs["ladder_safety_cage_extensions"] = sap_field_values["Ladder/Safety Cage Extensions"].strip()
-  additional_configs["moc_platform_supports"] = sap_field_values["MOC-Platform Supports"].strip()
-  additional_configs["fan_deck_ext_with_handrils"] = sap_field_values["Fan Deck Ext with Handrails"].strip()
+  additional_configs["fm_fan_shrouds_for_zone_hm"] = sap_field_values["FM Fan Shrouds For Zone HM"].strip()
+  additional_configs["air_intake_scr_and_inlet_wings"] = sap_field_values["Air Intake Scr And Inlet Wings"].strip()
+  additional_configs["internal_access"] = sap_field_values["Internal Access"].strip()
   additional_configs["louver_face_platform"] = sap_field_values["Louver Face Platform"].strip()
   additional_configs["access_door_platform"] = sap_field_values["Access Door Platform"].strip()
-  additional_configs["louver_face_cage_extension"] = sap_field_values["Louver Face Ldr/Cage Extension "].strip()
-  additional_configs["access_door_pltf"] = sap_field_values["Access Door Pltf Ladder Ext"].strip()
-  additional_configs["internal_walkway_access_door"] = sap_field_values["Internal Walkway @ Access Door"].strip()
-  additional_configs["internal_walkway_moc"] = sap_field_values["Internal Walkway MOC"].strip()
-  additional_configs["internal_access"] = sap_field_values["Internal Access"]
+  additional_configs["ladder_safety_cage_extensions"] = sap_field_values["Ladder/Safety Cage Extensions"].strip()
+  
   return additional_configs
 
 #Set Shipping Configs  
 def shipping_values(sap_field_values):
   shipping_configs = {}
+  shipping_configs["three_Piece_rig_construction"] = sap_field_values["3 Piece Rig Construction"].strip()
+  shipping_configs["type_of_crating"] = sap_field_values["Type of Crating"].strip()
   shipping_configs["special_required"] = sap_field_values["Specials Required?"].strip()
+  shipping_configs["configuration_type"] = sap_field_values["Configuration Type"].strip()
+  shipping_configs["eto_type"] = sap_field_values["ETO Type"].strip()
+  shipping_configs["model_with_suffix"] = sap_field_values["Model with Suffix"].strip()
+  shipping_configs["truck_type"] = sap_field_values["Truck Type:"].strip()
+  shipping_configs["fan_type_freight"] = sap_field_values["Fan Type Freight:"].strip()
+  shipping_configs["side_air_intake_option_freight"] = sap_field_values["Side Air Intake Option Freight:"].strip()
+  shipping_configs["air_discharge_configuration_f"] = sap_field_values["Air Discharge Configuration F:"].strip()
+  shipping_configs["louver_face_platform_freight"] = sap_field_values["Louver Face Platform Freight"].strip()
+  shipping_configs["access_door_platform_freight"] = sap_field_values["Access Door Platform Freight"].strip()
   
   return shipping_configs
   
 
   
-def record_price(price, rec_no, general_requirement_values):
+def record_price(price,sap_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\narayanan.g\\Documents\\test.xlsx")
+  excelFile = Excel.Open("C:\\Users\\narayanan.r\\Documents\\BOM_price_list.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
   rowIndex = excelSheet.RowCount + 1
-  excelSheet.Cell["A", rowIndex].Value = rec_no
-  excelSheet.Cell["B", rowIndex].Value = general_requirement_values["model_number"]
+  excelSheet.Cell["A", rowIndex].Value = sap_values["Count"]
+  excelSheet.Cell["B", rowIndex].Value = sap_values["Model Number"]
   excelSheet.Cell["C", rowIndex].Value = price
 
   # Save the file to apply the changes
