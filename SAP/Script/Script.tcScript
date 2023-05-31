@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
 	<children>
-		<child name="Unit2" key="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}" path="Unit2.py" />
+		<child name="S3EProduct" key="{FFE43AD6-35EF-453B-B68F-1D1D1171A053}" path="S3EProduct.py" />
 		<child name="loginForm" key="{AD4F063B-FAD8-4378-B06C-055A69CF64CD}" path="loginForm.py" />
 		<child name="createSalesPage" key="{8BE3F9F9-0ACE-474D-A6E2-9C96813C7D9A}" path="createSalesPage.py" />
 		<child name="createStandardOrder" key="{73D39DE9-3651-4308-BEBE-772097212D2E}" path="createStandardOrder.py" />
 		<child name="searchBox" key="{5C21BFBA-6112-4380-A231-39048A91A75C}" path="searchBox.py" />
 		<child name="CNRegionConfigurationPage" key="{02DDB98E-046C-47E2-B09A-7002FDF9FBD8}" path="CNRegionConfigurationPage.py" />
-		<child name="USRegionConfigurationPage" key="{16F563DF-4220-4E76-BDA8-A21616D7D429}" path="USRegionConfigurationPage.py" />
 		<child name="WaterManagementConfiguration" key="{CDB12478-0E17-4D0C-BE21-5EC71AF04E94}" path="WaterManagementConfiguration.py" />
 		<child name="AirHandlingConfiguration" key="{FA6CD928-5785-497B-AB2F-90CC0D380D9B}" path="AirHandlingConfiguration.py" />
 		<child name="AdditionalEnhancement" key="{AB05489A-52D1-4955-A2C1-E0A16695BC56}" path="AdditionalEnhancement.py" />
