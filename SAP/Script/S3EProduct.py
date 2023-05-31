@@ -2,7 +2,6 @@
 import searchBox
 import createSalesPage
 import createStandardOrder
-import USRegionConfigurationPage
 import CNRegionConfigurationPage
 import WaterManagementConfiguration
 import AirHandlingConfiguration
@@ -45,7 +44,7 @@ def sap_test():
       Driver.Next()
       continue
       
-     #---Create Standard Order:
+    #---Create Standard Order:
     sales_order_panel = page.sectionShellSplitCanvas
     sales_document_textbox = sales_order_panel.frameApplicationSalesdocumentCre.formWebguiform0
     createStandardOrder.create_standard_order(sales_document_textbox, page, standard_order_values(sap_field_values))
@@ -71,7 +70,7 @@ def sap_test():
      Driver.Next()
      continue
     
-     #---Air Handling System Configuration:       
+    #---Air Handling System Configuration:       
     variant_configuration_frame = sales_document_textbox.frameC102
     variant_configuration_textNode = variant_configuration_frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
     variant_configuration_textNode2 = variant_configuration_textNode.sectionSplitter0Content1    

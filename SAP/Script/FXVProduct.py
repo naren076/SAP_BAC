@@ -16,7 +16,7 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (7).xlsx", "Test Cases FINAL (3)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (7).xlsx", "Test Cases FINAL (2)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
@@ -46,7 +46,7 @@ def sap_test():
       Driver.Next()
       continue
       
-     #---Create Standard Order:
+    #---Create Standard Order:
     sales_order_panel  = page.sectionShellSplitCanvas
     sales_document_textbox  = sales_order_panel.frameApplicationSalesdocumentCre.formWebguiform0
     createStandardOrder.create_standard_order(sales_document_textbox, page, standard_order_values(sap_field_values))
