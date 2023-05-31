@@ -216,5 +216,5 @@
     air_page.FindElement("//*[contains(text(),'Factory Wiring')]//parent :: span//parent :: label//parent::div//parent::div//span[@class='sapMSltLabel']").Keys("[Enter]")
   air_handling_page.WaitConfirm(1000)
   
-   #---go to Additional Enhancements:
+  #---go to Additional Enhancements:
   air_page.FindElement("//span[.='Additional Enhancements']").Click()
