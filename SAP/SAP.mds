@@ -13,7 +13,7 @@
 				<environments activeCloud="SWT" />
 				<children />
 			</testItem>
-			<testItem name="FXVProduct" key="{5BA40698-02DC-4C0A-BF3B-061CFFFBB7C3}" group="False" parallel="False" enabled="True" testMoniker="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}sap_test" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True">
+			<testItem name="FXVProduct" key="{5BA40698-02DC-4C0A-BF3B-061CFFFBB7C3}" group="False" parallel="False" enabled="True" testMoniker="{19A2B216-07AA-4A3B-BDFC-2F9D61FEA0F9}sap_test" count="1" timeout="0" stopOnError="0" stopOnException="2" description="" tmsData="" testCase="True">
 				<testParameters />
 				<environments activeCloud="SWT" />
 				<children />
@@ -54,7 +54,7 @@
 		</data>
 	</variables>
 	<settings key="{DA643986-84B6-47A6-820C-630E9EDEB7EF}">
-		<settingsVersion value="15.49" />
+		<settingsVersion value="15.50" />
 		<setting name="AgOpenApp_ExtendedSilverlightObjectTree" type="1" value="False" />
 		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
 			<columns>
