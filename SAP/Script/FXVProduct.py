@@ -16,12 +16,12 @@ def sap_test():
   global RecNo
   # Creates the driver
   # If you connect to an Excel 2007 sheet, use the following method call:
-  Driver = DDT.ExcelDriver("C:\\Users\\narayanan.g\\Downloads\\FXV SAP Test Parameters (1).xlsx", "Test Cases FINAL (2)")
+  Driver = DDT.ExcelDriver("C:\\Users\\vaishnavi.r\\Downloads\\FXV SAP Test Parameters (7).xlsx", "Test Cases FINAL (3)")
   Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
   browser = Aliases.browser
   browser.BrowserWindow.Maximize()
   page = browser.pageFlp
-  #--Login form
+  #---Login Form:
   loginForm.login_form(page, Project.Variables.username)
   
   while not Driver.EOF():
@@ -32,108 +32,110 @@ def sap_test():
     Log.PushLogFolder(Fldr)
     sap_field_values = ProcessData(browser, page); # Processes data
     page.WaitConfirm(3000)
+    #---SearchBox:
     searchBox.search_item(page, "va01")
     page.FindElement("//a[contains(., 'Create Sales Orders')]").Click()
-    form = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']")
-     
-    order_form = form.FindElement("//div[@id='webguiPage0']/form")
-    #--Enter order Type--  
+    
+    #---Create Sales Document:  
+    sales_document_form  = page.FindElement("//iframe[@name='application-SalesDocument-create-iframe']") 
+    order_form = sales_document_form .FindElement("//div[@id='webguiPage0']/form") 
     createSalesPage.create_sales_order(order_form, sales_order_values(sap_field_values))
     if Log.ErrCount > ErrCount:
       RecNo = RecNo + 1
       Log.PopLogFolder()
       Driver.Next()
       continue
-     #--Enter Order Details---
-    panel = page.sectionShellSplitCanvas
-    textbox = panel.frameApplicationSalesdocumentCre.formWebguiform0
-    createStandardOrder.create_standard_order(browser, textbox, page, standard_order_values(sap_field_values))
+      
+     #---Create Standard Order:
+    sales_order_panel  = page.sectionShellSplitCanvas
+    sales_document_textbox  = sales_order_panel.frameApplicationSalesdocumentCre.formWebguiform0
+    createStandardOrder.create_standard_order(sales_document_textbox, page, standard_order_values(sap_field_values))
     if Log.ErrCount > ErrCount:
          RecNo = RecNo + 1
          Log.PopLogFolder()
          Driver.Next()
          continue
-    #--Enter Configuration--
-    FXVGeneralRequirements.set_configuration_details(textbox, page, general_requirement_values(sap_field_values))   
+         
+    #---General Requirement Configuration:
+    FXVGeneralRequirements.set_configuration_details(sales_document_textbox, page, general_requirement_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
      continue  
-    #--Water Management Configuration
+     
+    #---Water Management Configuration:
     FXVWaterManagementConfiguration.water_management(page, water_management_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
      continue   
-    #-- Coil Configuration
+     
+    #---Coil Configuration:
     FXVCoilConfiguration.coil_configuration(page, coil_configuration_values(sap_field_values))   
     if Log.ErrCount > ErrCount:
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
-     continue
-    
-    frame = page.sectionShellSplitCanvas.frameApplicationSalesdocumentCre.formWebguiform0.frameC102
-    textNode = frame.sectionShellSplitCanvas.sectionApplicationVariantconfigu
-    textNode2 = textNode.sectionSplitter0Content1
-    #--Air Handling Configuration
-    FXVAirHandlingConfiguration.air_handling(page, frame, textNode2, air_handling_values(sap_field_values))
+     continue  
+      
+    #---Air Handling System Configuration: 
+    variant_configuration_frame  = sales_document_textbox.frameC102
+    variant_configuration_textNode  = variant_configuration_frame .sectionShellSplitCanvas.sectionApplicationVariantconfigu
+    variant_configuration_textNode2  = variant_configuration_textNode.sectionSplitter0Content1
+    FXVAirHandlingConfiguration.air_handling(page, variant_configuration_frame , variant_configuration_textNode2, air_handling_values(sap_field_values))
     if Log.ErrCount > ErrCount:
      RecNo = RecNo + 1
      Log.PopLogFolder()
      Driver.Next()
      continue
     
-    #--FXVAdditional Enhancement
-    FXVAdditionalEnhancement.additional_configs(page, frame, textNode2, additional_config_vaues(sap_field_values))
+    #---Additional Enhancement Configuration: 
+    FXVAdditionalEnhancement.additional_configs(page, variant_configuration_frame , variant_configuration_textNode2, additional_config_values(sap_field_values))
     if Log.ErrCount > ErrCount:
       RecNo = RecNo + 1
       Log.PopLogFolder()
       Driver.Next()
       continue
     
-    #Shipping Page
-    FXVShippingConfiguration.shipping_configurations(page, frame, textNode2, shipping_values(sap_field_values))
+    #---Shipping Configuration: 
+    FXVShippingConfiguration.shipping_configurations(page, variant_configuration_frame , variant_configuration_textNode2, shipping_values(sap_field_values))
     if Log.ErrCount > ErrCount:
       RecNo = RecNo + 1
       Log.PopLogFolder()
       Driver.Next()
       continue
       
-    #Price  
-    price = frame.FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
+    #---Price:  
+    price = variant_configuration_frame .FindElement("#configurationComponent---configurationView--headerContainer-2--headerFieldPrice").text
     record_price(price,sap_field_values)
-    
-    #Done button
-    frame.FindElement("//button[.='Done']").Click()
-    
-    frame = browser.pageFlp.sectionShellSplitCanvas.frameApplicationSalesdocumentCre
-    frame2 = frame.formWebguiform0
+      
+    #---Done button:
+    variant_configuration_frame .FindElement("//button[.='Done']").Click()
     if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("frameC104", 30000).Exists):
-      review_frame = frame2.FindElement("//div[@id='C104-r']/iframe")
+      review_frame = sales_document_textbox.FindElement("//div[@id='C104-r']/iframe")
       review_frame.FindElement("//button[.='Apply']").Click()
-          
-    textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
+    page.WaitConfirm(4000)      
+    sales_document_textbox.FindElement("//div[@id='msgarea']//span[2]/div").Click()
     if(NameMapping.Sys.browser.pageFlp.frameApplicationSalesdocumentCre.WaitNamedChild("panelContinue", 75000).Exists):
-      textbox.FindElement("//div[.='Continue']").Click()
+      sales_document_textbox.FindElement("//div[.='Continue']").Click()
     page.WaitConfirm(3000)
-    image = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
-    image.FindElement("//a[@title='Navigate to Home Page']").Click()
     
-    #SearchBOX
+    sap_header = page.FindElement("//header[contains(@class, 'sapUshellShellHeader')]")
+    sap_header.FindElement("//a[@title='Navigate to Home Page']").Click()
+    
+    #---SearchBOX:
     searchBox.search_item(page, "csk2")
     
-    #Multi-Level Sales Order BOM
-    MultiLevelBOM.multi_level_bom(panel,textbox,page,sap_field_values)
+    #---MultiLevel Sales Order BOM:
+    MultiLevelBOM.multi_level_bom(sales_order_panel,sales_document_textbox,page,sap_field_values)
       
     page.WaitConfirm(10000)
     Log.PopLogFolder()     
     RecNo = RecNo + 1
     Driver.Next(); # Goes to the next record
     
- 
   # Closes the driver
   DDT.CloseDriver(Driver.Name)
   
@@ -145,14 +147,15 @@ def ProcessData(browser, page):
   for i in range(DDT.CurrentDriver.ColumnCount):
     sap_field_values[DDT.CurrentDriver.ColumnName[i]] = aqConvert.VarToStr(DDT.CurrentDriver.Value[i])
  
-  #--Search va01 ----
+  #---Search va01:
   if RecNo > 0:
     Browsers.Item[btChrome].Navigate(Project.Variables.sap_url)
     browser = Aliases.browser
     browser.BrowserWindow.Maximize()
+    
   return sap_field_values
    
-# Sales Order Values
+#---Sales Order Values:
 def sales_order_values(sap_field_values):
   sales_order_field_values = {}
   sales_order_field_values["order_type"] = sap_field_values["Order Type"].strip()
@@ -161,6 +164,7 @@ def sales_order_values(sap_field_values):
   
   return sales_order_field_values
   
+#---Standard Order Values:  
 def standard_order_values(sap_field_values):
   standard_order_field_values = {}
   standard_order_field_values["sold_to_party"] = sap_field_values["Sold To Party"].strip()
@@ -172,7 +176,7 @@ def standard_order_values(sap_field_values):
   
   return standard_order_field_values
 
-#Set values for general requirement configurations  
+#---Set values for General Requirement Configurations:  
 def general_requirement_values(sap_field_values):
   general_requirement_configurations = {}
   general_requirement_configurations["region_specific"] = sap_field_values["Region Specific"].strip()
@@ -203,9 +207,10 @@ def general_requirement_values(sap_field_values):
   general_requirement_configurations["horizontal_wind_rating"] = sap_field_values["Horizontal Wind Rating"].strip()
   general_requirement_configurations["vertical_wind_rating"] = sap_field_values["Vertical Wind Rating"].strip()
   general_requirement_configurations["fm_wind_load_rating"] = sap_field_values["FM Wind Load Rating"].strip()
+  
   return general_requirement_configurations
   
-#Set values for Water Management configurations
+#---Set values for Water Management Configurations:
 def water_management_values(sap_field_values):
   water_management_configurations = {}
   water_management_configurations["material_of_construction"] = sap_field_values["Material of Construction"].strip()
@@ -223,7 +228,7 @@ def water_management_values(sap_field_values):
     
   return water_management_configurations
   
-#--Set Values for Coil Configuration---
+#---Set Values for Coil Configurations:
 def coil_configuration_values(sap_field_values):
   coil_configurations = {}
   coil_configurations["coil_style"] = sap_field_values["Coil Style"].strip()
@@ -238,7 +243,7 @@ def coil_configuration_values(sap_field_values):
   
   return coil_configurations
   
-#--Set Values for Air Handling System---
+#---Set Values for Air Handling System Configurations:
 def air_handling_values(sap_field_values):
   air_handling_configurations = {}
   air_handling_configurations["system_frequency"] = sap_field_values["System Frequency"].strip()
@@ -272,20 +277,20 @@ def air_handling_values(sap_field_values):
   air_handling_configurations["factory_wiring"] = sap_field_values["Factory Wiring"].strip()
   
   return air_handling_configurations
-  
-def additional_config_vaues(sap_field_values):
-  #-- Set additional Config values
+
+#---Set Values for Additional Enhancement Configurations:   
+def additional_config_values(sap_field_values):
   additional_configs = {}
   additional_configs["coil_air_intake_option"] = sap_field_values["Coil Air Intake Option"].strip()
   additional_configs["side_air_taken_option"] = sap_field_values["Side Air Intake Option"].strip()
   additional_configs["air_discharge_configuration"] = sap_field_values["Air Discharge Configuration"].strip()
   ad = additional_configs["air_discharge_configuration"]
   additional_configs["x_path"] = ""
-  #check if string contains double quotes
+  #check if string contains double quotes:
   if aqString.Contains(ad, '"') < 0 :
      additional_configs["air_discharge_configuration"]
   else:
-    #split the string by double quotes
+    #split the string by double quotes:
     aqString.ListSeparator = '"'
     #get the first element
     first_element = aqString.GetListItem(ad, 0)
@@ -304,7 +309,7 @@ def additional_config_vaues(sap_field_values):
   
   return additional_configs
 
-#Set Shipping Configs  
+#---Set Values for Shipping Configurations:  
 def shipping_values(sap_field_values):
   shipping_configs = {}
   shipping_configs["three_Piece_rig_construction"] = sap_field_values["3 Piece Rig Construction"].strip()
@@ -322,12 +327,10 @@ def shipping_values(sap_field_values):
   
   return shipping_configs
   
-
-  
 def record_price(price,sap_values):
   
   # Get the sheet of the Excel file
-  excelFile = Excel.Open("C:\\Users\\narayanan.r\\Documents\\BOM_price_list.xlsx")
+  excelFile = Excel.Open("C:\\Users\\vaishnavi.r\\Documents\\BOM_price_list.xlsx")
   excelSheet = excelFile.SheetByTitle["Sheet1"]
   
   # Write the obtained data into a new row of the file
